@@ -1,0 +1,182 @@
+@CHARSET "UTF-8";
+
+/* Définition des polices personnalisées */
+@import url(http://fonts.googleapis.com/css?family=Abel);
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans);
+
+/* Palette de couleurs
+   Violet Vif 6300BF : header
+   Gris clair 303030 : fond du bloc_page
+   Violet pale A046E8 : liens dans texte
+   Chocolat Fond 111111 : footer et body-background
+   Chocolat Clair CCCCCC : police bloc_page
+   Rouge Erreur 
+   */
+
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arimo', sans-serif;
+    color : #3b3b3b;
+    font-size : 1.3em;
+    
+    background-color : #EEEEEE;
+
+    height: 100%;
+    margin : 0;
+    padding: 0;
+}
+
+body h1 {
+    letter-spacing: 0.15em;
+}
+
+.copyright {
+    font-size: 0.7em;
+}
+
+a {
+    text-decoration : none; /* enlever le soulignage des liens */
+    color : #3ab499}
+
+a:hover { 
+    color : #1d6958
+}
+
+
+/* Header */
+
+div.header {
+
+    background-color: #CAF4E9;
+    /*background-image:url(header-background.png);*/
+    /*background-image: -webkit-gradient(
+	linear,
+	left top,
+	left bottom,
+	color-stop(0, #5C317D),
+	color-stop(1, #1E1E1E)
+    );
+    background-image: -o-linear-gradient(bottom, #5C317D 0%, #1E1E1E 100%);
+    background-image: -moz-linear-gradient(bottom, #5C317D 0%, #1E1E1E 100%);
+    background-image: -webkit-linear-gradient(bottom, #5C317D 0%, #1E1E1E 100%);
+    background-image: -ms-linear-gradient(bottom, #5C317D 0%, #1E1E1E 100%);
+    background-image: linear-gradient(to bottom, #5C317D 0%, #1E1E1E 100%);
+    */
+    min-width : 100%; /* Eviter une couleur bizarre lors du resizing de la fenêtre */
+    height: 200px;
+    margin: 0px;
+    border-bottom: 3px solid #1d6958;
+}
+
+
+div.title {
+    font-family: 'Abel', sans-serif;
+    color: #1d6958;
+    
+    font-size: 3.5em;
+    letter-spacing : 0.2em;
+
+    text-align : center;
+    margin: 0;
+    
+    padding: 10px 0;
+    
+    height:200px;
+}
+
+.logo-moon {
+    width:180px;
+    height:180px;
+    display:inline-block;
+    margin: 0 -110px 0 55px; 
+    vertical-align: middle; 
+
+}
+
+.soreine {
+    line-height: 180px;
+    display:inline-block;
+    vertical-align: middle;
+}
+
+
+
+div.wrapper {
+    min-width: 100%;
+    min-height: 100%;
+}
+
+div.content {
+    text-align : left;
+    
+    width: 800px;
+    
+    margin : 0 auto;
+}
+
+div.content p {
+    line-height: 1.7em;
+    font-size: 0.8em;
+    text-align: justify;
+}
+
+
+/* Footer */
+div.footer {
+    border-top: 2px solid #CCCCCC;
+
+    background-image: url(footer-background.png);
+
+    width: auto;
+    height: 105px;
+    padding-top: 15px;
+    margin: 0px auto;
+
+    text-align: center;
+
+    position: static;
+    overflow: hidden;
+    z-index: 255;
+
+}
+
+div.footer p {
+    font-size: 0.6em;
+}
+
+/* Tableaux */
+table {
+    width: 100%;
+    border-bottom : 2px solid #3B3B3B;
+}
+
+table, th, td {
+    border: 0;
+    border-collapse: collapse;
+    empty-cells: show;
+    padding : 10px;
+}
+table th {
+    font-size: 0.75em;
+}
+table td {
+    font-size: 0.75em;
+}
+
+table tr:nth-child(2n+1) {
+    background-color: #DDDDDD;
+}
+table tr:nth-child(2n) {
+    background-color: #E9E9E9;
+}
+
+
+
+.musicnote {
+    font-family: 'Droid Sans', sans-serif;
+}
