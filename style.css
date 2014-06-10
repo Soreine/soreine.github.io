@@ -53,7 +53,7 @@ a:hover {
 div.header {
 
     background-color: #CAF4E9;
-    /*background-image:url(header-background.png);*/
+    /*background-image:url(images/header-background.png);*/
     /*background-image: -webkit-gradient(
 	linear,
 	left top,
@@ -130,7 +130,7 @@ div.content p {
 div.footer {
     border-top: 2px solid #CCCCCC;
 
-    background-image: url(footer-background.png);
+    background-image: url(images/footer-background.png);
 
     width: auto;
     height: 105px;
