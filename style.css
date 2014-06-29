@@ -24,7 +24,7 @@ body {
     color : #3b3b3b;
     font-size : 1.3em;
     
-    background-color : #EEEEEE;
+    background-color : #F6F6F6;
 
     height: 100%;
     margin : 0;
@@ -169,10 +169,10 @@ table td {
 }
 
 table tr:nth-child(2n+1) {
-    background-color: #DDDDDD;
+    background-color: #E9E9E9;
 }
 table tr:nth-child(2n) {
-    background-color: #E9E9E9;
+    background-color: #F2F2F2;
 }
 
 
