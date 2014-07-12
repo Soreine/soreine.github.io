@@ -549,7 +549,6 @@ a:hover{
 .music p a {
     color: #A6C;
 }
-
 .about p a {
     color: #F80;
 }
@@ -570,7 +569,7 @@ a:hover{
     background-image:linear-gradient(to right, #FFF 0%, #9C0 33%, #ED0 66%, #FFF 100%);
 }
 
-.home .break {
+.music .break {
     background-color: #A6C;
     background-image:-webkit-linear-gradient(to right, #FFF 0%, #A6C 33%, #3BE 66%, #FFF 100%);
     background-image:-moz-linear-gradient(to right, #FFF 0%, #A6C 33%, #3BE 66%, #FFF 100%);
@@ -599,7 +598,7 @@ p {
 }
 
 footer {
-    padding:10% 0;
+    padding:50px 0;
     clear: both;
     text-align:center;
     font-size:.75em;
