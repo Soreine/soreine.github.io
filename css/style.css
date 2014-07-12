@@ -510,6 +510,12 @@ nav ul li.active a {
 .home nav ul li.active:after {
     background: none repeat scroll 0% 0% #ED0;
 }
+.music nav ul li.active:after {
+    background: none repeat scroll 0% 0% #3BE;
+}
+.about nav ul li.active:after {
+    background: none repeat scroll 0% 0% #FB3;
+}
 
 nav ul li.active:after {
     content: "";
@@ -540,6 +546,13 @@ a:hover{
 .home p a {
     color: #690;
 }
+.music p a {
+    color: #A6C;
+}
+
+.about p a {
+    color: #F80;
+}
 
 .break {
     width:100%;
@@ -557,7 +570,7 @@ a:hover{
     background-image:linear-gradient(to right, #FFF 0%, #9C0 33%, #ED0 66%, #FFF 100%);
 }
 
-.music .break {
+.home .break {
     background-color: #A6C;
     background-image:-webkit-linear-gradient(to right, #FFF 0%, #A6C 33%, #3BE 66%, #FFF 100%);
     background-image:-moz-linear-gradient(to right, #FFF 0%, #A6C 33%, #3BE 66%, #FFF 100%);
@@ -568,19 +581,22 @@ a:hover{
 }
 
 .about .break {
-    background-color: #A6C;
-    background-image:-webkit-linear-gradient(to right, #FFF 0%, #A6C 33%, #3BE 66%, #FFF 100%);
-    background-image:-moz-linear-gradient(to right, #FFF 0%, #A6C 33%, #3BE 66%, #FFF 100%);
-    background-image:-o-linear-gradient(to right, #FFF 0%, #A6C 33%, #3BE 66%, #FFF 100%);
-    background-image:-ms-linear-gradient(to right, #FFF 0%, #A6C 33%, #3BE 66%, #FFF 100%);
-    background-image:-chrome-linear-gradient(to right, #FFF 0%, #A6C 33%, #3BE 66%, #FFF 100%);
-    background-image:linear-gradient(to right, #FFF 0%, #A6C 33%, #3BE 66%, #FFF 100%);
+    background-color: #F44;
+    background-image:-webkit-linear-gradient(to right, #FFF 0%, #F44 33%, #FB3 66%, #FFF 100%);
+    background-image:-moz-linear-gradient(to right, #FFF 0%, #F44 33%, #FB3 66%, #FFF 100%);
+    background-image:-o-linear-gradient(to right, #FFF 0%, #F44 33%, #FB3 66%, #FFF 100%);
+    background-image:-ms-linear-gradient(to right, #FFF 0%, #F44 33%, #FB3 66%, #FFF 100%);
+    background-image:-chrome-linear-gradient(to right, #FFF 0%, #F44 33%, #FB3 66%, #FFF 100%);
+    background-image:linear-gradient(to right, #FFF 0%, #F44 33%, #FB3 66%, #FFF 100%);
 }
 
 p {
     line-height: 1.4;
 }
 
+.content {
+    padding-bottom: 50px;
+}
 
 footer {
     padding:10% 0;
