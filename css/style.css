@@ -451,7 +451,7 @@ th {
 custom css ########################################################### */
 
 html {
-    background: #FFF;
+    background: #F0F0F0;
     color:#666;
     font-family:'Open Sans',Helvetica,Arial,sans-serif;
     font-size:1em;
@@ -459,6 +459,9 @@ html {
     -moz-osx-font-smoothing:antialiased;
 }
 
+page {
+    background: #FFF;
+}
 
 .container {
     position: relative;
@@ -469,6 +472,7 @@ html {
 
 
 header {
+    background: #FFF;
     text-align:center
 }
 
@@ -476,7 +480,7 @@ header {
     font-family: 'Quicksand', Helvetica, sans-serif;
     font-size:2.5em;
     font-weight:thin;
-    padding:10px 0 10px;
+    padding:.5em 0 .5em;
 }
 
 nav {
@@ -486,7 +490,7 @@ nav {
 }
 
 nav ul {
-    padding: 10px 0 10px;
+    padding: 1em 0 1em;
     margin:0;
 }
 
@@ -522,7 +526,7 @@ nav ul li.active:after {
     width: 100%;
     height: 3px;
     position: absolute;
-    bottom: -4px;
+    bottom: -.4em;
     left: 0px;
 }
 
@@ -553,10 +557,20 @@ a:hover{
     color: #F80;
 }
 
+.home .title a {
+    color: #690;
+}
+.music .title a {
+    color: #A6C;
+    font-weight:bold;
+}
+.about .title a {
+    color: #F80;
+}
+
 .break {
     width:100%;
-    height:5px;
-    margin:5px 0 5px;
+    height:.4em;
     content:'';
 }
 .home .break {
@@ -594,15 +608,25 @@ p {
 }
 
 .content {
+    background: #FFF;
     padding-bottom: 50px;
+    padding: .8em 0 .8em;
 }
 
 footer {
     padding:50px 0;
     clear: both;
+    background: #F0F0F0;
     text-align:center;
     font-size:.75em;
-    background-color:#f0f0f0;
+}
+
+
+footer.after{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    background: #F0F0F0;
 }
 
 .contact {
@@ -611,4 +635,8 @@ footer {
 }
 .copyright {
     font-style:italic;
+}
+
+#ccby {
+    height:1.3em;
 }
