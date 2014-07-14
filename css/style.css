@@ -466,7 +466,7 @@ page {
 .container {
     position: relative;
     width: 85%;
-    max-width: 1265px;
+    max-width: 800px; /* 1265px; */
     margin: 0px auto;
 }
 
@@ -477,9 +477,11 @@ header {
 }
 
 .logo {
+    text-transform: uppercase;
     font-family: 'Quicksand', Helvetica, sans-serif;
     font-size:2.5em;
     font-weight:thin;
+    letter-spacing:0.24em;
     padding:.5em 0 .5em;
 }
 
@@ -638,5 +640,6 @@ footer.after{
 }
 
 #ccby {
-    height:1.3em;
+    display:inline;
+    height:100%;
 }
