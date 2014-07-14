@@ -453,7 +453,7 @@ custom css ########################################################### */
 html {
     background: #F0F0F0;
     color:#666;
-    font-family:'Open Sans',Helvetica,Arial,sans-serif;
+    font-family: 'Lato', Helvetica,Arial,sans-serif;
     font-size:1em;
     -webkit-font-smoothing:antialiased;
     -moz-osx-font-smoothing:antialiased;
@@ -466,7 +466,7 @@ page {
 .container {
     position: relative;
     width: 85%;
-    max-width: 800px; /* 1265px; */
+    max-width: 700px; /* 1265px; */
     margin: 0px auto;
 }
 
@@ -478,7 +478,7 @@ header {
 
 .logo {
     text-transform: uppercase;
-    font-family: 'Quicksand', Helvetica, sans-serif;
+    font-family: 'Quicksand', Helvetica, Arial, sans-serif;
     font-size:2.5em;
     font-weight:thin;
     letter-spacing:0.24em;
@@ -487,7 +487,7 @@ header {
 
 nav {
     text-transform: uppercase;
-    font-family: 'Lato', Helvetica, sans-serif;
+    font-family: 'Lato', Helvetica, Arial, sans-serif;
     color: #222;
 }
 
