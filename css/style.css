@@ -492,15 +492,26 @@ nav {
 }
 
 nav ul {
-    padding: 1em 0 1em;
+    padding: 1em 0 0; /*The bottom padding is already made with nav ul:after*/
     margin:0;
+    /* Trick for equidistant li */
+    text-align:justify;
+    width:100%;
+    max-width:400px;
+    display:inline-block;
+}
+
+/* Trick for equidistant li */
+nav ul:after {
+    content:''; /* Ensures there are at least 2 lines of text, so justification works */
+    width:100%;
+    display:inline-block;
 }
 
 nav ul li {
+    font-size: 1em;
     list-style: none outside none;
-    display: inline;
-    line-height: 100%;
-    margin-right: 15%;
+    display: inline-block;
     position:relative;
     background: none repeat scroll 0px center transparent;
 }
@@ -519,8 +530,11 @@ nav ul li.active a {
 .music nav ul li.active:after {
     background: none repeat scroll 0% 0% #3BE;
 }
-.about nav ul li.active:after {
+.art nav ul li.active:after {
     background: none repeat scroll 0% 0% #FB3;
+}
+.prog nav ul li.active:after {
+    background: none repeat scroll 0% 0% #93F;
 }
 
 nav ul li.active:after {
@@ -555,19 +569,17 @@ a:hover{
 .music p a {
     color: #A6C;
 }
-.about p a {
+.art p a {
     color: #F80;
 }
-
-.home .title a {
-    color: #690;
+.prog p a {
+    color: #095;
 }
+
+
 .music .title a {
     color: #A6C;
     font-weight:bold;
-}
-.about .title a {
-    color: #F80;
 }
 
 .break {
@@ -595,7 +607,7 @@ a:hover{
     background-image:linear-gradient(to right, #FFF 0%, #A6C 33%, #3BE 66%, #FFF 100%);
 }
 
-.about .break {
+.art .break {
     background-color: #F44;
     background-image:-webkit-linear-gradient(to right, #FFF 0%, #F44 33%, #FB3 66%, #FFF 100%);
     background-image:-moz-linear-gradient(to right, #FFF 0%, #F44 33%, #FB3 66%, #FFF 100%);
@@ -605,8 +617,19 @@ a:hover{
     background-image:linear-gradient(to right, #FFF 0%, #F44 33%, #FB3 66%, #FFF 100%);
 }
 
+.prog .break {
+    background-color: #074;
+    background-image:-webkit-linear-gradient(to right, #FFF 0%, #93F 33%, #074 66%, #FFF 100%);
+    background-image:-moz-linear-gradient(to right, #FFF 0%, #93F 33%, #074 66%, #FFF 100%);
+    background-image:-o-linear-gradient(to right, #FFF 0%, #93F 33%, #074 66%, #FFF 100%);
+    background-image:-ms-linear-gradient(to right, #FFF 0%, #93F 33%, #074 66%, #FFF 100%);
+    background-image:-chrome-linear-gradient(to right, #FFF 0%, #93F 33%, #074 66%, #FFF 100%);
+    background-image:linear-gradient(to right, #FFF 0%, #93F 33%, #007744 66%, #FFF 100%);
+}
+
 p {
     line-height: 1.4;
+    text-align:justify;
 }
 
 .content {
