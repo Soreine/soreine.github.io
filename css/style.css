@@ -473,16 +473,70 @@ page {
 
 header {
     background: #FFF;
-    text-align:center
+    text-align:center;
 }
 
-.logo {
-    text-transform: uppercase;
+
+#logo {
+    padding:1em 0 1em;
+}
+
+#logo-image {
+    display:inline-block;
+    width:auto; 
+    height:2em;
+    background:#000;
+}
+
+.home #logo-image {
+    background-color: #9C0;
+    background-image:-webkit-linear-gradient(to right, #ED0, #9C0);
+    background-image:-moz-linear-gradient(to right, #ED0, #9C0);
+    background-image:-o-linear-gradient(to right, #ED0, #9C0);
+    background-image:-ms-linear-gradient(to right, #ED0, #9C0);
+    background-image:-chrome-linear-gradient(to right, #ED0, #9C0);
+    background-image:linear-gradient(to right, #ED0, #9C0);
+}
+
+.music .break {
+    background-color: #A6C;
+    background-image:-webkit-linear-gradient(to right, #A6C, #3BE);
+    background-image:-moz-linear-gradient(to right, #A6C, #3BE);
+    background-image:-o-linear-gradient(to right, #A6C, #3BE);
+    background-image:-ms-linear-gradient(to right, #A6C, #3BE);
+    background-image:-chrome-linear-gradient(to right, #A6C, #3BE);
+    background-image:linear-gradient(to right, #A6C, #3BE);
+}
+
+.art .break {
+    background-color: #F44;
+    background-image:-webkit-linear-gradient(to right, #F44, #FB3);
+    background-image:-moz-linear-gradient(to right, #F44, #FB3);
+    background-image:-o-linear-gradient(to right, #F44, #FB3);
+    background-image:-ms-linear-gradient(to right, #F44, #FB3);
+    background-image:-chrome-linear-gradient(to right, #F44, #FB3);
+    background-image:linear-gradient(to right, #F44, #FB3);
+}
+
+.prog .break {
+    background-color: #074;
+    background-image:-webkit-linear-gradient(to right, #93F, #074);
+    background-image:-moz-linear-gradient(to right, #93F, #074);
+    background-image:-o-linear-gradient(to right, #93F, #074);
+    background-image:-ms-linear-gradient(to right, #93F, #074);
+    background-image:-chrome-linear-gradient(to right, #93F, #074);
+    background-image:linear-gradient(to right, #93F, #074);
+}
+
+#logo-title{
     font-family: 'Quicksand', Helvetica, Arial, sans-serif;
     font-size:2.5em;
     font-weight:thin;
     letter-spacing:0.24em;
-    padding:.5em 0 .5em;
+    pointer-events: none;
+    text-transform: uppercase;
+    text-align: center;
+    display:inline-block;
 }
 
 nav {
@@ -589,12 +643,12 @@ a:hover{
 }
 .home .break {
     background-color: #9C0;
-    background-image:-webkit-linear-gradient(to right, #FFF 0%, #9C0 33%, #ED0 66%, #FFF 100%);
-    background-image:-moz-linear-gradient(to right, #FFF 0%, #9C0 33%, #ED0 66%, #FFF 100%);
-    background-image:-o-linear-gradient(to right, #FFF 0%, #9C0 33%, #ED0 66%, #FFF 100%);
-    background-image:-ms-linear-gradient(to right, #FFF 0%, #9C0 33%, #ED0 66%, #FFF 100%);
-    background-image:-chrome-linear-gradient(to right, #FFF 0%, #9C0 33%, #ED0 66%, #FFF 100%);
-    background-image:linear-gradient(to right, #FFF 0%, #9C0 33%, #ED0 66%, #FFF 100%);
+    background-image:-webkit-linear-gradient(to right, #FFF 0%, #ED0 33%, #9C0 66%, #FFF 100%);
+    background-image:-moz-linear-gradient(to right, #FFF 0%, #ED0 33%, #9C0 66%, #FFF 100%);
+    background-image:-o-linear-gradient(to right, #FFF 0%, #ED0 33%, #9C0 66%, #FFF 100%);
+    background-image:-ms-linear-gradient(to right, #FFF 0%, #ED0 33%, #9C0 66%, #FFF 100%);
+    background-image:-chrome-linear-gradient(to right, #FFF 0%, #ED0 33%, #9C0 66%, #FFF 100%);
+    background-image:linear-gradient(to right, #FFF 0%, #ED0 33%, #9C0 66%, #FFF 100%);
 }
 
 .music .break {
@@ -624,7 +678,7 @@ a:hover{
     background-image:-o-linear-gradient(to right, #FFF 0%, #93F 33%, #074 66%, #FFF 100%);
     background-image:-ms-linear-gradient(to right, #FFF 0%, #93F 33%, #074 66%, #FFF 100%);
     background-image:-chrome-linear-gradient(to right, #FFF 0%, #93F 33%, #074 66%, #FFF 100%);
-    background-image:linear-gradient(to right, #FFF 0%, #93F 33%, #007744 66%, #FFF 100%);
+    background-image:linear-gradient(to right, #FFF 0%, #93F 33%, #074 66%, #FFF 100%);
 }
 
 p {
