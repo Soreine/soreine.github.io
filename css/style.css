@@ -476,10 +476,25 @@ header {
     text-align:center;
 }
 
-
-#logo {
-    padding:1em 0 1em;
+header a {
+    color: #777;
 }
+
+header a:hover {
+    color: #000;
+}
+
+#logo{
+    padding:.5em 0 0;
+    font-family: 'Quicksand', Helvetica, Arial, sans-serif;
+    font-size:2.5em;
+    font-weight:thin;
+    letter-spacing:0.24em;
+    text-transform: uppercase;
+    text-align: center;
+    display:inline-block;
+}
+
 
 #logo-image {
     display:inline-block;
@@ -500,12 +515,12 @@ header {
 
 .music #logo-image {
     background-color: #A6C;
-    background-image:-webkit-linear-gradient(to right, #A6C, #3BE);
-    background-image:-moz-linear-gradient(to right, #A6C, #3BE);
-    background-image:-o-linear-gradient(to right, #A6C, #3BE);
-    background-image:-ms-linear-gradient(to right, #A6C, #3BE);
-    background-image:-chrome-linear-gradient(to right, #A6C, #3BE);
-    background-image:linear-gradient(to right, #A6C, #3BE);
+    background-image:-webkit-linear-gradient(to right, #3BE, #A6C);
+    background-image:-moz-linear-gradient(to right, #3BE, #A6C);
+    background-image:-o-linear-gradient(to right, #3BE, #A6C);
+    background-image:-ms-linear-gradient(to right, #3BE, #A6C);
+    background-image:-chrome-linear-gradient(to right, #3BE, #A6C);
+    background-image:linear-gradient(to right, #3BE, #A6C);
 }
 
 .art #logo-image {
@@ -526,17 +541,6 @@ header {
     background-image:-ms-linear-gradient(to right, #93F, #074);
     background-image:-chrome-linear-gradient(to right, #93F, #074);
     background-image:linear-gradient(to right, #93F, #074);
-}
-
-#logo-title{
-    font-family: 'Quicksand', Helvetica, Arial, sans-serif;
-    font-size:2.5em;
-    font-weight:thin;
-    letter-spacing:0.24em;
-    pointer-events: none;
-    text-transform: uppercase;
-    text-align: center;
-    display:inline-block;
 }
 
 nav {
@@ -600,25 +604,19 @@ nav ul li.active:after {
     left: 0px;
 }
 
-nav ul li a {
-    color: #777;
-}
-
-nav ul li a:hover {
-    color: #000;
-}
-
-
 a {
-    transition:color 0.3s ease-out 0s;
+    transition:color ease-out 0.4s;
     text-decoration: none;
 }
 a:hover{
-    transition:color ease-out .2s
+    transition:color ease-out 0.2s;
 }
 
 .home p a {
     color: #690;
+}
+.music span a {
+    color: #A6C;
 }
 .music p a {
     color: #A6C;
@@ -653,12 +651,12 @@ a:hover{
 
 .music .break {
     background-color: #A6C;
-    background-image:-webkit-linear-gradient(to right, #FFF 0%, #A6C 33%, #3BE 66%, #FFF 100%);
-    background-image:-moz-linear-gradient(to right, #FFF 0%, #A6C 33%, #3BE 66%, #FFF 100%);
-    background-image:-o-linear-gradient(to right, #FFF 0%, #A6C 33%, #3BE 66%, #FFF 100%);
-    background-image:-ms-linear-gradient(to right, #FFF 0%, #A6C 33%, #3BE 66%, #FFF 100%);
-    background-image:-chrome-linear-gradient(to right, #FFF 0%, #A6C 33%, #3BE 66%, #FFF 100%);
-    background-image:linear-gradient(to right, #FFF 0%, #A6C 33%, #3BE 66%, #FFF 100%);
+    background-image:-webkit-linear-gradient(to right, #FFF 0%, #3BE 33%, #A6C 66%, #FFF 100%);
+    background-image:-moz-linear-gradient(to right, #FFF 0%, #3BE 33%, #A6C 66%, #FFF 100%);
+    background-image:-o-linear-gradient(to right, #FFF 0%, #3BE 33%, #A6C 66%, #FFF 100%);
+    background-image:-ms-linear-gradient(to right, #FFF 0%, #3BE 33%, #A6C 66%, #FFF 100%);
+    background-image:-chrome-linear-gradient(to right, #FFF 0%, #3BE 33%, #A6C 66%, #FFF 100%);
+    background-image:linear-gradient(to right, #FFF 0%, #3BE 33%, #A6C 66%, #FFF 100%);
 }
 
 .art .break {
