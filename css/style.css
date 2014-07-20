@@ -681,7 +681,7 @@ a:hover{
     background-image:linear-gradient(to right, #FFF 0%, #93F 33%, #074 66%, #FFF 100%);
 }
 
-p {
+.content p {
     line-height: 1.4;
     text-align:justify;
 }
