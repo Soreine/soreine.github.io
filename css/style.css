@@ -451,7 +451,7 @@ th {
 custom css ########################################################### */
 
 html {
-    background: #F0F0F0;
+    background: #F6F6F6;
     color:#666;
     font-family: 'Lato', Helvetica,Arial,sans-serif;
     font-size:1em;
@@ -593,7 +593,7 @@ nav ul li.active a {
 }
 
 .about nav ul li.active:after {
-    background: none repeat scroll 0% 0% #ED0;
+    background: none repeat scroll 0% 0% #9C0;
 }
 .music nav ul li.active:after {
     background: none repeat scroll 0% 0% #3BE;
@@ -719,17 +719,8 @@ a:hover{
 footer {
     padding:50px 0;
     clear: both;
-    background: #F0F0F0;
     text-align:center;
     font-size:.75em;
-}
-
-
-footer.after{
-    position:absolute;
-    width: 100%;
-    height: 100%;
-    background: #F0F0F0;
 }
 
 .contact {
