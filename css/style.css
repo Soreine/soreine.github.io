@@ -500,10 +500,10 @@ header a:hover {
     display:inline-block;
     width:auto; 
     height:2em;
-    background:#000;
+    background:#AAA;
 }
 
-.home #logo-image {
+.about #logo-image {
     background-color: #9C0;
     background-image:-webkit-linear-gradient(to right, #ED0, #9C0);
     background-image:-moz-linear-gradient(to right, #ED0, #9C0);
@@ -514,13 +514,13 @@ header a:hover {
 }
 
 .music #logo-image {
-    background-color: #A6C;
-    background-image:-webkit-linear-gradient(to right, #3BE, #A6C);
-    background-image:-moz-linear-gradient(to right, #3BE, #A6C);
-    background-image:-o-linear-gradient(to right, #3BE, #A6C);
-    background-image:-ms-linear-gradient(to right, #3BE, #A6C);
-    background-image:-chrome-linear-gradient(to right, #3BE, #A6C);
-    background-image:linear-gradient(to right, #3BE, #A6C);
+    background-color: #93F;
+    background-image:-webkit-linear-gradient(to right, #3BE, #93F);
+    background-image:-moz-linear-gradient(to right, #3BE, #93F);
+    background-image:-o-linear-gradient(to right, #3BE, #93F);
+    background-image:-ms-linear-gradient(to right, #3BE, #93F);
+    background-image:-chrome-linear-gradient(to right, #3BE, #93F);
+    background-image:linear-gradient(to right, #3BE, #93F);
 }
 
 .art #logo-image {
@@ -541,6 +541,16 @@ header a:hover {
     background-image:-ms-linear-gradient(to right, #93F, #074);
     background-image:-chrome-linear-gradient(to right, #93F, #074);
     background-image:linear-gradient(to right, #93F, #074);
+}
+
+.home #logo-image {
+    background-color: #3DB;
+    background-image:-webkit-linear-gradient(to right, #3DB, #999999);
+    background-image:-moz-linear-gradient(to right, #3DB, #999999);
+    background-image:-o-linear-gradient(to right, #3DB, #999999);
+    background-image:-ms-linear-gradient(to right, #3DB, #999999);
+    background-image:-chrome-linear-gradient(to right, #3DB, #999999);
+    background-image:linear-gradient(to right, #3DB, #999999);
 }
 
 nav {
@@ -582,7 +592,7 @@ nav ul li.active a {
     color: #222;
 }
 
-.home nav ul li.active:after {
+.about nav ul li.active:after {
     background: none repeat scroll 0% 0% #ED0;
 }
 .music nav ul li.active:after {
@@ -593,6 +603,9 @@ nav ul li.active a {
 }
 .prog nav ul li.active:after {
     background: none repeat scroll 0% 0% #93F;
+}
+.home nav ul li.active:after {
+    background: none repeat scroll 0% 0% #3DB;
 }
 
 nav ul li.active:after {
@@ -612,14 +625,14 @@ a:hover{
     transition:color ease-out 0.2s;
 }
 
-.home p a {
+.about p a {
     color: #690;
 }
 .music span a {
-    color: #A6C;
+    color: #3BE;
 }
 .music p a {
-    color: #A6C;
+    color: #3BE;
 }
 .art p a {
     color: #F80;
@@ -627,10 +640,13 @@ a:hover{
 .prog p a {
     color: #095;
 }
+.home p a {
+    color: #2A9;
+}
 
 
 .music .title a {
-    color: #A6C;
+    color: #3BE;
     font-weight:bold;
 }
 
@@ -639,7 +655,7 @@ a:hover{
     height:.4em;
     content:'';
 }
-.home .break {
+.about .break {
     background-color: #9C0;
     background-image:-webkit-linear-gradient(to right, #FFF 0%, #ED0 33%, #9C0 66%, #FFF 100%);
     background-image:-moz-linear-gradient(to right, #FFF 0%, #ED0 33%, #9C0 66%, #FFF 100%);
@@ -650,13 +666,13 @@ a:hover{
 }
 
 .music .break {
-    background-color: #A6C;
-    background-image:-webkit-linear-gradient(to right, #FFF 0%, #3BE 33%, #A6C 66%, #FFF 100%);
-    background-image:-moz-linear-gradient(to right, #FFF 0%, #3BE 33%, #A6C 66%, #FFF 100%);
-    background-image:-o-linear-gradient(to right, #FFF 0%, #3BE 33%, #A6C 66%, #FFF 100%);
-    background-image:-ms-linear-gradient(to right, #FFF 0%, #3BE 33%, #A6C 66%, #FFF 100%);
-    background-image:-chrome-linear-gradient(to right, #FFF 0%, #3BE 33%, #A6C 66%, #FFF 100%);
-    background-image:linear-gradient(to right, #FFF 0%, #3BE 33%, #A6C 66%, #FFF 100%);
+    background-color: #93F;
+    background-image:-webkit-linear-gradient(to right, #FFF 0%, #3BE 33%, #93F 66%, #FFF 100%);
+    background-image:-moz-linear-gradient(to right, #FFF 0%, #3BE 33%, #93F 66%, #FFF 100%);
+    background-image:-o-linear-gradient(to right, #FFF 0%, #3BE 33%, #93F 66%, #FFF 100%);
+    background-image:-ms-linear-gradient(to right, #FFF 0%, #3BE 33%, #93F 66%, #FFF 100%);
+    background-image:-chrome-linear-gradient(to right, #FFF 0%, #3BE 33%, #93F 66%, #FFF 100%);
+    background-image:linear-gradient(to right, #FFF 0%, #3BE 33%, #93F 66%, #FFF 100%);
 }
 
 .art .break {
@@ -677,6 +693,16 @@ a:hover{
     background-image:-ms-linear-gradient(to right, #FFF 0%, #93F 33%, #074 66%, #FFF 100%);
     background-image:-chrome-linear-gradient(to right, #FFF 0%, #93F 33%, #074 66%, #FFF 100%);
     background-image:linear-gradient(to right, #FFF 0%, #93F 33%, #074 66%, #FFF 100%);
+}
+
+.home .break {
+    background-color: #3DB;
+    background-image:-webkit-linear-gradient(to right, #FFF 0%, #3DB 33%, #999999 66%, #FFF 100%);
+    background-image:-moz-linear-gradient(to right, #FFF 0%, #3DB 33%, #999999 66%, #FFF 100%);
+    background-image:-o-linear-gradient(to right, #FFF 0%, #3DB 33%, #999999 66%, #FFF 100%);
+    background-image:-ms-linear-gradient(to right, #FFF 0%, #3DB 33%, #999999 66%, #FFF 100%);
+    background-image:-chrome-linear-gradient(to right, #FFF 0%, #3DB 33%, #999999 66%, #FFF 100%);
+    background-image:linear-gradient(to right, #FFF 0%, #3DB 33%, #999999 66%, #FFF 100%);
 }
 
 .content p {
