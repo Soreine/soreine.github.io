@@ -1,0 +1,313 @@
+@charset "UTF-8";
+@import "normalize.css";
+
+/* color palette */
+$blue = #06A;
+$azure = #4FC;
+$pink = #D3C;
+$purple = #81E;
+$green = #9C0;
+$citrus = #ED0;
+$red = #E20;
+$fuschia = #E0B;
+$yellow = #FD3;
+$orange = #E60;
+
+$home = {
+    left: $blue, 
+    right: $azure,
+    links: $blue
+}
+
+$music = {
+    left: $pink,
+    right: $purple,
+    links: $purple
+}
+
+$art = {
+    left: $green,
+    right: $citrus,
+    links: $green
+}
+
+$prog = {
+    left: $red,
+    right: $fuschia,
+    links: $fuschia
+}
+
+$about = {
+    left: $yellow,
+    right: $orange,
+    links: $orange
+}
+
+kaleidoscope(mixin) {
+    .home {
+        mixin($home)
+    }
+    .music {
+        mixin($music)
+    }
+    .art {
+        mixin($art)
+    }
+    .prog {
+        mixin($prog)
+    }
+    .about {
+        mixin($about)
+    }
+}
+
+html {
+    background: #F6F6F6;
+    color:#666;
+    font-family: 'Lato', Helvetica,Arial,sans-serif;
+    font-size:1em;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:antialiased;
+}
+
+page {
+    background: #FFF;
+}
+
+.container {
+    position: relative;
+    width: 85%;
+    max-width: 700px; /* 1265px; */
+    margin: 0px auto;
+}
+
+
+header {
+    background: #FFF;
+    text-align:center;
+    a {
+        color: #777;
+    }
+    
+    a:hover {
+        color: #000;
+    }
+}
+
+#logo{
+    padding:.5em 0 0;
+    font-family: 'Quicksand', Helvetica, Arial, sans-serif;
+    font-size:2.5em;
+    font-weight:thin;
+    letter-spacing:0.24em;
+    text-transform: uppercase;
+    text-align: center;
+    display:inline-block;
+}
+
+
+#logo-image {
+    display:inline-block;
+    height:1.5em;
+}
+
+svg-gradient(palette) {
+    #logo-image {
+        #left-color {
+            stop-color:palette.left;
+        }
+        #right-color {
+            stop-color:palette.right;
+        }
+    }
+}
+kaleidoscope(svg-gradient)
+
+nav {
+    text-transform: uppercase;
+    font-family: 'Lato', Helvetica, Arial, sans-serif;
+    color: #222;
+
+    ul {
+        padding: 1em 0 0; /*The bottom padding is already made with nav ul:after*/
+        margin:0;
+        /* Trick for equidistant li */
+        text-align:justify;
+        width:100%;
+        max-width:400px;
+        display:inline-block;
+        /* Trick for equidistant li */
+        &:after {
+            content:''; /* Ensures there are at least 2 lines of text, so justification works */
+            width:100%;
+            display:inline-block;
+        }
+
+        li {
+            font-size: 1em;
+            list-style: none outside none;
+            display: inline-block;
+            position:relative;
+            background: none repeat scroll 0px center transparent;
+            &:last-child{
+                margin-right:0;
+            }
+            .active a {
+                color: #222;
+                &:after {
+                    content: "";
+                    width: 100%;
+                    height: 3px;
+                    position: absolute;
+                    bottom: -.4em;
+                    left: 0px;
+                    underline(palette) {
+                        background: none repeat scroll 0% 0% palette.links;
+                    }
+                    kaleidoscope(nav-underline);
+                }
+            }
+        }
+    }
+}
+
+.break {
+    width:100%;
+    height:.4em;
+    content:'';
+}
+
+a {
+    transition:color ease-out 0.4s;
+    text-decoration: none;
+    &:hover{
+        transition:color ease-out 0.2s;
+    }
+}
+
+link-color(palette) {
+    footer a {
+        color: palette.links;
+    }
+    .content a {
+        color: palette.links;
+    }
+}
+kaleidoscope(link-color);
+
+background-gradient(palette) {
+    .break {
+        background-color: palette.links;
+        background-image:-webkit-linear-gradient(to right, #FFF 0%, palette.left 33%, palette.right 66%, #FFF 100%);
+        background-image:-moz-linear-gradient(to right, #FFF 0%, palette.left 33%, palette.right 66%, #FFF 100%);
+        background-image:-o-linear-gradient(to right, #FFF 0%, palette.left 33%, palette.right 66%, #FFF 100%);
+        background-image:-ms-linear-gradient(to right, #FFF 0%, palette.left 33%, palette.right 66%, #FFF 100%);
+        background-image:-chrome-linear-gradient(to right, #FFF 0%, palette.left 33%, palette.right 66%, #FFF 100%);
+        background-image:linear-gradient(to right, #FFF 0%, palette.left 33%, palette.right 66%, #FFF 100%);
+    }
+}
+kaleidoscope(background-gradient);
+
+.content {
+    background: #FFF;
+    padding-bottom: 50px;
+    padding: .8em 0 .8em;
+    p {
+        line-height: 1.4;
+        text-align:justify;
+    }
+}
+
+footer {
+    padding:50px 0;
+    clear: both;
+    text-align:center;
+    font-size:.75em;
+}
+
+.contact {
+    font-size:1.05em;
+    font-weight:bold;
+}
+.copyright {
+    font-style:italic;
+}
+
+#ccby {
+    display:inline;
+    height:100%;
+}
+
+/* The playlist 
+================================================== */
+
+.music .playlist {
+    color:#999;
+    
+    a {
+        color:$music.links;
+    }
+    
+    ul {
+        padding: 0;
+        position:relative;
+    }
+    
+    li {
+        list-style: none outside none;
+        padding:0.5em;
+        position:relative;
+        transition:all ease-out .3s;
+    }
+
+    li:hover {
+        transition:all ease-out .2s;
+        color:#666;
+    }
+    ul:before {
+        background:#CCC;
+        content: "";
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        top:0px;
+        left:0px;
+    }
+    
+    li:after{
+        background:#CCC;
+        content: "";
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        bottom:0px;
+        left:0px;
+    }
+    
+    .title {
+        display:inline-block;
+        font-weight: bold;
+        color: $music.links;
+    }
+    
+    .date {
+        display:inline-block;
+    }
+    
+    .date:before {
+        content:'-';
+        padding:0px 0.3em;
+    }
+    
+    .length {
+        display:inline-block;
+        text-align: right;
+        position: absolute;
+        right: 0px;
+    }
+    
+    .description {
+        text-align:justify;
+        margin-left:1em;
+    }
+}
