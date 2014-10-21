@@ -3,19 +3,19 @@
 
 /* color palette */
 $blue = #06A;
-$azure = #4FC;
+$azure = #6DC;
 $pink = #D3C;
 $purple = #81E;
 $green = #9C0;
-$citrus = #ED0;
+$citrus = #EE4;
 $red = #E20;
-$fuschia = #E0B;
+$fuschia = #D0B;
 $yellow = #FD3;
 $orange = #E60;
 
 $home = {
-    left: $blue, 
-    right: $azure,
+    left: $azure, 
+    right: $blue,
     links: $blue
 }
 
@@ -26,14 +26,14 @@ $music = {
 }
 
 $art = {
-    left: $green,
-    right: $citrus,
+    left: $citrus,
+    right: $green,
     links: $green
 }
 
 $prog = {
-    left: $red,
-    right: $fuschia,
+    left: $fuschia,
+    right: $red,
     links: $fuschia
 }
 
@@ -62,7 +62,7 @@ kaleidoscope(mixin) {
 }
 
 html {
-    background: #F6F6F6;
+    background: #F2F2F2;
     color:#666;
     font-family: 'Lato', Helvetica,Arial,sans-serif;
     font-size:1em;
@@ -149,11 +149,16 @@ nav {
             display: inline-block;
             position:relative;
             background: none repeat scroll 0px center transparent;
-            &:last-child{
+            
+            &:last-child {
                 margin-right:0;
             }
-            .active a {
-                color: #222;
+            
+            &.active {
+                a {
+                    color: #222;
+                }
+                
                 &:after {
                     content: "";
                     width: 100%;
@@ -161,15 +166,19 @@ nav {
                     position: absolute;
                     bottom: -.4em;
                     left: 0px;
-                    underline(palette) {
-                        background: none repeat scroll 0% 0% palette.links;
-                    }
-                    kaleidoscope(nav-underline);
+                    color: #A00;
                 }
             }
         }
     }
 }
+
+nav-underline(palette) {
+    nav ul li.active:after {
+        background: none repeat scroll 0% 0% palette.links;
+    }
+}
+kaleidoscope(nav-underline);
 
 .break {
     width:100%;
