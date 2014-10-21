@@ -652,6 +652,11 @@ a:hover {
   line-height: 1.4;
   text-align: justify;
 }
+@media (min-width: 800px) {
+  .content {
+    font-size: 1.25em;
+  }
+}
 footer {
   padding: 50px 0;
   clear: both;
