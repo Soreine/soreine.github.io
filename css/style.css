@@ -548,7 +548,7 @@ nav ul li.active:after {
   background: none repeat scroll 0% 0% #81e;
 }
 .art nav ul li.active:after {
-  background: none repeat scroll 0% 0% #9c0;
+  background: none repeat scroll 0% 0% #7ca400;
 }
 .prog nav ul li.active:after {
   background: none repeat scroll 0% 0% #d0b;
@@ -581,10 +581,10 @@ a:hover {
   color: #81e;
 }
 .art footer a {
-  color: #9c0;
+  color: #7ca400;
 }
 .art .content a {
-  color: #9c0;
+  color: #7ca400;
 }
 .prog footer a {
   color: #d0b;
@@ -617,7 +617,7 @@ a:hover {
   background-image: linear-gradient(to right, #fff 0%, #d3c 33%, #81e 66%, #fff 100%);
 }
 .art .break {
-  background-color: #9c0;
+  background-color: #7ca400;
   background-image: -webkit-linear-gradient(to right, #fff 0%, #ee4 33%, #9c0 66%, #fff 100%);
   background-image: -moz-linear-gradient(to right, #fff 0%, #ee4 33%, #9c0 66%, #fff 100%);
   background-image: -o-linear-gradient(to right, #fff 0%, #ee4 33%, #9c0 66%, #fff 100%);
@@ -742,10 +742,12 @@ h1 {
 /* Figures */
 figure {
   text-align: center;
+  margin: 0;
+  padding: 2.5%;
 }
 figure img {
   max-width: 98%;
   padding: 1%;
   background: none repeat scroll 0% 0% #fff;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.3);
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.3);
 }

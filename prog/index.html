@@ -9,7 +9,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="/css/style.css" />
-     <!-- Google Fonts -->
+    <!-- Google Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Quicksand:300' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lato:400' rel='stylesheet' type='text/css'>
     
@@ -67,15 +67,74 @@
 	<div class="content">
 	  <div class="container">
 
-
 	    <!--DESCRIPTION-->
 	    <div class="description">
+              <h1>Swap Box Reloaded</h1>
+
+              <a title="Swap Box Reloaded" href="swap-box.png">
+                <figure>
+                  <img alt="Swap Box Reloaded screenshot" src="swap-box.png"/>
+                </figure>
+              </a>
+              
+              <p>
+                There is a cooperation game experiment named 
+                <em>Swap Box Turbo</em> whose concept is simple yet
+                funny. Both players control a little square that can
+                jump across platforms. The level is scrolling and the
+                squares die when they fall or when they touch each
+                other. It's no more than a two-player scrolling
+                platformer except from that very detail : every two
+                seconds, both players controls are swapped. The result
+                is a game of concentration, rhythm and cooperation with
+                lot of fun. Who the hell has touched the other and
+                caused the death of both players is the eternal
+                question. Here is a link to
+                <a href="http://nifflas.ni2.se/">Nifflas website</a>,
+                the creator of the game.
+              </p>
+              <p>
+                One day, I played this game with a friend and we both
+                enjoyed it. But the game is very short and we were not
+                completely satisfied. Because, yes, when you have
+                spent a whole hour to complete a 90 seconds level
+                which doesn't have a proper ending, you feel
+                frustrated.
+              </p>
+              <p>
+                So we decided to make our own version. The opportunity
+                was gold to experiment with game development. For a
+                simple game like this, playing directly in the browser
+                is convenient, so the <a href="">Phaser</a>
+                Javascript library has been our way to go. Besides, we
+                wanted procedurally generated levels. This adressed
+                the problem of the game being too short. So we made a
+                seed-based system, where the seed is the name of the
+                level. This way, any level can be shared just by
+                sharing its name.
+              </p>
+
+              <a href="https://github.com/Soreine/swap-box-reloaded/">
+                <img alt="GitHub" 
+                     style="vertical-align:middle"
+                     src="GitHub-Mark-32px.png"/>
+                See on GitHub
+              </a>
+              
+              <hr/>
+              
               <h1>PixelArtMaker</h1>
-                            
-              <p>PixelArtMaker is the combination of two image
-                manipulation algorithms designed around the style of
-                <a href="http://en.wikipedia.org/wiki/Pixel_art">Pixel Art</a>.
-                These two functionalities are :</p>
+              
+              <p>PixelArtMaker is a program I imagined when I was
+                playing around with the dithering feature of image
+                manipulation softwares like Gimp for
+                <a href="http://en.wikipedia.org/wiki/Pixel_art">Pixel Art</a> purposes. I
+                realised that the Bayer's positional dithering
+                generated some crosshatch patterns and wondered how I
+                could make an algorithm that would generate arbitrary
+                patterns.</p>
+              
+              <p>The result is a combination of two image manipulation algorithms :</p>
               
               <ul class="task-list">
                 <li>Generating an optimized limited color palette for an image.</li>
@@ -83,8 +142,8 @@
                   <a href="http://en.wikipedia.org/wiki/Dither">Dithering</a> an image with an
                   arbitrary color palette, using a user-defined pattern.</li>
               </ul>
-
-              <a rel="Click to enlarge" href="process.png">
+              
+              <a title="Click to enlarge" href="process.png">
                 <figure>
                   <img alt="Example" src="process.png"/>
                 </figure>
@@ -94,29 +153,30 @@
                 <a href="http://en.wikipedia.org/wiki/K-means_clustering">K-means clustering</a>
                 algorithm that tries to find the set of colors that
                 average best the colors from the input image.</p>
-                
-                <p>The dithering is a positional ordered dithering algorithm, similar to
-                  the
-                  <a href="http://en.wikipedia.org/wiki/Ordered_dithering">Bayer ordered dithering algorithm</a>.
-                  However, instead of using the optimised Bayer matrix
-                  as a pattern, any grayscale image can be used as
-                  pattern source. This is destined to artists wanting
-                  to try out some unusual patterns in their
-                  creation. Draw a pattern image, define a palette and
-                  start the dithering. If the result is good, then it
-                  can be used and tweaked for a handmade piece of
-                  pixel art. If the result is not satisfying, it does
-                  not matter, try out something else, because it is
-                  fast.</p>
-                <a href="https://github.com/Soreine/PixelArtMaker">
-                  <img alt="GitHub" 
-                       style="vertical-align:middle"
-                       src="GitHub-Mark-32px.png"/>
-                  More on GitHub
-                </p>
+              
+              <p>The dithering is a positional ordered dithering algorithm, similar to
+                the
+                <a href="http://en.wikipedia.org/wiki/Ordered_dithering">Bayer ordered dithering algorithm</a>.
+                However, instead of using the optimised Bayer matrix
+                as a pattern, any grayscale image can be used as
+                pattern source. This is destined to artists wanting
+                to try out some unusual patterns in their
+                creation. Draw a pattern image, define a palette and
+                start the dithering. If the result is good, then it
+                can be used and tweaked for a handmade piece of
+                pixel art. If the result is not satisfying, it does
+                not matter, try out something else, because it is
+                fast.</p>
+              
+              <a href="https://github.com/Soreine/PixelArtMaker">
+                <img alt="GitHub" 
+                     style="vertical-align:middle"
+                     src="GitHub-Mark-32px.png"/>
+                More on GitHub
+              </a>
 	    </div>
 	    <!-- /.description -->
-
+            
 	  </div> <!-- /container -->	  
 	</div> <!-- /content -->
       </section>
