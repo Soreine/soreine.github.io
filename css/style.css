@@ -14,9 +14,6 @@ html {
 page {
   background: #fff;
 }
-ul li {
-  list-style: outside none none;
-}
 .container {
   position: relative;
   width: 85%;
@@ -232,14 +229,26 @@ a span:hover {
   padding-top: 50px;
   padding-bottom: 50px;
 }
-.content p {
-  line-height: 1.4;
-  text-align: justify;
-}
 @media (min-width: 800px) {
   .content {
     font-size: 1.25em;
   }
+}
+.content p {
+  line-height: 1.4;
+  text-align: justify;
+}
+.content ul {
+  padding: 0px 0px 1em 15px;
+}
+.content ul li {
+  list-style: outside none none;
+  background-position: 0px 0.3em;
+  background-image: url("/images/list.svg");
+  background-repeat: no-repeat;
+  padding-left: 30px;
+  padding-bottom: 0.8em;
+  line-height: 1.4;
 }
 .clear {
   clear: both;
@@ -377,13 +386,15 @@ footer {
   padding: 0;
   position: relative;
 }
-.music .playlist li {
-  list-style: none outside none;
+.music .playlist ul li {
+  list-style: outside none none;
+  padding: 0px;
+  background: none repeat scroll 0px center transparent;
   padding: 0.5em;
   position: relative;
   transition: all ease-out 0.3s;
 }
-.music .playlist li:hover {
+.music .playlist ul li:hover {
   transition: all ease-out 0.2s;
   color: #666;
 }

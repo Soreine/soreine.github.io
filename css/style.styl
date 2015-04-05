@@ -78,10 +78,6 @@ page {
     background: #FFF;
 }
 
-ul li {
-    list-style: outside none none;
-}
-
 .container {
     position: relative;
     width: 85%;
@@ -232,13 +228,29 @@ kaleidoscope(background-gradient);
     background: #FFF;
     padding-top: 50px;
     padding-bottom: 50px;
+
+    @media(min-width: $media-width) {
+        font-size:1.25em;
+    }
+
     p {
         line-height: 1.4;
         text-align:justify;
     }
-    @media(min-width: $media-width) {
-        font-size:1.25em;
+
+    ul {
+        padding: 0px 0px 1em 15px;
+        li {
+            list-style: outside none none;
+            background-position: 0px 0.3em;
+            background-image:url('/images/list.svg'); 
+            background-repeat:no-repeat;
+            padding-left: 30px;
+            padding-bottom: 0.8em;
+            line-height: 1.4;
+        }
     }
+    
 }
 
 .clear {
@@ -390,19 +402,20 @@ footer {
     ul {
         padding: 0;
         position:relative;
-    }
-    
-    li {
-        list-style: none outside none;
-        padding:0.5em;
-        position:relative;
-        transition:all ease-out .3s;
+        li {
+            list-style: outside none none;
+            padding: 0px;
+            background: none repeat scroll 0px center transparent;
+            padding:0.5em;
+            position:relative;
+            transition:all ease-out .3s;
+        }
+        li:hover {
+            transition:all ease-out .2s;
+            color:#666;
+        }
     }
 
-    li:hover {
-        transition:all ease-out .2s;
-        color:#666;
-    }
     ul:before {
         background:#CCC;
         content: "";
