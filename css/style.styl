@@ -1,6 +1,9 @@
 @charset "UTF-8";
 @import "normalize.css";
 
+/* Media thresholds */
+$media-width = 800px;
+
 /* color palette */
 $blue = #06A;
 $azure = #6DC;
@@ -75,6 +78,10 @@ page {
     background: #FFF;
 }
 
+ul li {
+    list-style: outside none none;
+}
+
 .container {
     position: relative;
     width: 85%;
@@ -127,7 +134,6 @@ nav {
     text-transform: uppercase;
     font-family: 'Lato', Helvetica, Arial, sans-serif;
     color: #222;
-
     ul {
         padding: 1em 0 0; /*The bottom padding is already made with nav ul:after*/
         margin:0;
@@ -186,7 +192,7 @@ kaleidoscope(nav-underline);
     content:'';
 }
 
-a {
+a, a span {
     transition:color ease-out 0.4s;
     text-decoration: none;
     &:hover{
@@ -217,20 +223,140 @@ background-gradient(palette) {
 }
 kaleidoscope(background-gradient);
 
+
+
+/* Content */
+/* ================================================== */
+
 .content {
     background: #FFF;
+    padding-top: 50px;
     padding-bottom: 50px;
-    padding: .8em 0 .8em;
     p {
         line-height: 1.4;
         text-align:justify;
     }
-    @media(min-width: 800px) {
+    @media(min-width: $media-width) {
         font-size:1.25em;
     }
 }
 
+.clear {
+    clear: both;
+    display: block;
+}
 
+h1 {
+    margin: 1em 0 1em 0;
+    font-size: 1.5em;
+}
+
+.posts {
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+    ul {
+        padding: 0px;
+        a {
+            display: block;
+        }
+        li {
+            /* list-style: outside none none;*/
+            display: block;
+            clear: both;
+            @media(min-width: $media-width) {
+                float: left;
+                width: 48%;
+                &:nth-child(2n+1) {
+                    clear: left;
+                }
+                &:nth-child(2n) {
+                    clear: none;
+                }
+            }
+            margin-bottom: 35px;
+            padding: 0px;
+            background: none repeat scroll 0px center transparent;
+            line-height: 1.1;
+        }
+    }
+
+    .left {
+        display: block;
+        font-weight: 700;
+        width: 75px;
+        float: left;
+        margin-right: 20px;
+        .date {
+            text-transform: uppercase;
+            font-size:17px;
+            line-height: 17px;
+            /* posts-color mixin */
+        }
+        .year {
+            color: #666;
+            display: block;
+            text-align: right;
+            font-size: 13px;
+            line-height: 13px;
+        }
+    }
+    .date, .year {
+        display: block;
+        text-align: right;
+    }
+
+    .right {
+        display: block;
+        float: left;
+        width: 65%;
+        span {
+            display: block;
+        }
+        .title {
+            line-height: 18px;
+            font-size: 18px;
+            @media(min-width:615px) {
+                font-size:22px;
+            }
+            color: #666;
+            margin-bottom: 4px;
+        }
+        .tags {
+            color: #AAA;
+            font-size: 13px;
+        }
+    }
+    a:hover .right .title {
+        color: #333;
+    }
+}
+posts-color(palette) {
+    .posts .left .date {
+        color:palette.left;
+    }
+}
+kaleidoscope(date-color);
+
+hr {
+    margin: 2em 0;
+}
+
+/* Figures */
+
+figure {
+    text-align:center;
+    margin:0;
+    padding:2.5%;
+    img {
+        max-width: 98%;
+        padding: 1%;
+        background: none repeat scroll 0% 0% #FFF;
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+    }
+}
+
+/* Footer */
+/* ================================================== */
 footer {
     padding:50px 0;
     clear: both;
@@ -251,8 +377,8 @@ footer {
     height:100%;
 }
 
-/* The playlist 
-================================================== */
+/* The playlist */
+/* ================================================== */
 
 .music .playlist {
     color:#999;
@@ -322,29 +448,5 @@ footer {
     .description {
         text-align:justify;
         margin-left:1em;
-    }
-}
-
-
-h1 {
-    margin: 2em 0 1em 0;
-    font-size: 1.5em;
-}
-
-hr {
-    margin: 2em 0;
-}
-
-/* Figures */
-
-figure {
-    text-align:center;
-    margin:0;
-    padding:2.5%;
-    img {
-        max-width: 98%;
-        padding: 1%;
-        background: none repeat scroll 0% 0% #FFF;
-        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
     }
 }
