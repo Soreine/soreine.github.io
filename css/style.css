@@ -263,8 +263,10 @@ h2 {
   font-size: 1em;
 }
 .posts {
-  padding-bottom: 20px;
-  margin-bottom: 50px;
+  padding: 0px;
+  margin: 0px;
+  border: 0px none;
+  overflow: hidden;
 }
 .posts ul {
   padding: 0px;
