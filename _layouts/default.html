@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  {% include head.html %}
+
+  <body class="{{ page.category }}">
+    
+    <div class="page">
+
+      <!-- HEADER -->
+      {% include header.html %}
+      
+      <!-- CONTENT -->
+      <section>
+	<div class="content">
+	  <div class="container">
+
+	    <!--DESCRIPTION-->
+	    <div class="description">
+              {{ content }}        
+	    </div>
+	    <!-- /.description -->
+            
+	  </div> <!-- /container -->	  
+	</div> <!-- /content -->
+      </section>
+      
+    </div> <!-- /page -->
+
+    <!-- FOOTER -->
+    {% include footer.html %}
+  </body>
+</html>
