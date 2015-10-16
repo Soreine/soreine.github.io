@@ -13,7 +13,7 @@ discover. It is made and maintained by myself as a statically
 generated website. It started as handmade HTML and CSS styling. I
 recently switched to using
 [Stylus](https://learnboost.github.io/stylus/) (those pretty colors
-are a hassle) and [Jekyll](http://jekyllrb.com/) to facilitate the
+were a hassle) and [Jekyll](http://jekyllrb.com/) to facilitate the
 addition and management of content, but still keeping my own
 HTML templates.
 
