@@ -10,10 +10,12 @@ permalink: /about/
 This site can be seen as a blog, a showcase of my music and other
 creations and experiments, or just a nice place to visit and
 discover. It is made and maintained by myself as a statically
-generated website. I am currently using plain old HTML along with
-[Stylus](https://learnboost.github.io/stylus/) for CSS styling. I am
-planning on using [Jekyll](http://jekyllrb.com/) as the website grows
-to facilitate the addition and management of content.
+generated website. It started as handmade HTML and CSS styling. I
+recently switched to using
+[Stylus](https://learnboost.github.io/stylus/) (those pretty colors
+are a hassle) and [Jekyll](http://jekyllrb.com/) to facilitate the
+addition and management of content, but still keeping my own
+HTML templates.
 
 
 # About me
@@ -59,5 +61,5 @@ games with a strong sense of art. To name a few of the greatest :
 blowing), [Hohokum](http://hohokum.playstation.com/),
 [Monument Valley](http://www.monumentvalleygame.com/),
 [FEZ](http://fezgame.com/) (this one has a grandiose feeling of
-freedom). This is a kind of games it is definitely worth working for, as an
-artist or as an engineer.
+freedom). This is a kind of games it is definitely worth working for,
+as an artist or as an engineer.

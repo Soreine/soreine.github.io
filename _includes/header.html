@@ -31,11 +31,18 @@
     </a>
     <nav>
       <ul>
-        <!-- TODO add current category indicator -->
-	<li><a href="/music/">♪ Music</a></li>
-	<li><a href="/art/">Art</a></li>
-	<li><a href="/prog/">Prog</a></li>
-	<li><a href="/about/">About</a></li>
+	<li {% if page.category == 'music' %} class="active" {% endif %}>
+          <a href="/music/">♪ Music</a>
+        </li>
+	<li {% if page.category == 'art' %} class="active" {% endif %}>
+          <a href="/art/">Art</a>
+        </li>
+	<li {% if page.category == 'prog' %} class="active" {% endif %}>
+          <a href="/prog/">Prog</a>
+        </li>
+	<li {% if page.category == 'about' %} class="active" {% endif %}>
+          <a href="/about/">About</a>
+        </li>
       </ul>
     </nav>
   </div> <!-- container -->
