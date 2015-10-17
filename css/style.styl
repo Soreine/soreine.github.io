@@ -239,7 +239,7 @@ kaleidoscope(background-gradient);
     }
 
     ul {
-        padding: 0px 0px 1em 15px;
+        padding-left: 15px;
         li {
             list-style: outside none none;
             background-position: 0px 0.3em;
@@ -248,6 +248,9 @@ kaleidoscope(background-gradient);
             padding-left: 30px;
             padding-bottom: 0.8em;
             line-height: 1.4;
+        }
+        li:last-child {
+            padding-bottom:0;
         }
     }
     
@@ -385,7 +388,9 @@ figcaption {
 /* Footer */
 /* ================================================== */
 footer {
-    padding:50px 0;
+    .container {
+        padding:50px 0;
+    }
     clear: both;
     text-align:center;
     font-size:.75em;
@@ -476,4 +481,9 @@ footer {
         text-align:justify;
         margin-left:1em;
     }
+}
+
+.post-meta {
+    color:#999;
+    margin-top:0;
 }

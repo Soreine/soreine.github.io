@@ -239,7 +239,7 @@ a span:hover {
   text-align: justify;
 }
 .content ul {
-  padding: 0px 0px 1em 15px;
+  padding-left: 15px;
 }
 .content ul li {
   list-style: outside none none;
@@ -249,6 +249,9 @@ a span:hover {
   padding-left: 30px;
   padding-bottom: 0.8em;
   line-height: 1.4;
+}
+.content ul li:last-child {
+  padding-bottom: 0;
 }
 .clear {
   clear: both;
@@ -370,10 +373,12 @@ figcaption {
 /* Footer */
 /* ================================================== */
 footer {
-  padding: 50px 0;
   clear: both;
   text-align: center;
   font-size: 0.75em;
+}
+footer .container {
+  padding: 50px 0;
 }
 .contact {
   font-size: 1.05em;
@@ -448,4 +453,8 @@ footer {
 .music .playlist .description {
   text-align: justify;
   margin-left: 1em;
+}
+.post-meta {
+  color: #999;
+  margin-top: 0;
 }

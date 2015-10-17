@@ -1,0 +1,76 @@
+---
+layout: post
+category: prog
+date: 2014-11-29
+title: Swap Box Reloaded
+tags: ['html5game', 'javascript', 'phaser']
+---
+
+<a title="Swap Box Reloaded" href="/images/prog/swap-box.png">
+  <figure>
+    <img alt="Swap Box Reloaded screenshot" src="/images/prog/swap-box.png"/>
+  </figure>
+</a>
+
+<p>
+  There is a cooperation game experiment named 
+  <em>Swap Box Turbo</em> whose concept is simple yet
+  funny. Both players control a little square that can
+  jump across platforms. The level is scrolling and the
+  squares die when they fall or when they touch each
+  other. It's nothing more than a two-player scrolling
+  platformer except from that very detail : every two
+  seconds, both players controls are swapped. The result
+  is a game of concentration, rhythm and cooperation
+  with lot of fun. Who the hell has touched the other
+  and caused the death of both players is the eternal
+  question. Here is a link to
+  <a href="http://nifflas.ni2.se/">Nifflas website</a>,
+  the creator of the game.
+</p>
+<p>
+  One day, I played this game with a friend and we both
+  enjoyed it. But the game is very short and we were not
+  completely satisfied. Because, yes, when you have
+  spent a whole hour to complete a 90 seconds level
+  which doesn't have a proper ending, you feel
+  frustrated.
+</p>
+<p>
+  So we decided to make our own version. The opportunity
+  was gold to experiment with game development. For a
+  simple game like this, playing directly in the browser
+  is convenient, so the <a href="http://phaser.io/">Phaser</a>
+  Javascript library has been our way to go. This game
+  engine is simple and leverage the power of the WebGL
+  renderer <a href="http://www.pixijs.com/">Pixi.js</a>.
+  We also wanted procedurally generated levels. This
+  adress the problem of the game being too short. So
+  we made a seed-based system, where the seed is the
+  name of the level.
+</p>
+
+<p>
+  Here are some characteristics of the game :
+</p>
+
+<ul>
+  <li>The game is playable in browser (Chrome or
+    Firefox are recommended), with one keyboard for both
+    player.</li>
+  <li>The music along with some visual hints help the
+    players to feel the swap tempo.</li>
+  <li>All levels are potentially infinite. They are
+    generated automatically according to a seed, and can
+    be re-generated identically from the seed.</li>
+  <li>The variety of levels is easily expandable because
+    we use a concept of biome (as in Minecraft) to
+    generate the levels.</li>
+</ul>
+
+<a href="https://github.com/Soreine/swap-box-reloaded/">
+  <img alt="GitHub" 
+       style="vertical-align:middle"
+       src="/images/GitHub-Mark.svg"/>
+  See on GitHub
+</a>
