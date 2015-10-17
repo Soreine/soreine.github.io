@@ -6,11 +6,16 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://soreine.github.io" # the base hostname & protocol for your site
 github_username:  Soreine
 
+exlude:
+  - css/style.styl
+  - Gemfile
+  - Gemfile.lock
+  - README.md
 # Stylus
-stylus:
-  compress: true
-  path: ./css/
-  include_css: true
+# stylus:
+#   compress: true
+#   path: ./css/
+#   include_css: true
 
 # Build settings
 markdown: kramdown
