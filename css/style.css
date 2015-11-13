@@ -370,6 +370,10 @@ figcaption {
   color: #222;
   font-style: italic;
 }
+/* Disqus */
+#disqus_thread {
+  padding-top: 1em;
+}
 /* Footer */
 /* ================================================== */
 footer {
