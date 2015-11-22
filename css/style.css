@@ -235,7 +235,7 @@ a span:hover {
   }
 }
 .content p {
-  line-height: 1.4;
+  line-height: 1.58;
   text-align: justify;
 }
 .content ul {
@@ -372,7 +372,8 @@ figcaption {
 }
 /* Disqus */
 #disqus_thread {
-  padding-top: 1em;
+  padding-top: 3em;
+  padding-bottom: 1.5em;
 }
 /* Footer */
 /* ================================================== */
