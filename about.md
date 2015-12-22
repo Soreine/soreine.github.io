@@ -38,9 +38,9 @@ and challenges. You can find me on
 [Codewars](http://www.codewars.com/users/Soreine) or
 [Codingame](https://www.codingame.com/profile/04928e763cd7e1dba698bee386f13206777182).
 They always are a great way to improve one's mastery of new
-languages. I have successfully learnt JavaScript still using and
-loving this language) and [Clojure](http://clojure.org/) this way, and
-I am currently sharpening my understanding of functional programming
+languages. I have successfully learnt JavaScript (still using and
+enjoying it today) and [Clojure](http://clojure.org/) this way, and I
+am currently sharpening my understanding of functional programming
 with the most beautiful incarnation of this paradigm, namely
 [Haskell](https://www.haskell.org/)
 
