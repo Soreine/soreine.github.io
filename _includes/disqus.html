@@ -1,4 +1,4 @@
-{% if site.disqus_short_name and page.comments != false %}
+{% if site.enable_disqus and site.disqus_short_name and page.comments != false %}
 <div id="disqus_thread"></div>
 <script>
  var disqus_shortname = '{{ site.disqus_short_name }}';

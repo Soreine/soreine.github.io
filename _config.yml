@@ -5,6 +5,7 @@ description: Soreine\'s personal website # > this means to ignore newlines until
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://soreine.github.io" # the base hostname & protocol for your site
 disqus_short_name: soreine-github-io
+enable_disqus: true
 github_username: Soreine
 permalink: pretty
 exlude:
