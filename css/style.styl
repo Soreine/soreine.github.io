@@ -17,7 +17,7 @@ $yellow = #FD3;
 $orange = #E60;
 
 $home = {
-    left: $azure, 
+    left: $azure,
     right: $blue,
     links: $blue
 }
@@ -67,10 +67,11 @@ kaleidoscope(mixin) {
 html {
     background: #FFF;
     color:#666;
-    font-family: 'Lato', Helvetica,Arial,sans-serif;
+    font-family: 'Lato', Helvetica, Arial, sans-serif;
     font-size:1em;
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:antialiased;
+    font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: antialiased;
     overflow-y: scroll; /* Always have a scrollbar */
 }
 
@@ -91,27 +92,35 @@ header {
     a {
         color: #777;
     }
-    
+
     a:hover {
         color: #000;
     }
 }
 
 #logo{
-    padding:.5em 0 0;
-    font-family: 'Quicksand', Helvetica, Arial, sans-serif;
-    font-size:2.5em;
-    font-weight:thin;
-    letter-spacing:0.24em;
-    text-transform: uppercase;
+    margin: 20px 0 10px;
     text-align: center;
-    display:inline-block;
+    display: inline-block;
 }
 
-
 #logo-image {
-    display:inline-block;
-    height:1.5em;
+    display: inline-block;
+    height: 3em;
+    margin-bottom: 0.5em;
+}
+
+#logo-name {
+    $logo-spacing = 0.5em;
+    letter-spacing: $logo-spacing;
+    // http://stackoverflow.com/questions/6315491/conflict-between-letter-spacing-and-text-aligncenter
+    padding-left: $logo-spacing;
+    font-family: 'Quicksand', Helvetica, Arial, sans-serif;
+    font-size: 1.1em;
+    font-weight: normal;
+    color: #000;
+    text-transform: uppercase;
+    display: block;
 }
 
 svg-gradient(palette) {
@@ -151,16 +160,16 @@ nav {
             display: inline-block;
             position:relative;
             background: none repeat scroll 0px center transparent;
-            
+
             &:last-child {
                 margin-right:0;
             }
-            
+
             &.active {
                 a {
                     color: #222;
                 }
-                
+
                 &:after {
                     content: "";
                     width: 100%;
@@ -243,7 +252,7 @@ kaleidoscope(background-gradient);
         li {
             list-style: outside none none;
             background-position: 0px 0.3em;
-            background-image:url('/images/list.svg'); 
+            background-image:url('/images/list.svg');
             background-repeat:no-repeat;
             padding-left: 30px;
             padding-bottom: 0.8em;
@@ -253,7 +262,6 @@ kaleidoscope(background-gradient);
             padding-bottom:0;
         }
     }
-    
 }
 
 .clear {
@@ -420,11 +428,11 @@ footer {
 
 .music .playlist {
     color:#999;
-    
+
     a {
         color:$music.links;
     }
-    
+
     ul {
         padding: 0;
         position:relative;
@@ -451,7 +459,7 @@ footer {
         top:0px;
         left:0px;
     }
-    
+
     li:after{
         background:#CCC;
         content: "";
@@ -461,28 +469,28 @@ footer {
         bottom:0px;
         left:0px;
     }
-    
+
     .title {
         display:inline-block;
         color: $music.links;
     }
-    
+
     .date {
         display:inline-block;
     }
-    
+
     .date:before {
         content:'-';
         padding:0px 0.3em;
     }
-    
+
     .length {
         display:inline-block;
         text-align: right;
         position: absolute;
         right: 0px;
     }
-    
+
     .description {
         text-align:justify;
         margin-left:1em;

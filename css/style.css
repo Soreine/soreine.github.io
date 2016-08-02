@@ -7,6 +7,7 @@ html {
   color: #666;
   font-family: 'Lato', Helvetica, Arial, sans-serif;
   font-size: 1em;
+  font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: antialiased;
   overflow-y: scroll; /* Always have a scrollbar */
@@ -31,18 +32,24 @@ header a:hover {
   color: #000;
 }
 #logo {
-  padding: 0.5em 0 0;
-  font-family: 'Quicksand', Helvetica, Arial, sans-serif;
-  font-size: 2.5em;
-  font-weight: thin;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
+  margin: 20px 0 10px;
   text-align: center;
   display: inline-block;
 }
 #logo-image {
   display: inline-block;
-  height: 1.5em;
+  height: 3em;
+  margin-bottom: 0.5em;
+}
+#logo-name {
+  letter-spacing: 0.5em;
+  padding-left: 0.5em;
+  font-family: 'Quicksand', Helvetica, Arial, sans-serif;
+  font-size: 1.1em;
+  font-weight: normal;
+  color: #000;
+  text-transform: uppercase;
+  display: block;
 }
 .home #logo-image #left-color {
   stop-color: #6dc;
@@ -372,7 +379,7 @@ figcaption {
 }
 /* Disqus */
 #disqus_thread {
-  padding-top: 3em;
+  padding-top: 4em;
   padding-bottom: 1.5em;
 }
 /* Footer */
