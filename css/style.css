@@ -4,7 +4,7 @@
 /* color palette */
 html {
   background: #fff;
-  color: #666;
+  color: #555;
   font-family: 'Lato', Helvetica, Arial, sans-serif;
   font-size: 1em;
   font-smoothing: antialiased;
@@ -319,7 +319,7 @@ h2 {
 /* posts-color mixin */
 }
 .posts .left .year {
-  color: #666;
+  color: #555;
   display: block;
   text-align: right;
   font-size: 13px;
@@ -341,7 +341,7 @@ h2 {
 .posts .right .title {
   line-height: 18px;
   font-size: 18px;
-  color: #666;
+  color: #555;
   margin-bottom: 4px;
 }
 @media (min-width: 615px) {
@@ -350,7 +350,7 @@ h2 {
   }
 }
 .posts .right .tags {
-  color: #aaa;
+  color: #777;
   font-size: 13px;
 }
 .posts a:hover .right .title {
@@ -406,7 +406,7 @@ footer .container {
 /* The playlist */
 /* ================================================== */
 .music .playlist {
-  color: #999;
+  color: #777;
 }
 .music .playlist a {
   color: #81e;
@@ -425,7 +425,7 @@ footer .container {
 }
 .music .playlist ul li:hover {
   transition: all ease-out 0.2s;
-  color: #666;
+  color: #555;
 }
 .music .playlist ul:before {
   background: #ccc;
@@ -467,6 +467,6 @@ footer .container {
   margin-left: 1em;
 }
 .post-meta {
-  color: #999;
+  color: #777;
   margin-top: 0;
 }

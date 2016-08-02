@@ -16,6 +16,9 @@ $fuschia = #D0B;
 $yellow = #FD3;
 $orange = #E60;
 
+$gray = #555;
+$gray-light = #777;
+
 $home = {
     left: $azure,
     right: $blue,
@@ -66,7 +69,7 @@ kaleidoscope(mixin) {
 
 html {
     background: #FFF;
-    color:#666;
+    color:$gray;
     font-family: 'Lato', Helvetica, Arial, sans-serif;
     font-size:1em;
     font-smoothing: antialiased;
@@ -90,7 +93,7 @@ header {
     background: #FFF;
     text-align:center;
     a {
-        color: #777;
+        color: $gray-light;
     }
 
     a:hover {
@@ -323,7 +326,7 @@ h2 {
             /* posts-color mixin */
         }
         .year {
-            color: #666;
+            color: $gray;
             display: block;
             text-align: right;
             font-size: 13px;
@@ -348,11 +351,11 @@ h2 {
             @media(min-width:615px) {
                 font-size:22px;
             }
-            color: #666;
+            color: $gray;
             margin-bottom: 4px;
         }
         .tags {
-            color: #AAA;
+            color: $gray-light;
             font-size: 13px;
         }
     }
@@ -427,7 +430,7 @@ footer {
 /* ================================================== */
 
 .music .playlist {
-    color:#999;
+    color:$gray-light;
 
     a {
         color:$music.links;
@@ -446,7 +449,7 @@ footer {
         }
         li:hover {
             transition:all ease-out .2s;
-            color:#666;
+            color:$gray;
         }
     }
 
@@ -498,6 +501,6 @@ footer {
 }
 
 .post-meta {
-    color:#999;
+    color:$gray-light;
     margin-top:0;
 }
