@@ -38,7 +38,7 @@ header a:hover {
 }
 #logo-image {
   display: inline-block;
-  height: 3em;
+  height: 3em !important;
   margin-bottom: 0.5em;
 }
 #logo-name {

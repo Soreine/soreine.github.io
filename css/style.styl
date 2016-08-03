@@ -109,7 +109,9 @@ header {
 
 #logo-image {
     display: inline-block;
-    height: 3em;
+    // The HTML element contains height style already, to avoid oversized svg before css loads
+    // So we override it here
+    height: 3em !important;
     margin-bottom: 0.5em;
 }
 
