@@ -58,28 +58,28 @@ header a:hover {
   stop-color: #06a;
 }
 .music #logo-image #left-color {
-  stop-color: #d3c;
-}
-.music #logo-image #right-color {
-  stop-color: #81e;
-}
-.art #logo-image #left-color {
-  stop-color: #ee4;
-}
-.art #logo-image #right-color {
-  stop-color: #9c0;
-}
-.prog #logo-image #left-color {
   stop-color: #d0b;
 }
-.prog #logo-image #right-color {
+.music #logo-image #right-color {
   stop-color: #e20;
 }
-.about #logo-image #left-color {
+.art #logo-image #left-color {
   stop-color: #fd3;
 }
-.about #logo-image #right-color {
+.art #logo-image #right-color {
   stop-color: #e60;
+}
+.prog #logo-image #left-color {
+  stop-color: #d3c;
+}
+.prog #logo-image #right-color {
+  stop-color: #81e;
+}
+.about #logo-image #left-color {
+  stop-color: #ee4;
+}
+.about #logo-image #right-color {
+  stop-color: #9c0;
 }
 nav {
   text-transform: uppercase;
@@ -129,16 +129,16 @@ nav ul li.active:after {
   background: none repeat scroll 0% 0% #06a;
 }
 .music nav ul li.active:after {
-  background: none repeat scroll 0% 0% #81e;
-}
-.art nav ul li.active:after {
-  background: none repeat scroll 0% 0% #7ca400;
-}
-.prog nav ul li.active:after {
   background: none repeat scroll 0% 0% #d0b;
 }
-.about nav ul li.active:after {
+.art nav ul li.active:after {
   background: none repeat scroll 0% 0% #e60;
+}
+.prog nav ul li.active:after {
+  background: none repeat scroll 0% 0% #81e;
+}
+.about nav ul li.active:after {
+  background: none repeat scroll 0% 0% #7ca400;
 }
 .break {
   width: 100%;
@@ -161,28 +161,28 @@ a span:hover {
   color: #06a;
 }
 .music footer a {
-  color: #81e;
+  color: #d0b;
 }
 .music .content a {
-  color: #81e;
+  color: #d0b;
 }
 .art footer a {
-  color: #7ca400;
+  color: #e60;
 }
 .art .content a {
-  color: #7ca400;
+  color: #e60;
 }
 .prog footer a {
-  color: #d0b;
+  color: #81e;
 }
 .prog .content a {
-  color: #d0b;
+  color: #81e;
 }
 .about footer a {
-  color: #e60;
+  color: #7ca400;
 }
 .about .content a {
-  color: #e60;
+  color: #7ca400;
 }
 .home .break {
   background-color: #06a;
@@ -194,24 +194,6 @@ a span:hover {
   background-image: linear-gradient(to right, #fff 0%, #6dc 33%, #06a 66%, #fff 100%);
 }
 .music .break {
-  background-color: #81e;
-  background-image: -webkit-linear-gradient(to right, #fff 0%, #d3c 33%, #81e 66%, #fff 100%);
-  background-image: -moz-linear-gradient(to right, #fff 0%, #d3c 33%, #81e 66%, #fff 100%);
-  background-image: -o-linear-gradient(to right, #fff 0%, #d3c 33%, #81e 66%, #fff 100%);
-  background-image: -ms-linear-gradient(to right, #fff 0%, #d3c 33%, #81e 66%, #fff 100%);
-  background-image: -chrome-linear-gradient(to right, #fff 0%, #d3c 33%, #81e 66%, #fff 100%);
-  background-image: linear-gradient(to right, #fff 0%, #d3c 33%, #81e 66%, #fff 100%);
-}
-.art .break {
-  background-color: #7ca400;
-  background-image: -webkit-linear-gradient(to right, #fff 0%, #ee4 33%, #9c0 66%, #fff 100%);
-  background-image: -moz-linear-gradient(to right, #fff 0%, #ee4 33%, #9c0 66%, #fff 100%);
-  background-image: -o-linear-gradient(to right, #fff 0%, #ee4 33%, #9c0 66%, #fff 100%);
-  background-image: -ms-linear-gradient(to right, #fff 0%, #ee4 33%, #9c0 66%, #fff 100%);
-  background-image: -chrome-linear-gradient(to right, #fff 0%, #ee4 33%, #9c0 66%, #fff 100%);
-  background-image: linear-gradient(to right, #fff 0%, #ee4 33%, #9c0 66%, #fff 100%);
-}
-.prog .break {
   background-color: #d0b;
   background-image: -webkit-linear-gradient(to right, #fff 0%, #d0b 33%, #e20 66%, #fff 100%);
   background-image: -moz-linear-gradient(to right, #fff 0%, #d0b 33%, #e20 66%, #fff 100%);
@@ -220,7 +202,7 @@ a span:hover {
   background-image: -chrome-linear-gradient(to right, #fff 0%, #d0b 33%, #e20 66%, #fff 100%);
   background-image: linear-gradient(to right, #fff 0%, #d0b 33%, #e20 66%, #fff 100%);
 }
-.about .break {
+.art .break {
   background-color: #e60;
   background-image: -webkit-linear-gradient(to right, #fff 0%, #fd3 33%, #e60 66%, #fff 100%);
   background-image: -moz-linear-gradient(to right, #fff 0%, #fd3 33%, #e60 66%, #fff 100%);
@@ -228,6 +210,24 @@ a span:hover {
   background-image: -ms-linear-gradient(to right, #fff 0%, #fd3 33%, #e60 66%, #fff 100%);
   background-image: -chrome-linear-gradient(to right, #fff 0%, #fd3 33%, #e60 66%, #fff 100%);
   background-image: linear-gradient(to right, #fff 0%, #fd3 33%, #e60 66%, #fff 100%);
+}
+.prog .break {
+  background-color: #81e;
+  background-image: -webkit-linear-gradient(to right, #fff 0%, #d3c 33%, #81e 66%, #fff 100%);
+  background-image: -moz-linear-gradient(to right, #fff 0%, #d3c 33%, #81e 66%, #fff 100%);
+  background-image: -o-linear-gradient(to right, #fff 0%, #d3c 33%, #81e 66%, #fff 100%);
+  background-image: -ms-linear-gradient(to right, #fff 0%, #d3c 33%, #81e 66%, #fff 100%);
+  background-image: -chrome-linear-gradient(to right, #fff 0%, #d3c 33%, #81e 66%, #fff 100%);
+  background-image: linear-gradient(to right, #fff 0%, #d3c 33%, #81e 66%, #fff 100%);
+}
+.about .break {
+  background-color: #7ca400;
+  background-image: -webkit-linear-gradient(to right, #fff 0%, #ee4 33%, #9c0 66%, #fff 100%);
+  background-image: -moz-linear-gradient(to right, #fff 0%, #ee4 33%, #9c0 66%, #fff 100%);
+  background-image: -o-linear-gradient(to right, #fff 0%, #ee4 33%, #9c0 66%, #fff 100%);
+  background-image: -ms-linear-gradient(to right, #fff 0%, #ee4 33%, #9c0 66%, #fff 100%);
+  background-image: -chrome-linear-gradient(to right, #fff 0%, #ee4 33%, #9c0 66%, #fff 100%);
+  background-image: linear-gradient(to right, #fff 0%, #ee4 33%, #9c0 66%, #fff 100%);
 }
 /* Content */
 /* ================================================== */
@@ -420,7 +420,7 @@ footer .container {
   color: #777;
 }
 .music .playlist a {
-  color: #81e;
+  color: #d0b;
 }
 .music .playlist ul {
   padding: 0;
@@ -458,7 +458,7 @@ footer .container {
 }
 .music .playlist .title {
   display: inline-block;
-  color: #81e;
+  color: #d0b;
 }
 .music .playlist .date {
   display: inline-block;
