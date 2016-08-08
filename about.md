@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Soreine - About
-category: about
+category: home
 permalink: /about/
 ---
 

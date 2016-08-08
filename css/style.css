@@ -357,7 +357,7 @@ h2 {
   font-size: 13px;
 }
 .posts a:hover .right .title {
-  color: #333;
+  color: #000;
 }
 hr {
   margin: 2em 0;
@@ -401,9 +401,11 @@ footer {
 footer .container {
   padding: 50px 0;
 }
-.contact {
+.about {
   font-size: 1.05em;
-  font-weight: bold;
+}
+.about a {
+  margin: 0px 10px;
 }
 .copyright {
   font-style: italic;
