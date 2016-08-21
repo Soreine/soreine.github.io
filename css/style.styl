@@ -408,6 +408,45 @@ figcaption {
     font-style:italic
 }
 
+// Small photographs with caption on it
+.polaroid {
+    display: block;
+    width: 200px;
+    background: #fff;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    padding: 10px;
+    margin: -50px auto;
+
+    &:after {
+        content: "\A";
+        white-space: pre;
+    }
+
+    &:nth-child(4n + 1) {
+        transform: rotate(-5deg) translate(-110px, 0px);
+    }
+    &:nth-child(4n + 2) {
+        transform: rotate(3deg) translate(120px, 5px);
+    }
+    &:nth-child(4n + 3) {
+        transform: rotate(-2deg) translate(-115px, 15px);
+    }
+    &:nth-child(4n + 0) {
+        transform: rotate(6deg) translate(110px, -10px);
+    }
+
+    img {
+        width: 100%;
+    }
+
+    polarcaption {
+        font-size: 0.8em;
+        margin: 0.7em 0;
+        color: #222;
+    }
+}
+
 /* Disqus */
 
 #disqus_thread {
