@@ -16,6 +16,7 @@ $fuschia = #D0B;
 $yellow = #FD3;
 $orange = #E60;
 
+$gray-dark = #222;
 $gray = #555;
 $gray-light = #777;
 
@@ -143,7 +144,7 @@ kaleidoscope(svg-gradient)
 nav {
     text-transform: uppercase;
     font-family: 'Lato', Helvetica, Arial, sans-serif;
-    color: #222;
+    color: $gray-dark;
     ul {
         padding: 1em 0 0; /*The bottom padding is already made with nav ul:after*/
         margin:0;
@@ -172,7 +173,7 @@ nav {
 
             &.active {
                 a {
-                    color: #222;
+                    color: $gray-dark;
                 }
 
                 &:after {
@@ -393,7 +394,7 @@ figure {
     text-align:center;
     margin:0;
     padding:2.5%;
-    img {
+    img, .img {
         max-width: 98%;
         padding: 1%;
         background: none repeat scroll 0% 0% #FFF;
@@ -404,7 +405,7 @@ figure {
 figcaption {
     font-size:90%;
     margin:.7em 0 1em 0;
-    color:#222;
+    color:$gray;
     font-style:italic
 }
 
@@ -441,9 +442,12 @@ figcaption {
     }
 
     polarcaption {
-        font-size: 0.8em;
+        font-size: 0.6em;
         margin: 0.7em 0;
-        color: #222;
+        color: $gray-light;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        word-spacing: 0.3em;
     }
 }
 

@@ -374,7 +374,8 @@ figure {
   margin: 0;
   padding: 2.5%;
 }
-figure img {
+figure img,
+figure .img {
   max-width: 98%;
   padding: 1%;
   background: none repeat scroll 0% 0% #fff;
@@ -383,7 +384,7 @@ figure img {
 figcaption {
   font-size: 90%;
   margin: 0.7em 0 1em 0;
-  color: #222;
+  color: #555;
   font-style: italic;
 }
 .polaroid {
@@ -415,9 +416,12 @@ figcaption {
   width: 100%;
 }
 .polaroid polarcaption {
-  font-size: 0.8em;
+  font-size: 0.6em;
   margin: 0.7em 0;
-  color: #222;
+  color: #777;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  word-spacing: 0.3em;
 }
 /* Disqus */
 #disqus_thread {
