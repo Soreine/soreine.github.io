@@ -417,13 +417,25 @@ figcaption {
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
     text-align: center;
     padding: 10px;
+
     margin: 40px auto;
 
-    @media(min-width: $media-width) {
-        margin: -50px auto;
+    &:nth-child(4n + 1) {
+        transform: rotate(-5deg) translate(-10px, 0px);
+    }
+    &:nth-child(4n + 2) {
+        transform: rotate(3deg) translate(20px, 5px);
+    }
+    &:nth-child(4n + 3) {
+        transform: rotate(-2deg) translate(-15px, 15px);
+    }
+    &:nth-child(4n + 0) {
+        transform: rotate(6deg) translate(10px, -10px);
     }
 
     @media(min-width: $media-width) {
+        margin: -50px auto;
+
         &:nth-child(4n + 1) {
             transform: rotate(-5deg) translate(-110px, 0px);
         }

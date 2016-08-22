@@ -396,12 +396,22 @@ figcaption {
   padding: 10px;
   margin: 40px auto;
 }
+.polaroid:nth-child(4n + 1) {
+  transform: rotate(-5deg) translate(-10px, 0px);
+}
+.polaroid:nth-child(4n + 2) {
+  transform: rotate(3deg) translate(20px, 5px);
+}
+.polaroid:nth-child(4n + 3) {
+  transform: rotate(-2deg) translate(-15px, 15px);
+}
+.polaroid:nth-child(4n + 0) {
+  transform: rotate(6deg) translate(10px, -10px);
+}
 @media (min-width: 800px) {
   .polaroid {
     margin: -50px auto;
   }
-}
-@media (min-width: 800px) {
   .polaroid:nth-child(4n + 1) {
     transform: rotate(-5deg) translate(-110px, 0px);
   }
