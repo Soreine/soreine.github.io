@@ -52,8 +52,17 @@ preview: "/images/art/mandala-preview.png"
          height: 299px;
          width: 299px;
      }
+     #image-container {
+         position: relative;
+
+         display: inline-block;
+         padding: 1%;
+
+         height: 299px;
+         width: 299px;
+     }
      @media (min-device-width:800px) {
-         #gray, #colored {
+         #gray, #colored, #image-container {
              height: 598px;
              width: 598px;
          }
@@ -62,14 +71,6 @@ preview: "/images/art/mandala-preview.png"
          opacity: 1;
          will-change: opacity;
          animation: 2s ease-in-out 2s infinite alternate beat;
-     }
-     #image-container {
-         height: 598px;
-         width: 598px;
-         position: relative;
-
-         display: inline-block;
-         padding: 1%;
      }
      @keyframes beat {
          from {
