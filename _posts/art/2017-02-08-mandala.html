@@ -8,74 +8,75 @@ comments: false
 preview: "/images/art/mandala-preview.png"
 ---
 
-<a title="Mandala" href="/images/art/mandala.png">
-    <figure>
-        <style>
-         .content, header, footer {
-             background: #212320;
-         }
-         header a, footer, figcaption {
-             color: #aaa;
-         }
-         header a:hover {
-             color: #fff;
-         }
-         nav ul li.active a {
-             color: #fff;
-         }
-         #logo-name {
-             color: #fff;
-         }
-         body: {
-             color: #fff !important;
-         }
-         .art .break {
-             background-image: linear-gradient(to right, #212320 0%, #fd3 33%, #e60 66%, #212320 100%);
-         }
+<figure>
+    <style>
+     .content, header, footer {
+         background: #212320;
+     }
+     header a, footer, figcaption {
+         color: #aaa;
+     }
+     header a:hover {
+         color: #fff;
+     }
+     nav ul li.active a {
+         color: #fff;
+     }
+     #logo-name {
+         color: #fff;
+     }
+     body: {
+         color: #fff !important;
+     }
+     .art .break {
+         background-image: linear-gradient(to right, #212320 0%, #fd3 33%, #e60 66%, #212320 100%);
+     }
 
 
-         figure img {
-             box-shadow: none;
-             background: transparent;
-         }
-         #gray, #colored {
-             image-rendering: optimizeSpeed;
-             image-rendering: -moz-crisp-edges;
-             image-rendering: -webkit-optimize-contrast;
-             image-rendering: optimize-contrast;
-             image-rendering: pixelated;
-             -ms-interpolation-mode: nearest-neighbor;
+     figure img {
+         box-shadow: none;
+         background: transparent;
+     }
+     #gray, #colored {
+         image-rendering: optimizeSpeed;
+         image-rendering: -moz-crisp-edges;
+         image-rendering: -webkit-optimize-contrast;
+         image-rendering: optimize-contrast;
+         image-rendering: pixelated;
+         -ms-interpolation-mode: nearest-neighbor;
 
-             position: absolute;
-             left: 0;
-             top: 0;
-         }
-         #gray {
+         position: absolute;
+         left: 0;
+         top: 0;
+     }
+     #gray {
+         opacity: 1;
+         will-change: opacity;
+         animation: 2s ease-in-out 2s infinite alternate beat;
+     }
+     #image-container {
+         height: 598px;
+         width: 598px;
+         position: relative;
+
+         display: inline-block;
+         padding: 1%;
+     }
+     @keyframes beat {
+         from {
              opacity: 1;
-             will-change: opacity;
-             animation: 2s ease-in-out 2s infinite alternate beat;
          }
-         #image-container {
-             height: 598px;
-             width: 598px;
-             position: relative;
-
-             display: inline-block;
-             padding: 1%;
+         to {
+             opacity: 0;
          }
-         @keyframes beat {
-             from {
-                 opacity: 1;
-             }
-             to {
-                 opacity: 0;
-             }
-         }
-        </style>
-        <div id="image-container">
-            <img id="colored" height="598" width="598" alt="Mandala" src="/images/art/mandala.png">
-            <img id="gray" height="598" width="598" alt="Mandala Gray" src="/images/art/mandala-gray.png">
-        </div>
+     }
+    </style>
+    <div id="image-container">
+        <img id="colored" height="598" width="598" alt="Mandala" src="/images/art/mandala.png">
+        <img id="gray" height="598" width="598" alt="Mandala Gray" src="/images/art/mandala-gray.png">
+    </div>
+    <a title="Mandala" href="/images/art/mandala.png">
         <figcaption>Mandala</figcaption>
-    </figure>
-</a>
+    </a>
+</figure>
+
