@@ -1,4 +1,4 @@
-var TWO_PI = Math.PI*2;
+var TWO_PI = Math.PI * 2;
 var canvas, ctx;
 
 var HEIGHT;
@@ -18,11 +18,11 @@ var frame = 0;
 var NB_FRAME = 75;
 
 function getLineWidth(frame) {
-    var progress = (frame % NB_FRAME)/NB_FRAME;
-    return (1 - Math.sqrt(progress))*20;
+    var progress = (frame % NB_FRAME) / NB_FRAME;
+    return (1 - Math.sqrt(progress)) * 20;
 }
 
-function setup () {
+function setup() {
     ctx.lineJoin = 'round';
 
     radius = Math.min(WIDTH * 0.4, HEIGHT * 0.4);
@@ -30,7 +30,7 @@ function setup () {
     initEnd();
 }
 
-function loop () {
+function loop() {
     // Blur effect
     clear(0.2);
     draw(frame);
@@ -38,7 +38,7 @@ function loop () {
     window.requestAnimationFrame(loop);
 }
 
-function draw (frame) {
+function draw(frame) {
     if (frame % NB_FRAME === 0) {
         initShape();
     }
@@ -49,14 +49,16 @@ function draw (frame) {
         dots[i].x = lerp(dots[i].x, endPos[i].x, 0.1);
         dots[i].y = lerp(dots[i].y, endPos[i].y, 0.1);
     }
-    path(ctx, function () {
-        ctx.strokeStyle = gray(255 - Math.floor(constrain(frame % NB_FRAME, 0, 30)*1.5));
+    path(ctx, function() {
+        ctx.strokeStyle = gray(
+            255 - Math.floor(constrain(frame % NB_FRAME, 0, 30) * 1.5)
+        );
         shape(ctx, dots);
         ctx.stroke();
     });
 
     // Draw the circle
-    path(ctx, function () {
+    path(ctx, function() {
         ctx.lineWidth = getLineWidth(frame) + 1;
         ctx.strokeStyle = gray(255);
         circle(ctx, WCENTER, HCENTER, radius);
@@ -74,8 +76,8 @@ function initShape() {
         var r = maxR * Math.sqrt(Math.random());
         var angle = TWO_PI * Math.random();
         dots.push({
-            x: WCENTER + r * Math.cos(angle),
-            y: HCENTER + r * Math.sin(angle)
+            x: WCENTER + 0.4 * r * Math.cos(angle),
+            y: HCENTER + 0.4 * r * Math.sin(angle)
         });
     }
 }
@@ -84,10 +86,10 @@ function initEnd() {
     // Init end position
     for (var i = 0; i < NUM; ++i) {
         endPos.push({
-            x: WCENTER + Math.sin(angle)*radius,
-            y: HCENTER + Math.cos(angle)*radius
+            x: WCENTER + Math.sin(angle) * radius,
+            y: HCENTER + Math.cos(angle) * radius
         });
-        angle += TWO_PI/NUM;
+        angle += TWO_PI / NUM;
     }
 }
 
@@ -96,15 +98,15 @@ function clear(alpha) {
     ctx.fillRect(0, 0, WIDTH, HEIGHT);
 }
 
-function main(ref){
+function main(ref) {
     canvas = document.getElementById(ref);
-    if (canvas.getContext){
+    if (canvas.getContext) {
         ctx = canvas.getContext('2d');
 
         HEIGHT = canvas.height;
         WIDTH = canvas.width;
-        WCENTER = WIDTH/2;
-        HCENTER = HEIGHT/2;
+        WCENTER = WIDTH / 2;
+        HCENTER = HEIGHT / 2;
 
         setup();
 
@@ -118,7 +120,7 @@ window.onload = main.bind(this, 'canvas');
 
 function gray(v, alpha) {
     alpha = alpha || 1;
-    return 'rgba('+v+','+v+','+v+','+alpha+')';
+    return 'rgba(' + v + ',' + v + ',' + v + ',' + alpha + ')';
 }
 
 function shape(ctx, vertices) {
@@ -138,7 +140,7 @@ function shape(ctx, vertices) {
 function constrain(x, min, max) {
     if (x < min) {
         return min;
-    } else if ( x > max) {
+    } else if (x > max) {
         return max;
     } else {
         return x;
@@ -150,7 +152,7 @@ function circle(ctx, x, y, radius) {
 }
 
 function lerp(min, max, amount) {
-    return ((max - min) * amount) + min;
+    return (max - min) * amount + min;
 }
 
 function path(ctx, fun) {
