@@ -1,6 +1,6 @@
 # Site settings
 title: Soreine
-email: soreine.plume@gmail.com
+email: hello@soreine.dev
 description: "Soreine's personal website" # > this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://soreine.github.io" # the base hostname & protocol for your site
