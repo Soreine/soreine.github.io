@@ -4,24 +4,62 @@ layout: default
 
 <!--
 <a data-reveal="" href="#"></a>
-<span data-revealed=""></span>
+<span data-from=""></span>
 -->
 
 <h3 style="text-align: center; letter-spacing: 0.2em; margin-top: 0;">
   Hello ~
 </h3>
 <p>
-  Welcome to my personal page. I <a href="/prog/">program</a>, create
-  <a href="/music/">music</a> and sometimes make
-  <a href="/art/">generative art</a>. You can learn more about me or this site
-  by reading my <a href="/about/">about page</a>.
+  Hello stranger, and welcome to my Web
+  <a data-reveal="garden" href="#">garden</a>.
+  <span data-from="garden">
+    It is a space I carefully grow for myself and others to enjoy, and it is
+    small enough that I can maintain it myself.
+  </span>
 </p>
 <p>
   My name is Nicolas Gaborit. I'm also known as Soreine, which is my pseudonym
   on the Web. I am a <a data-reveal="french" href="#">French</a
-  ><span data-revealed="french">, <em></em></span>
+  ><span data-from="french">, <em></em></span>
+</p>
 
-  If you have any questions, if you would like to share on any project you have,
-  even if you just would like to say hi, I'll be more than happy to
+<p>
+  I'll be more than happy to
   <a href="mailto:hello@soreine.dev">hear from you</a>!
 </p>
+
+<script>
+  const links = document.querySelectorAll("[data-reveal]");
+
+  links.forEach((link) => {
+    const key = link.getAttribute("data-reveal");
+    const reveals = document.querySelectorAll(`[data-from="${key}"]`);
+
+    const onClick = (event) => {
+      event.preventDefault();
+
+      link.setAttribute("data-revealed", "true");
+      reveals.forEach((reveal) => {
+        reveal.setAttribute("data-revealed", "true");
+      });
+    };
+
+    link.addEventListener("click", onClick);
+  });
+</script>
+
+<style>
+  [data-reveal][data-revealed] {
+    cursor: default;
+    text-decoration: none;
+  }
+
+  [data-from] {
+    display: none;
+  }
+
+  [data-from][data-revealed] {
+    display: initial;
+  }
+</style>
