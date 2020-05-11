@@ -8,18 +8,35 @@ layout: default
 -->
 
 <section>
+  <!-- 
+    - Welcome
+    - My name
+    - Developer
+    - Minimalist
+    - Ecological
+
+
+   -->
   <p>
     Hello stranger, and welcome to my Web
     <span data-reveal="garden">garden</span>.
     <span data-from="garden">
-      It is a space I carefully grow for myself and others to enjoy, and it is
-      small enough that I can maintain it myself.
+      This is a space I carefully grow for myself and others to enjoy, and it is
+      small enough that I can
+      <span data-reveal="homegrown">maintain it myself.</span>
+      <span data-from="homegrown">It's mostly home-grown!</span>
     </span>
   </p>
   <p>
     My name is Nicolas Gaborit. I'm also known as Soreine, which is my pseudonym
-    on the Web. I am a <span data-reveal="french">French</span
-    ><span data-from="french">, <em></em></span>
+    on the Web. I come from
+    <span data-reveal="french">France</span>.<span
+      data-from="french"
+      class="marginnote"
+      >Except for a few writings, I favored universality by writing in English
+      here. <em>Désolé</em>.</span
+    >
+    I am interested in a lot of subjects besides programming, which is my job.
   </p>
 
   <p>
@@ -40,12 +57,21 @@ layout: default
     const key = link.getAttribute("data-reveal");
     const reveals = document.querySelectorAll(`[data-from="${key}"]`);
 
-    const onClick = (event) => {
-      event.preventDefault();
-      setRevealed([link, ...reveals], "true");
+    let revealTimeout = null;
+
+    const onEnter = (event) => {
+      // event.preventDefault();
+      revealTimeout = setTimeout(() => {
+        setRevealed([link, ...reveals], "true");
+      }, 400);
+    };
+
+    const onLeave = (event) => {
+      clearTimeout(revealTimeout);
     };
 
     setRevealed([link, ...reveals], "false");
-    link.addEventListener("click", onClick);
+    link.addEventListener("mouseover", onEnter);
+    link.addEventListener("mouseleave", onLeave);
   });
 </script>

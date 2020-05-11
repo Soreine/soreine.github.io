@@ -9,14 +9,21 @@ body {
   background: "red";
 }
 
+[data-reveal] {
+  transition: font-weight 0.2s ease;
+}
+
 [data-reveal][data-revealed="false"] {
   @include underlined($textColor);
-  cursor: pointer;
+  cursor: default;
+
+  &:hover {
+    font-weight: bold;
+  }
 }
 
 [data-reveal][data-revealed="true"] {
   cursor: default;
-  transition: border 0.4s ease;
 }
 
 /* data-revealed is set to false by JavaScript on load. */
