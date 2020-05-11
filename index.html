@@ -3,14 +3,14 @@ layout: default
 ---
 
 <!--
-<a data-reveal="" href="#"></a>
+<span data-reveal=""></span>
 <span data-from=""></span>
 -->
 
 <section>
   <p>
     Hello stranger, and welcome to my Web
-    <a data-reveal="garden" href="#">garden</a>.
+    <span data-reveal="garden">garden</span>.
     <span data-from="garden">
       It is a space I carefully grow for myself and others to enjoy, and it is
       small enough that I can maintain it myself.
@@ -18,17 +18,22 @@ layout: default
   </p>
   <p>
     My name is Nicolas Gaborit. I'm also known as Soreine, which is my pseudonym
-    on the Web. I am a <a data-reveal="french" href="#">French</a
+    on the Web. I am a <span data-reveal="french">French</span
     ><span data-from="french">, <em></em></span>
   </p>
 
   <p>
-    I'll be more than happy to
+    It would be a joy for me to
     <a href="mailto:hello@soreine.dev">hear from you</a>!
   </p>
 </section>
 
 <script>
+  function setRevealed(elements, value) {
+    elements.forEach((el) => {
+      el.setAttribute("data-revealed", value);
+    });
+  }
   const links = document.querySelectorAll("[data-reveal]");
 
   links.forEach((link) => {
@@ -37,28 +42,10 @@ layout: default
 
     const onClick = (event) => {
       event.preventDefault();
-
-      link.setAttribute("data-revealed", "true");
-      reveals.forEach((reveal) => {
-        reveal.setAttribute("data-revealed", "true");
-      });
+      setRevealed([link, ...reveals], "true");
     };
 
+    setRevealed([link, ...reveals], "false");
     link.addEventListener("click", onClick);
   });
 </script>
-
-<style>
-  [data-reveal][data-revealed] {
-    cursor: default;
-    text-decoration: none;
-  }
-
-  [data-from] {
-    display: none;
-  }
-
-  [data-from][data-revealed] {
-    display: initial;
-  }
-</style>
