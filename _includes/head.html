@@ -1,27 +1,44 @@
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
 
   <!-- Meta information -->
-  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <title>
+    {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}
+  </title>
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/tufte.css" />
+  <!-- <link rel="stylesheet" href="/css/style.css" /> -->
   <!-- Google Fonts -->
-  <link href='https://fonts.googleapis.com/css?family=Quicksand:400' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400' rel='stylesheet' type='text/css'>
+  <link
+    href="https://fonts.googleapis.com/css?family=Quicksand:400"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css?family=Lato:400"
+    rel="stylesheet"
+    type="text/css"
+  />
 
   <!-- <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
   -->
 
   <!-- OG attributes -->
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta
+    name="description"
+    content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}"
+  />
 
   <meta property="og:title" content="Soreine" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="http://soreine.github.io/" />
-  <meta property="og:image" content="http://soreine.github.io/images/og-image.png" />
+  <meta
+    property="og:image"
+    content="http://soreine.github.io/images/og-image.png"
+  />
   <meta property="og:description" content="{{ site.description }}" />
 </head>

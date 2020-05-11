@@ -42,6 +42,8 @@
 
 ## Resources
 
+https://alantrotter.com/
+
 https://www.renderforest.com/music-visualisations?utm_campaign=quora&utm_medium=questions&utm_source=quora
 
 https://edwardtufte.github.io/tufte-css/
