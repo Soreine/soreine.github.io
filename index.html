@@ -2,47 +2,71 @@
 layout: default
 ---
 
-<!--
+<section>
+  <!-- 
+
+- Welcome
+
+
+- Who am I ?
+  - My name
+  - You can contact me
+- Am a developer.
+  - Check out my GitHub
+  - Or my LinkedIn
+- Learn more about me
+  - Minimalist
+  - Ecology
+
+
+-->
+
+  <!--
 <span data-reveal=""></span>
 <span data-from=""></span>
 -->
-
-<section>
-  <!-- 
-    - Welcome
-    - My name
-    - Developer
-    - Minimalist
-    - Ecological
-
-
-   -->
   <p>
-    Hello stranger, and welcome to my Web
-    <span data-reveal="garden">garden</span>.
+    Hello stranger, and welcome to my
+    <span data-reveal="garden">virtual garden</span>.
     <span data-from="garden">
       This is a space I carefully grow for myself and others to enjoy, and it is
       small enough that I can
-      <span data-reveal="homegrown">maintain it myself.</span>
-      <span data-from="homegrown">It's mostly home-grown!</span>
+      <span data-reveal="maintain-it">maintain it myself.</span>
+      <span data-from="maintain-it"
+        >It's mostly <span data-reveal="homegrown">home-grown.</span>
+        <span data-from="homegrown"
+          >Check out the code on
+          <a href="https://github.com/Soreine/soreine.github.io/">GitHub</a
+          >!</span
+        ></span
+      >
     </span>
   </p>
   <p>
-    My name is Nicolas Gaborit. I'm also known as Soreine, which is my pseudonym
-    on the Web. I come from
-    <span data-reveal="french">France</span>.<span
-      data-from="french"
-      class="marginnote"
-      >Except for a few writings, I favored universality by writing in English
-      here. <em>Désolé</em>.</span
-    >
-    I am interested in a lot of subjects besides programming, which is my job.
+    My name is Nicolas Gaborit, but I'm also known as
+    <span data-reveal="soreine">Soreine</span>.
+    <span data-from="soreine"
+      >I come from <span data-reveal="french">France</span
+      ><span data-from="french" class="marginnote"
+        >Except for a few writings, I favored universality by writing in English
+        here. <em>Désolé</em>.</span
+      >. You can <span data-reveal="contact">contact me</span
+      ><span data-from="contact">
+        at <a href="mailto:hello@soreine.dev">hello@soreine.dev</a>, I'll be happy to hear from you</span>.</span
+      >
+    </span>
   </p>
 
   <p>
-    It would be a joy for me to
-    <a href="mailto:hello@soreine.dev">hear from you</a>!
+    I am a <span data-reveal="developer">developer</span>.
+    <span data-from="developer">I am interested in</span>
   </p>
+
+  check my <span data-reveal="profiles">profiles</span>.
+  <span data-from="profiles"
+    >Here is my <a href="https://github.com/Soreine">GitHub</a> and
+    <a href="https://www.linkedin.com/in/ngaborit/">LinkedIn</a>.
+  </span>
 </section>
 
 <script>
@@ -63,7 +87,7 @@ layout: default
       // event.preventDefault();
       revealTimeout = setTimeout(() => {
         setRevealed([link, ...reveals], "true");
-      }, 400);
+      }, 200);
     };
 
     const onLeave = (event) => {

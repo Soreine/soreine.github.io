@@ -5,7 +5,7 @@ https://edwardtufte.github.io/tufte-css/
 
 I replaced the fonts with a custom one */
 
-$background: #fcfcfc;
+$background: #f6f6f6;
 $textColor: #333;
 
 @mixin underlined($color, $thickness: 4%) {
@@ -251,7 +251,6 @@ a:visited {
 a:link,
 .tufte-underline,
 .hover-tufte-underline:hover {
-  font-weight: bold;
   @include underlined($textColor);
 }
 

@@ -5,21 +5,9 @@
 @import "tufte";
 // Note: @use does not seem to work well in Jekyll :/
 
-body {
-  background: "red";
-}
-
-[data-reveal] {
-  transition: font-weight 0.2s ease;
-}
-
 [data-reveal][data-revealed="false"] {
   @include underlined($textColor);
   cursor: default;
-
-  &:hover {
-    font-weight: bold;
-  }
 }
 
 [data-reveal][data-revealed="true"] {
@@ -35,7 +23,7 @@ body {
   display: initial;
   animation-name: fadein;
   animation-timing-function: ease;
-  animation-duration: 0.4s;
+  animation-duration: 1s;
 }
 
 @keyframes fadein {
