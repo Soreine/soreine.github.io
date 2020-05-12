@@ -2,31 +2,28 @@
 layout: default
 ---
 
-<section>
-  <!-- 
+<!--
 
 - Welcome
 
-
 - Who am I ?
   - My name
+  - Am a developer
+    - Check out my GitHub
+    - Or my LinkedIn
   - You can contact me
-- Am a developer.
-  - Check out my GitHub
-  - Or my LinkedIn
-- Learn more about me
-  - Minimalist
-  - Ecology
 
+- I do stuff
+  - programming
+  - music
+  - art
+  - writing
 
 -->
 
-  <!--
-<span data-reveal=""></span>
-<span data-from=""></span>
--->
+<section>
   <p>
-    Hello stranger, and welcome to my
+    Hello, and welcome to my
     <span data-reveal="garden">virtual garden</span>.
     <span data-from="garden">
       This is a space I carefully grow for myself and others to enjoy, and it is
@@ -35,8 +32,9 @@ layout: default
       <span data-from="maintain-it"
         >It's mostly <span data-reveal="homegrown">home-grown.</span>
         <span data-from="homegrown"
-          >Check out the code on
-          <a href="https://github.com/Soreine/soreine.github.io/">GitHub</a
+          >Check out
+          <a href="https://github.com/Soreine/soreine.github.io/"
+            >the code on GitHub</a
           >!</span
         ></span
       >
@@ -50,52 +48,33 @@ layout: default
       ><span data-from="french" class="marginnote"
         >Except for a few writings, I favored universality by writing in English
         here. <em>Désolé</em>.</span
-      >. You can <span data-reveal="contact">contact me</span
-      ><span data-from="contact">
-        at <a href="mailto:hello@soreine.dev">hello@soreine.dev</a>, I'll be happy to hear from you</span>.</span
       >
+      and work as a <span data-reveal="developer">developer</span>.
+      <span data-from="developer"
+        >You can check my profile on
+        <a href="https://github.com/Soreine">GitHub</a> and
+        <a href="https://www.linkedin.com/in/ngaborit/">LinkedIn</a>.
+      </span>
+
+      Feel free to <span data-reveal="contact">contact me</span
+      ><span data-from="contact">
+        at <a href="mailto:hello@soreine.dev">hello@soreine.dev</a>, I'll be
+        happy to hear from you</span
+      >.
     </span>
   </p>
 
   <p>
-    I am a <span data-reveal="developer">developer</span>.
-    <span data-from="developer">I am interested in</span>
+    <span>
+      I enjoy <span data-reveal="creating">creating things</span>.<br />
+    </span>
   </p>
-
-  check my <span data-reveal="profiles">profiles</span>.
-  <span data-from="profiles"
-    >Here is my <a href="https://github.com/Soreine">GitHub</a> and
-    <a href="https://www.linkedin.com/in/ngaborit/">LinkedIn</a>.
-  </span>
+  <p data-from="creating">
+    <span>I <a href="">program</a>.<br /></span>
+    <span>I make <a href="">music</a>.<br /></span>
+    <span>I generate <a href="">visuals</a>.<br /></span>
+    <span>I <a href="">write</a> small stuff.<br /></span>
+  </p>
 </section>
 
-<script>
-  function setRevealed(elements, value) {
-    elements.forEach((el) => {
-      el.setAttribute("data-revealed", value);
-    });
-  }
-  const links = document.querySelectorAll("[data-reveal]");
-
-  links.forEach((link) => {
-    const key = link.getAttribute("data-reveal");
-    const reveals = document.querySelectorAll(`[data-from="${key}"]`);
-
-    let revealTimeout = null;
-
-    const onEnter = (event) => {
-      // event.preventDefault();
-      revealTimeout = setTimeout(() => {
-        setRevealed([link, ...reveals], "true");
-      }, 200);
-    };
-
-    const onLeave = (event) => {
-      clearTimeout(revealTimeout);
-    };
-
-    setRevealed([link, ...reveals], "false");
-    link.addEventListener("mouseover", onEnter);
-    link.addEventListener("mouseleave", onLeave);
-  });
-</script>
+<script src="./scripts/revealing-words.js"></script>
