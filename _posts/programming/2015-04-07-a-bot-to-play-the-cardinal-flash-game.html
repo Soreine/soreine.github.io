@@ -1,0 +1,141 @@
+---
+layout: post
+category: programming
+date: 2015-04-07
+title: A Bot to Play the Cardinal Flash Game
+tags: ["bot", "flash", "c", "python"]
+---
+
+<a title="Cardinal Preview" href="/images/prog/cardinal.mp4">
+  <figure>
+    <video autoplay muted loop>
+      <source src="/images/prog/cardinal.mp4" type="video/mp4" />
+    </video>
+    <figcaption>Cardinal is a reflexe-based flash game.</figcaption>
+  </figure>
+</a>
+
+<p>
+  After reading this article on
+  <a
+    href="http://inventwithpython.com/blog/2014/12/17/programming-a-bot-to-play-the-sushi-go-round-flash-game/"
+  >
+    Programming a Bot to Play the "Sushi Go Round" Flash Game There</a
+  >, I wanted to follow the example and make my own Flash game bot. I chose the
+  Flash game
+  <a href="http://www.newgrounds.com/portal/view/634256"> Cardinal</a> because
+  its mechanics are simple: you are prompted with a direction to move (by
+  pressing one of the directional keys), one after the other, until you fail
+  because of the response time getting shorter. In fact you are a cube
+  surrounded by four wall presses, and only one them is absent each time: your
+  exit in other words. If you fail to escape in time, the walls crush you. My
+  mere human skills escaped death 86 times in a row, whereas my bot was still
+  alive after the 10,000th round and beyond.
+</p>
+
+<a title="11K+ High Score" href="/images/prog/high-score.png">
+  <figure>
+    <img alt="11K+ High Score" src="/images/prog/high-score.png" />
+    <figcaption>
+      11,229 High Score achieved with the 2nd version of the bot.
+    </figcaption>
+  </figure>
+</a>
+
+<h2>First step - Making the bot play correctly</h2>
+<p>
+  Here is the process the bot needs to follow to play the game correctly:
+</p>
+<ul>
+  <li>Locate the game area on screen</li>
+  <li>Click the Play button so the game starts</li>
+  <li>Look for the missing wall in the current setup</li>
+  <li>Press the corresponding direction and wait for the next round</li>
+</ul>
+<p>
+  To this end, we can take screenshots, look for given images on the screen,
+  move the cursor and input keys. These fundamentals actions are made available
+  through the <a href="https://github.com/asweigart/pyautogui/">pyautogui</a>
+  module.
+</p>
+<p>
+  Locating the game area on the screen is easy as long as there is a part of the
+  game startup screen that is constant. We can just locate that sub-image on the
+  whole screen and deduce from that the relative coordinates of the game screen
+  and all the elements whose positions are fixed. We can then safely move the
+  cursor to the Play button position and click.
+</p>
+
+<p>
+  As the walls' positions are fixed, looking for the missing wall consist in
+  taking a screenshot and checking the color value of one pixel from each wall's
+  known position. If one of these pixels doesn't match the red color of a wall,
+  then the corresponding way is clear. We can then make a move and input the
+  appropriate direction!
+</p>
+
+<a title="Gameplay Screenshot" href="/images/prog/escaping.png">
+  <figure>
+    <img alt="Gameplay Screenshot" src="/images/prog/escaping.png" />
+    <figcaption>The square escaping through the right opening.</figcaption>
+  </figure>
+</a>
+
+<p>
+  After moving, we must wait until the animation of the escaping square is over
+  and a new walls setup is displayed. The red square is always put back to the
+  center of the screen before every move. So we can watch for that moment to
+  come before continuing, by repeatedly taking screenshots and checking the
+  presence of the square. However, <em>pyautogui is slow</em> at taking
+  screenshots (>100ms). I suspect it is because it saves images in a temporary
+  file. So if we don't want to be late for the next round, we must time our
+  screenshot so it happens short after the square is back to the center. By
+  timing the screenshot well, we can be just in time to make the next move. The
+  whole performance of the bot lies on this precise timing.
+</p>
+
+<p>
+  Unfortunately, a screenshot duration varies, so we can only assume it has an
+  upper bound. Practically, this means that we must time it so the result is
+  available some time after the next round, but still keep some room for error.
+  In the worst case, we get a screenshot just
+  <em>before</em> the next round and we have to retake a screenshot, which takes
+  a lot of time, usually resulting in our time being up. The first version of
+  the bot would not go higher than a 80 score.
+</p>
+
+<h2>Second step - Gotta go fast</h2>
+
+<p>
+  In order to improve the bot's performance, we must make faster screenshots. I
+  chose a simple way to achieve that. Instead of using the built-in screenshot
+  feature of pyautogui, I would create a small C API for taking screenshot,
+  using the <a href="http://en.wikipedia.org/wiki/Xlib">Xlib</a>
+  library and use this API in Python with the
+  <a href="https://docs.python.org/3.4/library/ctypes.html">ctypes</a>
+  module. The C code just need to be compiled as a shared library to be loaded
+  by Python. The C code does not save pictures in temporary files but store them
+  in memory as XImage structures. The only downside is that you now have to
+  handle memory management in Python too. But now we can also take screenshots
+  of the game region in about 12ms, which is inferior to a frame duration! That
+  means enough speed to actually watch repeatedly for the next round to come, as
+  we wanted to do in the first place.
+</p>
+
+<p>
+  While the reaction time window shrinks as the game progresses, it seems it
+  will not fall under the duration of a frame. This means in practice that this
+  second version of the bot is able to play the game indefinetely. I left it run
+  for two hours one day, and it was still playing past the 10,000 score mark. I
+  had to kill it, sadly, as its power was becoming a threat for mankind. It also
+  took away all the fun from this game in the process&hellip;
+</p>
+
+<p>
+  Now I need to find a new game &mdash;sigh&mdash;.
+</p>
+
+<a href="https://github.com/Soreine/cardinal-bot/">
+  <img class="icon" alt="GitHub" src="/images/GitHub-Mark.svg" />
+  See on GitHub
+</a>

@@ -1,0 +1,59 @@
+---
+layout: post
+category: programming
+date: 2014-10-21
+title: Pixel Art Maker
+tags: ["c++", "pixelart", "imageprocessing"]
+---
+
+<p>
+  Pixel Art Maker is a program I imagined when I was playing around with the
+  dithering feature of image manipulation softwares like Gimp for
+  <a href="http://en.wikipedia.org/wiki/Pixel_art">Pixel Art</a> purposes. I
+  realised that the Bayer's positional dithering generated some crosshatch
+  patterns and wondered how I could make an algorithm that would generate
+  arbitrary patterns.
+</p>
+
+<p>The result is a combination of two image manipulation algorithms :</p>
+
+<ul>
+  <li>Generating an optimized limited color palette for an image.</li>
+  <li>
+    <a href="http://en.wikipedia.org/wiki/Dither">Dithering</a> an image with an
+    arbitrary color palette, using a user-defined pattern.
+  </li>
+</ul>
+
+<a title="Click to enlarge" href="/images/prog/process.png">
+  <figure>
+    <img alt="Example" src="/images/prog/process.png" />
+  </figure>
+</a>
+
+<p>
+  The palette generation is made using a
+  <a href="http://en.wikipedia.org/wiki/K-means_clustering"
+    >K-means clustering</a
+  >
+  algorithm that tries to find the set of colors that average best the colors
+  from the input image.
+</p>
+
+<p>
+  The dithering is a positional ordered dithering algorithm, similar to the
+  <a href="http://en.wikipedia.org/wiki/Ordered_dithering"
+    >Bayer ordered dithering algorithm</a
+  >. However, instead of using the optimised Bayer matrix as a pattern, any
+  grayscale image can be used as pattern source. This is destined to artists
+  wanting to try out some unusual patterns in their creation. Draw a pattern
+  image, define a palette and start the dithering. If the result is good, then
+  it can be used and tweaked for a handmade piece of pixel art. If the result is
+  not satisfying, it does not matter, try out something else, because it is
+  fast.
+</p>
+
+<a href="https://github.com/Soreine/PixelArtMaker">
+  <img class="icon" alt="GitHub" src="/images/GitHub-Mark.svg" />
+  More on GitHub
+</a>

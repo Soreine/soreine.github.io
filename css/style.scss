@@ -35,3 +35,34 @@
     opacity: 1;
   }
 }
+
+.posts {
+  li {
+    list-style: none;
+    margin-top: 2.1rem;
+    margin-bottom: 3.4rem; /* same as p.subtitle + section + p margins */
+  }
+
+  .title {
+    font-weight: 400;
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+    line-height: 1;
+  }
+  .date,
+  .tags {
+    font-size: 1rem;
+  }
+
+  .tag {
+    text-transform: uppercase;
+    margin-right: 1rem;
+  }
+
+  li > a:link {
+    background-image: none;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+  }
+}
