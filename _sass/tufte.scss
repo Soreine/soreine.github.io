@@ -254,21 +254,21 @@ figure {
   margin: 0 0 3em 0;
 }
 
-figcaption {
-  float: right;
-  clear: right;
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  vertical-align: baseline;
-  position: relative;
-  max-width: 40%;
-}
+// figcaption {
+//   float: right;
+//   clear: right;
+//   margin-top: 0;
+//   margin-bottom: 0;
+//   font-size: 1.1rem;
+//   line-height: 1.6;
+//   vertical-align: baseline;
+//   position: relative;
+//   max-width: 40%;
+// }
 
-figure.fullwidth figcaption {
-  margin-right: 24%;
-}
+// figure.fullwidth figcaption {
+//   margin-right: 24%;
+// }
 
 /* Links: replicate underline that clears descenders */
 a:link,
@@ -288,7 +288,8 @@ a:link,
 }
 
 /* Sidenotes, margin notes, figures, captions */
-img {
+img,
+video {
   max-width: 100%;
 }
 
@@ -454,11 +455,11 @@ label.margin-toggle:not(.sidenote-number) {
     max-width: 90%;
   }
 
-  figcaption,
-  figure.fullwidth figcaption {
-    margin-right: 0%;
-    max-width: none;
-  }
+  // figcaption,
+  // figure.fullwidth figcaption {
+  //   margin-right: 0%;
+  //   max-width: none;
+  // }
 
   blockquote {
     margin-left: 1.5em;
@@ -500,7 +501,8 @@ label.margin-toggle:not(.sidenote-number) {
     width: 85%;
   }
 
-  img {
+  img,
+  video {
     width: 100%;
   }
 }

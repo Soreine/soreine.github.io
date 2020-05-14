@@ -97,3 +97,37 @@
     content: "/";
   }
 }
+
+.post {
+  figure {
+    figcaption {
+      margin-left: 1.5rem;
+      margin-bottom: 0;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      vertical-align: baseline;
+      max-width: 40%;
+    }
+  }
+}
+
+// For images, videos, etc.
+a.wrapper {
+  padding: 0;
+  background-image: none;
+}
+
+.icon {
+  vertical-align: baseline;
+  height: 1em;
+  margin: 0 0.5rem;
+}
+
+.pixel-perfect {
+  image-rendering: optimizeSpeed;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: optimize-contrast;
+  image-rendering: pixelated;
+  -ms-interpolation-mode: nearest-neighbor;
+}
