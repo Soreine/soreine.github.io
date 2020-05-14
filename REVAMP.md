@@ -49,3 +49,8 @@ https://www.renderforest.com/music-visualisations?utm_campaign=quora&utm_medium=
 https://edwardtufte.github.io/tufte-css/
 
 https://practicaltypography.com/charter.html
+
+https://github.com/git-no/jekyll-breadcrumbs
+
+https://stackoverflow.com/questions/27099427/jekyll-filename-without-date
+https://jekyllrb.com/docs/collections/
