@@ -5,13 +5,13 @@ https://edwardtufte.github.io/tufte-css/
 
 I replaced the fonts with a custom one */
 
-$background: #fffff8;
-$textColor: #2f1b0f;
+$background: #f8f8f8;
+$textColor: #333;
 
-@mixin dotted($color: #eef, $thickness: 10%) {
+@mixin dotted($color: $textColor, $thickness: 10%) {
   text-decoration: none;
-  padding-bottom: 2px;
-  border-bottom: 1px dashed #333;
+  padding-bottom: 1px;
+  border-bottom: 1px dashed $color;
 
   // background: $color;
   // border-radius: 8px;
@@ -54,22 +54,22 @@ $textColor: #2f1b0f;
   // );
 }
 
-@mixin underlined($color, $thickness: 6%) {
+@mixin underlined($color, $thickness: 4%) {
   text-decoration: none;
-  color: #8b0000;
+  color: $color;
   padding-bottom: 2px;
   background-image: -webkit-linear-gradient(
     bottom,
     rgba(0, 0, 0, 0) 0%,
-    #8b0000 0%,
-    #8b0000 $thickness,
+    $color 0%,
+    $color $thickness,
     rgba(0, 0, 0, 0) $thickness
   );
   background-image: linear-gradient(
     to top,
     rgba(0, 0, 0, 0) 0%,
-    #8b0000 0%,
-    #8b0000 $thickness,
+    $color 0%,
+    $color $thickness,
     rgba(0, 0, 0, 0) $thickness
   );
 }
@@ -342,7 +342,7 @@ a:visited {
   text-shadow: unset;
 }
 
-a:link,
+a,
 .tufte-underline,
 .hover-tufte-underline:hover {
   @include underlined($textColor);

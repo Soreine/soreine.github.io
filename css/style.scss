@@ -6,7 +6,7 @@
 // Note: @use does not seem to work well in Jekyll :/
 
 [data-reveal][data-revealed="false"] {
-  @include highlighted();
+  @include dotted();
   cursor: default;
 }
 
