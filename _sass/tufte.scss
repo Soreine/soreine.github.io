@@ -251,21 +251,21 @@ div.epigraph {
   margin: 5em 0;
 }
 
-div.epigraph > blockquote {
+div.epigraph blockquote {
   margin-top: 3em;
   margin-bottom: 3em;
 }
 
-div.epigraph > blockquote,
-div.epigraph > blockquote > p {
+div.epigraph blockquote,
+div.epigraph blockquote p {
   font-style: italic;
 }
 
-div.epigraph > blockquote > footer {
+div.epigraph blockquote footer {
   font-style: normal;
 }
 
-div.epigraph > blockquote > footer > cite {
+div.epigraph blockquote footer cite {
   font-style: italic;
 }
 /* end chapter epigraphs styles */
@@ -285,15 +285,15 @@ blockquote footer {
   text-align: right;
 }
 
-section > p,
-section > footer,
-section > table {
+section p,
+section footer,
+section table {
   width: 55%;
 }
 
 /* 50 + 5 == 55, to be the same width as paragraph */
-section > ol,
-section > ul {
+section ol,
+section ul {
   width: 50%;
   padding-inline-start: 5%;
   -webkit-padding-start: 5%;
@@ -415,29 +415,29 @@ div.table-wrapper {
 }
 
 code,
-pre > code {
+pre code {
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
   font-size: 1rem;
   line-height: 1.42;
   -webkit-text-size-adjust: 100%; /* Prevent adjustments of font size after orientation changes in iOS. See https://github.com/edwardtufte/tufte-css/issues/81#issuecomment-261953409 */
 }
 
-.sans > code {
+.sans code {
   font-size: 1.2rem;
 }
 
-h1 > code,
-h2 > code,
-h3 > code {
+h1 code,
+h2 code,
+h3 code {
   font-size: 0.8em;
 }
 
-.marginnote > code,
-.sidenote > code {
+.marginnote code,
+.sidenote code {
   font-size: 1rem;
 }
 
-pre > code {
+pre code {
   font-size: 0.9rem;
   width: 52.5%;
   margin-left: 2.5%;
@@ -445,7 +445,7 @@ pre > code {
   display: block;
 }
 
-pre.fullwidth > code {
+pre.fullwidth code {
   width: 90%;
 }
 
@@ -494,21 +494,21 @@ label.margin-toggle:not(.sidenote-number) {
   }
 
   hr,
-  section > p,
-  section > footer,
-  section > table {
+  section p,
+  section footer,
+  section table {
     width: 100%;
   }
 
-  pre > code {
+  pre code {
     width: 97%;
   }
 
-  section > ol {
+  section ol {
     width: 90%;
   }
 
-  section > ul {
+  section ul {
     width: 90%;
   }
 
