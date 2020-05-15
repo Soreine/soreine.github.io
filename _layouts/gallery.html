@@ -2,13 +2,13 @@
 layout: default
 ---
 
-<div style="text-align: center; margin-top: 40px">
-    {% for post in site.posts %}
-    {% if post.category == page.category %}
+<section>
+  <ul>
+    {% for post in site.posts %} {% if post.category == page.category %}
     <a class="polaroid" href="{{ post.url }}">
-        <img alt="{{ post.title }}" src="{{ post.preview }}"/>
-        <polarcaption>{{ post.title }}</polarcaption>
+      <img alt="{{ post.title }}" src="{{ post.preview }}" />
+      <figcaption>{{ post.title }}</figcaption>
     </a>
-    {% endif %}
-    {% endfor %}
-</div>
+    {% endif %} {% endfor %}
+  </ul>
+</section>

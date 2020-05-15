@@ -64,8 +64,7 @@
   }
 
   li > a:link {
-    padding: 0;
-    background-image: none;
+    @include no-underline();
     list-style: none;
     display: flex;
     flex-direction: column;
@@ -76,9 +75,6 @@
   ol {
     margin-left: 0;
     padding: 0;
-    // display: flex;
-    // flex-direction: row;
-    // align-items: center;
     margin-bottom: 3.4rem;
     text-transform: uppercase;
   }
@@ -89,7 +85,7 @@
     margin-top: 0;
     text-rendering: optimizeLegibility;
     font-size: 1.2rem;
-    letter-spacing: 0.15rem;
+    letter-spacing: 0.1em;
   }
 
   li:not(:last-child):after {
@@ -106,23 +102,30 @@
   }
 }
 
-.post {
-  figure {
-    figcaption {
-      margin-left: 1.5rem;
-      margin-bottom: 0;
-      font-size: 1.1rem;
-      line-height: 1.6;
-      vertical-align: baseline;
-      max-width: 40%;
-    }
+figure {
+  img,
+  video {
+    background: white;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    box-sizing: border-box;
   }
+
+  display: inline-block;
+}
+
+figcaption {
+  margin-left: 1.5rem;
+  margin-bottom: 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  vertical-align: baseline;
+  max-width: 24rem;
 }
 
 // For images, videos, etc.
 a.wrapper {
-  padding: 0;
-  background-image: none;
+  @include no-underline();
 }
 
 .icon {
@@ -139,4 +142,71 @@ a.wrapper {
   image-rendering: optimize-contrast;
   image-rendering: pixelated;
   -ms-interpolation-mode: nearest-neighbor;
+}
+
+// Small photographs with caption on it
+a.polaroid {
+  @include no-underline();
+
+  // filter: grayscale(1);
+
+  display: block;
+
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  box-sizing: border-box;
+  background: white;
+
+  width: 200px;
+  margin-top: 2.1rem;
+  margin-bottom: 3.4rem; /* same as p.subtitle + section + p margins */
+  text-align: center;
+
+  // margin: -50px auto;
+
+  // &:nth-child(4n + 1) {
+  //   transform: rotate(-5deg) translate(-110px, 0px);
+  // }
+  // &:nth-child(4n + 2) {
+  //   transform: rotate(3deg) translate(120px, 5px);
+  // }
+  // &:nth-child(4n + 3) {
+  //   transform: rotate(-2deg) translate(-115px, 15px);
+  // }
+  // &:nth-child(4n + 0) {
+  //   transform: rotate(6deg) translate(110px, -10px);
+  // }
+
+  // @media (max-width: 760px) {
+  //   margin: 40px auto;
+
+  //   &:nth-child(4n + 1) {
+  //     transform: rotate(-5deg) translate(-10px, 0px);
+  //   }
+  //   &:nth-child(4n + 2) {
+  //     transform: rotate(3deg) translate(20px, 5px);
+  //   }
+  //   &:nth-child(4n + 3) {
+  //     transform: rotate(-2deg) translate(-15px, 15px);
+  //   }
+  //   &:nth-child(4n + 0) {
+  //     transform: rotate(6deg) translate(10px, -10px);
+  //   }
+  // }
+
+  // img {
+  //   width: 100%;
+  //   // filter: brightness(0.98);
+  // }
+
+  figcaption {
+    // font-size: 0.6em;
+    // margin: 0.7em 0;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: center;
+    margin: 0 auto;
+    max-width: initial;
+    // word-spacing: 0.3em;
+  }
 }
