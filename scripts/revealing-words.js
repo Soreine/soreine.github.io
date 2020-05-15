@@ -7,20 +7,30 @@ const links = document.querySelectorAll("[data-reveal]");
 
 links.forEach((link) => {
   const key = link.getAttribute("data-reveal");
-  const reveals = document.querySelectorAll(`[data-from="${key}"]`);
+  const memo = link.hasAttribute("data-memo");
+  const reveals = document.querySelectorAll('[data-from="' + key + '"]');
 
   let revealTimeout = null;
 
+  const reveal = () => {
+    if (memo) {
+      localStorage.setItem("revealed" + key, true);
+    }
+    setRevealed([link, ...reveals], "true");
+  };
+
   const onEnter = (event) => {
-    // event.preventDefault();
-    revealTimeout = setTimeout(() => {
-      setRevealed([link, ...reveals], "true");
-    }, 200);
+    revealTimeout = setTimeout(reveal, 200);
   };
 
   const onLeave = (event) => {
     clearTimeout(revealTimeout);
   };
+
+  if (memo) {
+    const wasRevealed = localStorage.getItem("revealed" + key);
+    if (wasRevealed) return;
+  }
 
   setRevealed([link, ...reveals], "false");
   link.addEventListener("mouseover", onEnter);
