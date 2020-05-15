@@ -91,8 +91,8 @@
   li:not(:last-child):after {
     margin: 0 0.5rem;
     content: "";
-    height: 1rem;
-    width: 1rem;
+    height: 0.9rem;
+    width: 0.9rem;
     color: "black";
     display: inline-block;
     background-image: url("./chevron-right.svg");
@@ -162,42 +162,42 @@ a.polaroid {
   margin-bottom: 3.4rem; /* same as p.subtitle + section + p margins */
   text-align: center;
 
-  // margin: -50px auto;
+  margin: -50px auto;
 
-  // &:nth-child(4n + 1) {
-  //   transform: rotate(-5deg) translate(-110px, 0px);
-  // }
-  // &:nth-child(4n + 2) {
-  //   transform: rotate(3deg) translate(120px, 5px);
-  // }
-  // &:nth-child(4n + 3) {
-  //   transform: rotate(-2deg) translate(-115px, 15px);
-  // }
-  // &:nth-child(4n + 0) {
-  //   transform: rotate(6deg) translate(110px, -10px);
-  // }
+  &:nth-child(4n + 1) {
+    transform: rotate(-5deg) translate(-110px, 0px);
+  }
+  &:nth-child(4n + 2) {
+    transform: rotate(3deg) translate(120px, 5px);
+  }
+  &:nth-child(4n + 3) {
+    transform: rotate(-2deg) translate(-115px, 15px);
+  }
+  &:nth-child(4n + 0) {
+    transform: rotate(6deg) translate(110px, -10px);
+  }
 
-  // @media (max-width: 760px) {
-  //   margin: 40px auto;
+  @media (max-width: 760px) {
+    margin: 40px auto;
 
-  //   &:nth-child(4n + 1) {
-  //     transform: rotate(-5deg) translate(-10px, 0px);
-  //   }
-  //   &:nth-child(4n + 2) {
-  //     transform: rotate(3deg) translate(20px, 5px);
-  //   }
-  //   &:nth-child(4n + 3) {
-  //     transform: rotate(-2deg) translate(-15px, 15px);
-  //   }
-  //   &:nth-child(4n + 0) {
-  //     transform: rotate(6deg) translate(10px, -10px);
-  //   }
-  // }
+    &:nth-child(4n + 1) {
+      transform: rotate(-5deg) translate(-10px, 0px);
+    }
+    &:nth-child(4n + 2) {
+      transform: rotate(3deg) translate(20px, 5px);
+    }
+    &:nth-child(4n + 3) {
+      transform: rotate(-2deg) translate(-15px, 15px);
+    }
+    &:nth-child(4n + 0) {
+      transform: rotate(6deg) translate(10px, -10px);
+    }
+  }
 
-  // img {
-  //   width: 100%;
-  //   // filter: brightness(0.98);
-  // }
+  img {
+    // transition: filter ease 0.5s;
+    filter: grayscale(0.7);
+  }
 
   figcaption {
     // font-size: 0.6em;
