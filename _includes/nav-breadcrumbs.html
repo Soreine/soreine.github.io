@@ -15,9 +15,9 @@
     </li>
     {% else %}
     <li>
-      <a href="{{ crumbitem.url | prepend: site.baseurl }}">
-        <span>{{ crumbitem.title }}</span>
-      </a>
+      <a href="{{ crumbitem.url | prepend: site.baseurl }}"
+        ><span>{{ crumbitem.title }}</span></a
+      >
     </li>
     {% endif %} {% endfor %}
   </ol>
