@@ -5,27 +5,87 @@ https://edwardtufte.github.io/tufte-css/
 
 I replaced the fonts with a custom one */
 
-$background: #fffff6;
-$textColor: #333;
+$background: #fffff8;
+$textColor: #2f1b0f;
 
-@mixin underlined($color, $thickness: 4%) {
+@mixin dotted($color: #eef, $thickness: 10%) {
   text-decoration: none;
-  color: $color;
+  padding-bottom: 2px;
+  border-bottom: 1px dashed #333;
+
+  // background: $color;
+  // border-radius: 8px;
+
+  // background-image: -webkit-linear-gradient(
+  //   bottom,
+  //   rgba(0, 0, 0, 0) 0%,
+  //   $color 0%,
+  //   $color $thickness,
+  //   rgba(0, 0, 0, 0) $thickness
+  // );
+  // background-image: linear-gradient(
+  //   to top,
+  //   rgba(0, 0, 0, 0) 0%,
+  //   $color 0%,
+  //   $color $thickness,
+  //   rgba(0, 0, 0, 0) $thickness
+  // );
+}
+
+@mixin highlighted($color: #e4f0d0, $thickness: 10%) {
+  text-decoration: none;
+
+  background: $color;
+  border-radius: 8px;
+
+  // background-image: -webkit-linear-gradient(
+  //   bottom,
+  //   rgba(0, 0, 0, 0) 0%,
+  //   $color 0%,
+  //   $color $thickness,
+  //   rgba(0, 0, 0, 0) $thickness
+  // );
+  // background-image: linear-gradient(
+  //   to top,
+  //   rgba(0, 0, 0, 0) 0%,
+  //   $color 0%,
+  //   $color $thickness,
+  //   rgba(0, 0, 0, 0) $thickness
+  // );
+}
+
+@mixin underlined($color, $thickness: 6%) {
+  text-decoration: none;
+  color: #8b0000;
   padding-bottom: 2px;
   background-image: -webkit-linear-gradient(
     bottom,
     rgba(0, 0, 0, 0) 0%,
-    $color 0%,
-    $color $thickness,
+    #8b0000 0%,
+    #8b0000 $thickness,
     rgba(0, 0, 0, 0) $thickness
   );
   background-image: linear-gradient(
     to top,
     rgba(0, 0, 0, 0) 0%,
-    $color 0%,
-    $color $thickness,
+    #8b0000 0%,
+    #8b0000 $thickness,
     rgba(0, 0, 0, 0) $thickness
   );
+}
+
+@mixin framed($color, $thickness: 1px) {
+  text-decoration: none;
+  color: $color;
+  padding: 2px;
+  border: $thickness solid $color;
+}
+
+@mixin no-underline() {
+  text-decoration: none;
+  color: inherit;
+  padding-bottom: 0;
+  background-image: none;
 }
 
 @font-face {
