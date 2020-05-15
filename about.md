@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Soreine - About
+title: About
 category: home
 permalink: /about/
 ---
@@ -16,7 +16,6 @@ recently switched to using
 were a hassle) and [Jekyll](http://jekyllrb.com/) to facilitate the
 addition and management of content, but still keeping my own
 HTML templates.
-
 
 # About me
 
