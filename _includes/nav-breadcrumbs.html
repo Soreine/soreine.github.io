@@ -7,17 +7,25 @@
     {% assign position = 0 %} {% for crumbitem in breadcrumbs %} {% assign
     position = position | plus: 1 %} {% if forloop.first %}
     <li>
-      <a href="{{ site.baseurl }}/"><span>Home</span></a>
+      <a class="wrapper" href="{{ site.baseurl }}/">
+        {% include soreine.svg.html height="0.9rem" %}
+        <style>
+          #soreine-logo {
+            margin-right: 0.5rem;
+            display: inline-block;
+          }
+          #soreine-logo #mask {
+            fill: currentColor;
+            opacity: 0.9;
+          }
+        </style>
+        <span>Home</span>
+      </a>
     </li>
-    {% elsif position > 2 %} {% continue %} {% elsif forloop.last %}
+    {% elsif position > 2 %} {% continue %} {% else %}
     <li>
       {% include chevron.svg.html %}
-      <span>{{ crumbitem.title }}</span>
-    </li>
-    {% else %}
-    <li>
-      {% include chevron.svg.html %}
-      <a href="{{ crumbitem.url | prepend: site.baseurl }}"
+      <a class="wrapper" href="{{ crumbitem.url | prepend: site.baseurl }}"
         ><span>{{ crumbitem.title }}</span></a
       >
     </li>

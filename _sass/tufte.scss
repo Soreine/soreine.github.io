@@ -6,7 +6,7 @@ https://edwardtufte.github.io/tufte-css/
 I replaced the fonts with a custom one */
 
 $background: #fcfcfc;
-$textColor: #222;
+$textColor: #333;
 
 @mixin dotted($color: $textColor, $thickness: 10%) {
   text-decoration: none;

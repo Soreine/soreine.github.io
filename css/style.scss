@@ -105,15 +105,19 @@ body:after {
 
   .chevron {
     margin: 0 0.5rem;
-    // content: "";
     height: 0.9rem;
     width: 0.9rem;
     color: inherit;
     display: inline-block;
-    // background-image: url("./chevron-right.svg");
-    // background-size: 100%;
     vertical-align: baseline;
     margin-bottom: -0.1rem;
+  }
+
+  #soreine-logo {
+    position: relative;
+    top: 0.15rem;
+    height: 1rem;
+    margin-right: 0.5rem;
   }
 }
 
