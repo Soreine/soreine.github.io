@@ -10,7 +10,7 @@ category: writing
 ---
 
 <section>
-
+<div markdown="1">
 Recently, I had to implement some functions to move items in an ordered collection, and I made it way more complicated than needed. My collections were ordered trees and I was moving subtrees around, but the problem is similar with simple lists, so we will talk about lists.
 
 Here is one of the functions I wanted to implement:
