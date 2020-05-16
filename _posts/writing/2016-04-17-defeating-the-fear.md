@@ -2,7 +2,7 @@
 layout: post
 category: writing
 date: 2016-04-17
-title: "Defeating the Fear"
+title: "Defeating the fear"
 # jekyll-seo-tag
 description: "The goals of this blog"
 author: "Soreine"

@@ -2,7 +2,7 @@
 layout: post
 category: writing
 date: 2016-05-22
-title: "The Humanity of Irregularities"
+title: "The humanity of irregularities"
 audiotags: true
 # jekyll-seo-tag
 description: "When music comes from the soul."
