@@ -8,12 +8,11 @@ description: "The goals of this blog"
 author: "Soreine"
 ---
 
-<section>
-<div markdown="1">
+<section markdown="1">
 
-<p>
+_**Note**: this article was the first of a blog I started, but never really maintainted. Curiously, this has given it a radically different interpretation._
+
 How can I improve at X? By making mistakes doing X. Seeking perfection can be a curse. I don't want to fear failing anymore. So I will take each blog post as an opportunity to make mistakes. If everything goes well, the blog as a whole should end up being OK.
-</p>
 
 ## Fear hinders everything
 
@@ -38,32 +37,31 @@ For some, "better is the enemy of good". For perfectionists, bad (which most of 
 So yeah, breaking the ice of perfection and the fear that accompanies it is my main motivation here. But there are others, of course:
 
 <ul>
-<li>
+<li markdown="1">
  <strong>Improving writing skills</strong>: This general skill, in turn, improves analytical skills, English skill (French is my mother tongue), and oral communication.
 
 </li>
-<li>
+<li markdown="1">
  <strong>Digging subjects deeper</strong>: Because writing requires to research your subject thoroughly, you end up more knowledgeable about it.
 
 </li>
-<li>
+<li markdown="1">
  <strong>Getting motivation</strong>: Communicating about what you do is an incentive to continue. And writing about something you accomplished is always rewarding.
 
 </li>
-<li>
+<li markdown="1">
  <strong>Getting in a habit</strong>: Doing things, like writing a blog, makes it easier to involve in other activities. It's basic maths. Doing `N+1` things when you now how to do `N` feels easier the greater the `N`.
 
 </li>
-<li>
+<li markdown="1">
  <strong>Keeping records</strong>: Be it techniques, tips, links to valuable resources, stories, or my own progress, my blog will always remember them, and so do I.
 
 </li>
-<li>
+<li markdown="1">
  <strong>Alleviating my [web page](https://soreine.github.io)</strong>: Not that it is overloaded with content, but I want to keep it separate from blogging.
 </li>
 </ul>
 
 I would gladly have concluded with a list rules and best practices for me to follow, writing this blog. But they would have been additional barriers to my blogging, so I'd better not :)
 
-</div>
 </section>

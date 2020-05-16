@@ -9,15 +9,15 @@ author: "Soreine"
 category: writing
 ---
 
-<section>
-<div markdown="1">
+<section markdown="1">
 Recently, I had to implement some functions to move items in an ordered collection, and I made it way more complicated than needed. My collections were ordered trees and I was moving subtrees around, but the problem is similar with simple lists, so we will talk about lists.
 
 Here is one of the functions I wanted to implement:
 
-> `move(collection, i, j)`
->
-> Returns a new collection where the item at index `i` is now at index `j`
+```elm
+move(collection, i, j)
+> Returns a new collection where the item at index i is now at index j
+```
 
 Let's assume we already have two basic functions at our disposal:
 
@@ -40,17 +40,13 @@ For lists, it is simple to determine if we need to insert back at `i` or `i - 1`
 
 Determining the impact on indexes when removing a subtree was a bit trickier than lists. A few bugs later, and I had written the code to handle that, and could implement the `move` function. Add on top of that that I wanted `move(collection, i, i)` to be a no-op, and I was gone full paranoid, looking everywhere after edge cases.
 
-</div>
 </section>
-<section>
-<div markdown="1">
+<section markdown="1">
 
 _Actually, all this can be a lot simpler._
 
-</div>
 </section>
-<section>
-<div markdown="1">
+<section markdown="1">
 
 I realised that **I was biased by concepts of our physical world**. I was inclined to believe that an item needs to be taken from somewhere first, to be put somewhere else after. But inside the Matrix, you're free to do it in any order. Using real-world analogies is helpful to the mind, but it can be deceiving too.
 
@@ -68,14 +64,11 @@ function move(collection, i, j)
         insert at j
 ```
 
-</div>
 </section>
-<section>
-<div markdown="1">
+<section markdown="1">
 
 Now free your mind. You will be a happier person. Just like Morpheus.
 
-![Morpheus](/blog/images/morpheus.jpg)
+<img src="/images/writing/morpheus.jpg" />
 
-</div>
 </section>
