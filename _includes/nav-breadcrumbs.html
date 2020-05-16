@@ -11,10 +11,12 @@
     </li>
     {% elsif position > 2 %} {% continue %} {% elsif forloop.last %}
     <li>
+      {% include chevron.svg.html %}
       <span>{{ crumbitem.title }}</span>
     </li>
     {% else %}
     <li>
+      {% include chevron.svg.html %}
       <a href="{{ crumbitem.url | prepend: site.baseurl }}"
         ><span>{{ crumbitem.title }}</span></a
       >
