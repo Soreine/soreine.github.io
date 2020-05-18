@@ -4,23 +4,106 @@ title: Music
 comments: false
 category: music
 permalink: /music/
+songs:
+  - title: "Awakening"
+    source: "./mp3/Awakening.mp3"
+  - title: "Into the Open"
+    source: "./mp3/Into-The-Open.mp3"
+  - title: "CloudLight"
+    source: "./mp3/CloudLight.mp3"
+  - title: "Seashell Manor"
+    source: "./mp3/Seashell-Manor.mp3"
 ---
 
 <section>
-  <p>
+  <!-- <p>
     Here is a humble collection of songs. Echoes from timeless musical sessions,
     spent trying to jam notes from the piano together into the computer.
-  </p>
+  </p> -->
+
+  <hr />
+  <ul class="playlist">
+    {% for item in page.songs %}
+    <li class="song">
+      {% include play.svg.html %}
+      <span class="counter sans">{{ forloop.index }}</span>
+      <span class="title">{{item.title}}</span>
+      <span class="duration sans">2:25</span>
+      <audio controls><source src="{{item.source}}" type="audio/mpeg" /></audio>
+    </li>
+    {% endfor %}
+  </ul>
 
   <p>
     <iframe
       scrolling="no"
       width="100%"
-      height="700"
       frameborder="no"
-      style="margin-top: 40px;"
+      style="margin-top: 40px; height: 400px;"
       src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/15157137&amp;auto_play=false&amp;hide_related=true&amp;show_comments=true&amp;show_user=false&amp;show_reposts=false&amp;visual=false"
     >
     </iframe>
   </p>
 </section>
+
+<style>
+  hr {
+    /* Same than ul */
+    width: 50%;
+  }
+
+  .playlist {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 0 1rem;
+  }
+
+  .song {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    font-size: 1.2rem;
+    padding: 1rem 0 !important;
+    margin: 0 !important;
+  }
+
+  .title {
+    flex: 1 0;
+  }
+
+  .duration,
+  .counter {
+    font-size: 1rem;
+    color: #777;
+    flex: 0 0 auto;
+    margin: 0 1rem;
+  }
+  .counter {
+    margin-left: 0;
+  }
+
+  .duration {
+    margin-right: 0;
+  }
+
+  audio {
+    display: none;
+  }
+
+  .feather {
+    margin: 0 0.5em;
+    height: 1em;
+    width: 1em;
+    color: inherit;
+    display: inline-block;
+    vertical-align: baseline;
+    margin-bottom: -0.1rem;
+  }
+  .feather {
+    display: none;
+  }
+</style>
