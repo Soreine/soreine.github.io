@@ -54,3 +54,5 @@ https://github.com/git-no/jekyll-breadcrumbs
 
 https://stackoverflow.com/questions/27099427/jekyll-filename-without-date
 https://jekyllrb.com/docs/collections/
+
+https://521dimensions.com/open-source/amplitudejs/
