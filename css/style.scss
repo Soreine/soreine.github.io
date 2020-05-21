@@ -255,13 +255,19 @@ a.polaroid {
     align-items: stretch;
   }
   .progress-background,
-  .progress-played {
+  .progress-played,
+  .progress-buffered {
     height: 0.3rem;
     border-radius: 0.3rem;
   }
   .progress-background {
     position: relative;
     background-color: #eee;
+  }
+  .progress-buffered {
+    position: absolute;
+    width: 0%;
+    background-color: #ddd;
   }
   .progress-played {
     position: absolute;

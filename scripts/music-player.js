@@ -1,14 +1,16 @@
-// Bind progress bar mouse events
-const { onTimeUpdate } = (() => {
+// Bind progress bar events
+const { onTimeUpdate, watchBuffered } = (() => {
   const epsilon = 1e-4; // Amplitude does not like 0/100 percentage
 
   const progressBar = (() => {
     const p = document.getElementById("custom-song-played-progress");
     const played = p.querySelector(".progress-played");
+    const buffered = p.querySelector(".progress-buffered");
 
     return {
       clickArea: p,
       played,
+      buffered,
     };
   })();
 
@@ -20,7 +22,7 @@ const { onTimeUpdate } = (() => {
     e.preventDefault();
     isDragging = true;
     mousePercentage = getMouseEventPercentage(e);
-    updateProgressBarPercentage(mousePercentage);
+    updateBar(progressBar.played, mousePercentage);
   }
   function stopDragging(e) {
     if (isDragging) {
@@ -34,7 +36,15 @@ const { onTimeUpdate } = (() => {
     if (!isDragging) return;
 
     mousePercentage = getMouseEventPercentage(e);
-    updateProgressBarPercentage(mousePercentage);
+    updateBar(progressBar.played, mousePercentage);
+  }
+
+  function watchBuffered(x = 0) {
+    window.requestAnimationFrame(() => {
+      const percentage = Amplitude.getBuffered() / 100;
+      updateBar(progressBar.buffered, percentage);
+      watchBuffered();
+    });
   }
 
   function getMouseEventPercentage({ pageX }) {
@@ -52,11 +62,11 @@ const { onTimeUpdate } = (() => {
   function onTimeUpdate() {
     if (isDragging) return;
     const songPlayedPercentage = Amplitude.getSongPlayedPercentage() / 100;
-    updateProgressBarPercentage(songPlayedPercentage);
+    updateBar(progressBar.played, songPlayedPercentage);
   }
 
-  function updateProgressBarPercentage(percentage) {
-    progressBar.played.style.width = percentage * 100 + "%";
+  function updateBar(bar, percentage) {
+    bar.style.width = Math.min(Math.max(0, percentage), 1) * 100 + "%";
   }
 
   progressBar.clickArea.addEventListener("mousedown", startDragging);
@@ -66,6 +76,7 @@ const { onTimeUpdate } = (() => {
 
   return {
     onTimeUpdate,
+    watchBuffered,
   };
 })();
 
@@ -82,3 +93,5 @@ Amplitude.init({
   // debug: true,
   // preload: true,
 });
+
+watchBuffered();
