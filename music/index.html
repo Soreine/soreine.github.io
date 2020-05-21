@@ -4,7 +4,7 @@ title: Music
 comments: false
 category: music
 permalink: /music/
-songs:
+main_songs:
   - title: Awakening
     source: ./mp3/Awakening.mp3
 
@@ -42,19 +42,62 @@ songs:
     source: ./mp3/When-Besaid-Cries.mp3
 ---
 
-<section>
+<section class="music">
   <!-- <p>
     Here is a humble collection of songs. Echoes from timeless musical sessions,
     spent trying to jam notes from the piano together into the computer.
   </p> -->
 
+  <div class="amplitude-play" data-amplitude-song-index="0">Play</div>
+
+  <div id="custom-song-played-progress">
+    <div class="progress-background">
+      <div class="progress-played"></div>
+    </div>
+  </div>
+  <div id="single-song-player">
+    <img data-amplitude-song-info="cover_art_url" />
+    <div class="bottom-container">
+      <progress
+        class="amplitude-song-played-progress"
+        id="song-played-progress"
+      ></progress>
+
+      <div class="time-container">
+        <span class="current-time">
+          <span class="amplitude-current-minutes"></span>:<span
+            class="amplitude-current-seconds"
+          ></span>
+        </span>
+        <span class="duration">
+          <span class="amplitude-duration-minutes"></span>:<span
+            class="amplitude-duration-seconds"
+          ></span>
+        </span>
+      </div>
+
+      <div class="control-container">
+        <div class="amplitude-play-pause" id="play-pause">Play/Pause</div>
+        <div class="meta-container">
+          <span data-amplitude-song-info="name" class="song-name"></span>
+          <span data-amplitude-song-info="artist"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <hr />
   <ul class="playlist">
-    {% for item in page.songs %}
+    {% for item in page.main_songs %}
     <li class="song">
       {% include play.svg.html %}
       <span class="counter sans">{{ forloop.index }}</span>
-      <span class="title">{{item.title}}</span>
+      <span
+        class="title amplitude-name"
+        data-amplitude-song-index="{{ forloop.index0 }}"
+        data-amplitude-playlist="main_songs"
+        >{{item.title}}</span
+      >
       <span class="duration sans">0:00</span>
       <audio controls><source src="{{item.source}}" type="audio/mpeg" /></audio>
     </li>
@@ -75,91 +118,17 @@ songs:
 </section>
 
 <script>
-  function createSong(element) {
-    console.log({ element });
-    const audio = element.querySelector("audio")[0];
-    const title = element.querySelector("title")[0].innerText;
-
-    return {
-      audio,
-      title,
-    };
-  }
-
-  const songs = Array.from(document.querySelectorAll(".song")).map((el) =>
-    console.log({ el })
-  );
-  console.log(songs);
+  // console.log({{ page.main_songs }});
+  window.main_songs = [
+  {% for item in page.main_songs %}
+  {
+    name: "{{item.title}}",
+    url: "{{item.source}}"
+  },
+  {% endfor %}
+  ];
 </script>
 
-<style>
-  hr {
-    /* Same than ul */
-    width: 50%;
-  }
+<script src="../scripts/amplitude/amplitude.js"></script>
 
-  .playlist {
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    padding: 0 1rem;
-  }
-
-  .song {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-
-    font-size: 1.2rem;
-    margin: 0 !important;
-
-    padding: 1rem 0;
-    transition: padding-left 0.4s;
-    cursor: pointer;
-  }
-
-  .song:hover {
-    cursor: pointer;
-    padding-left: 0.5rem;
-  }
-
-  .title {
-    flex: 1 0;
-  }
-
-  .duration,
-  .counter {
-    font-size: 1rem;
-    color: #777;
-    flex: 0 0 auto;
-    margin: 0 1rem;
-  }
-  .counter {
-    text-align: right;
-    width: 1rem;
-    margin-left: 0;
-  }
-
-  .duration {
-    margin-right: 0;
-  }
-
-  audio {
-    display: none;
-  }
-
-  .feather {
-    margin: 0 0.5em;
-    height: 1em;
-    width: 1em;
-    color: inherit;
-    display: inline-block;
-    vertical-align: baseline;
-    margin-bottom: -0.1rem;
-  }
-  .feather {
-    display: none;
-  }
-</style>
+<script src="../scripts/music-player.js"></script>

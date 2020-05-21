@@ -238,3 +238,99 @@ a.polaroid {
     // word-spacing: 0.3em;
   }
 }
+
+.music {
+  #custom-song-played-progress {
+    cursor: pointer;
+    width: 50%;
+    height: 40px; // clickable zone
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+  }
+  .progress-background,
+  .progress-played {
+    height: 0.3rem;
+    border-radius: 0.3rem;
+  }
+  .progress-background {
+    position: relative;
+    background-color: #eee;
+  }
+  .progress-played {
+    position: absolute;
+    width: 0%;
+    background-color: $textColor;
+  }
+
+  hr {
+    /* Same than ul */
+    width: 50%;
+  }
+
+  .playlist {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 0 1rem;
+  }
+
+  .song {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    font-size: 1.2rem;
+    margin: 0 !important;
+
+    padding: 1rem 0;
+    transition: padding-left 0.4s ease-out;
+    cursor: pointer;
+  }
+
+  .song:hover {
+    cursor: pointer;
+    padding-left: 0.5rem;
+  }
+
+  .title {
+    flex: 1 0;
+  }
+
+  .duration,
+  .counter {
+    font-size: 1rem;
+    color: #777;
+    flex: 0 0 auto;
+    margin: 0 1rem;
+  }
+  .counter {
+    text-align: right;
+    width: 1rem;
+    margin-left: 0;
+  }
+
+  .duration {
+    margin-right: 0;
+  }
+
+  audio {
+    display: none;
+  }
+
+  .feather {
+    margin: 0 0.5em;
+    height: 1em;
+    width: 1em;
+    color: inherit;
+    display: inline-block;
+    vertical-align: baseline;
+    margin-bottom: -0.1rem;
+  }
+  .feather {
+    display: none;
+  }
+}
