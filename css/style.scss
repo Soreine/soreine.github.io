@@ -118,6 +118,11 @@ body:after {
     top: 0.15rem;
     height: 1rem;
     margin-right: 0.5rem;
+    display: inline-block;
+  }
+  #soreine-logo #mask {
+    fill: currentColor;
+    opacity: 0.9;
   }
 }
 

@@ -8,17 +8,7 @@
     position = position | plus: 1 %} {% if forloop.first %}
     <li>
       <a class="wrapper" href="{{ site.baseurl }}/">
-        {% include soreine.svg.html height="0.9rem" %}
-        <style>
-          #soreine-logo {
-            margin-right: 0.5rem;
-            display: inline-block;
-          }
-          #soreine-logo #mask {
-            fill: currentColor;
-            opacity: 0.9;
-          }
-        </style>
+        {% include soreine.svg.html %}
         <span>Home</span>
       </a>
     </li>
