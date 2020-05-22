@@ -56,3 +56,5 @@ https://stackoverflow.com/questions/27099427/jekyll-filename-without-date
 https://jekyllrb.com/docs/collections/
 
 https://521dimensions.com/open-source/amplitudejs/
+
+https://cdn.pling.com/img/c/3/1/c/ecc0fa8cbcb3f3e33b81c4f5a9c9791b6aa5.png

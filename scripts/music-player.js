@@ -1,7 +1,7 @@
+const EPSILON = 1e-5; // Amplitude does not like 0/100 percentage
+
 // Bind progress bar events
 const { onTimeUpdate, watchBuffered } = (() => {
-  const epsilon = 1e-4; // Amplitude does not like 0/100 percentage
-
   const progressBar = (() => {
     const p = document.getElementById("custom-song-played-progress");
     const played = p.querySelector(".progress-played");
@@ -15,7 +15,7 @@ const { onTimeUpdate, watchBuffered } = (() => {
   })();
 
   let isDragging = false;
-  let mousePercentage = epsilon;
+  let mousePercentage = EPSILON;
 
   function startDragging(e) {
     e.stopPropagation();
@@ -29,7 +29,7 @@ const { onTimeUpdate, watchBuffered } = (() => {
       Amplitude.setSongPlayedPercentage(mousePercentage * 100);
     }
     isDragging = false;
-    mousePercentage = epsilon;
+    mousePercentage = EPSILON;
   }
 
   function mouseMoving(e) {
@@ -53,8 +53,8 @@ const { onTimeUpdate, watchBuffered } = (() => {
     const offsetWidth = rect.width;
     const x = pageX - offsetLeft;
     const percentage = Math.min(
-      Math.max(epsilon, x / offsetWidth),
-      1 - epsilon
+      Math.max(EPSILON, x / offsetWidth),
+      1 - EPSILON
     );
     return percentage;
   }
@@ -93,5 +93,31 @@ Amplitude.init({
   // debug: true,
   // preload: true,
 });
+
+// Bind keys
+(() => {
+  window.addEventListener("keydown", (e) => {
+    if (e.key === " ") {
+      if (Amplitude.getPlayerState() === "playing") {
+        Amplitude.pause();
+      } else {
+        Amplitude.play();
+      }
+    } else if (e.key === "ArrowRight") {
+      Amplitude.next();
+    } else if (e.key === "ArrowLeft") {
+      if (Amplitude.getSongPlayedSeconds() < 3) {
+        Amplitude.prev();
+      } else {
+        Amplitude.setSongPlayedPercentage(EPSILON);
+      }
+    } else {
+      return;
+    }
+
+    e.stopPropagation();
+    e.preventDefault();
+  });
+})();
 
 watchBuffered();
