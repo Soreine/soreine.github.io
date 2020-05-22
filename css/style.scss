@@ -247,107 +247,125 @@ a.polaroid {
 .music {
   #song-player {
     width: 50%;
-  }
 
-  .controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    .controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-    .feather {
-      display: block;
-      stroke-width: 0.1rem;
-      height: 1.2rem;
-      width: 1.2rem;
-    }
-  }
-
-  #custom-song-played-progress {
-    cursor: pointer;
-    height: 40px; // clickable zone
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
-
-    &:hover {
-      .progress-played::after {
+      .feather {
         display: block;
+        stroke-width: 0.1rem;
+        height: 1.2rem;
+        width: 1.2rem;
       }
     }
-  }
-  .progress-background,
-  .progress-played,
-  .progress-buffered {
-    height: 0.2rem;
-    border-radius: 0.2rem;
-  }
-  .progress-background {
-    position: relative;
-    background-color: #eee;
-  }
-  .progress-buffered {
-    position: absolute;
-    width: 0%;
-    background-color: #ddd;
-  }
-  .progress-played {
-    position: absolute;
-    width: 0%;
-    background-color: $textColor;
 
-    &::after {
-      display: none;
-      content: "";
+    #song-progress {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    #custom-progress-bar {
+      flex: 1 1 auto;
+      cursor: pointer;
+      height: 40px; // clickable zone
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: stretch;
+
+      &:hover {
+        .progress-played::after {
+          display: block;
+        }
+      }
+    }
+    .progress-background,
+    .progress-played,
+    .progress-buffered {
+      height: 0.2rem;
+      border-radius: 0.2rem;
+    }
+    .progress-background {
+      position: relative;
+      background-color: #eee;
+    }
+    .progress-buffered {
       position: absolute;
-      top: 50%;
-      right: 0;
-      transform: translate(50%, -50%);
-      height: 0.7rem;
-      width: 0.7rem;
-      border-radius: 0.7rem;
-      border: 0.1rem solid $textColor;
-      background-color: $background;
+      width: 0%;
+      background-color: #ddd;
     }
-  }
+    .progress-played {
+      position: absolute;
+      width: 0%;
+      background-color: $textColor;
 
-  .amplitude-play-pause {
-    position: relative;
-    cursor: pointer;
-    height: 2rem;
-    width: 2rem;
-    border-radius: 2rem;
-    border: 0.08rem solid $textColor;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    .feather-play {
-      margin-left: 10%;
+      &::after {
+        display: none;
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(50%, -50%);
+        height: 0.7rem;
+        width: 0.7rem;
+        border-radius: 0.7rem;
+        border: 0.1rem solid $textColor;
+        background-color: $background;
+      }
     }
-  }
-  .amplitude-playing {
-    .feather-play {
-      display: none;
-    }
-  }
-  .amplitude-paused {
-    .feather-pause {
-      display: none;
-    }
-  }
 
-  .amplitude-play-pause,
-  .amplitude-prev,
-  .amplitude-next {
-    cursor: pointer;
-    height: 2rem;
-    width: 2rem;
-    margin: 0 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    .duration,
+    .current-time {
+      flex: 0 0 auto;
+      font-size: 1rem;
+      font-weight: 300;
+      color: $textColor;
+      flex: 0 0 auto;
+      margin: 0 1rem;
+    }
+
+    .amplitude-play-pause {
+      position: relative;
+      cursor: pointer;
+      height: 2rem;
+      width: 2rem;
+      border-radius: 2rem;
+      border: 0.08rem solid $textColor;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .feather-play {
+        margin-left: 10%;
+      }
+    }
+    .amplitude-playing {
+      .feather-play {
+        display: none;
+      }
+    }
+    .amplitude-paused {
+      .feather-pause {
+        display: none;
+      }
+    }
+
+    .amplitude-play-pause,
+    .amplitude-prev,
+    .amplitude-next {
+      cursor: pointer;
+      height: 2rem;
+      width: 2rem;
+      margin: 0 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   hr {
@@ -388,8 +406,9 @@ a.polaroid {
 
   .duration,
   .counter {
+    font-weight: 300;
     font-size: 1rem;
-    color: #777;
+    color: $textColor;
     flex: 0 0 auto;
     margin: 0 1rem;
   }

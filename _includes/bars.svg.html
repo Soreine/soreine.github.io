@@ -1,0 +1,53 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class="feather feather-bars"
+>
+  <line class="line1" x1="18" y1="20" x2="18" y2="10"></line>
+  <line class="line2" x1="12" y1="20" x2="12" y2="4"></line>
+  <line class="line3" x1="6" y1="20" x2="6" y2="14"></line>
+</svg>
+
+<style>
+  .feather-bars .line1,
+  .feather-bars .line2,
+  .feather-bars .line3 {
+    animation-name: bounce;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    transform-origin: center 85%;
+  }
+
+  .feather-bars .line2 {
+    animation-delay: -0.25s;
+  }
+  .feather-bars .line3 {
+    animation-delay: -0.5s;
+  }
+
+  @keyframes bounce {
+    0% {
+      transform: scaleY(0.7);
+    }
+    25% {
+      transform: scaleY(1);
+    }
+    50% {
+      transform: scaleY(0.9);
+    }
+    75% {
+      transform: scaleY(1);
+    }
+    100% {
+      transform: scaleY(0.7);
+    }
+  }
+</style>

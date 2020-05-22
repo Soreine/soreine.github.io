@@ -3,7 +3,7 @@ const EPSILON = 1e-5; // Amplitude does not like 0/100 percentage
 // Bind progress bar events
 const { onTimeUpdate, watchBuffered } = (() => {
   const progressBar = (() => {
-    const p = document.getElementById("custom-song-played-progress");
+    const p = document.getElementById("custom-progress-bar");
     const played = p.querySelector(".progress-played");
     const buffered = p.querySelector(".progress-buffered");
 
@@ -83,7 +83,7 @@ const { onTimeUpdate, watchBuffered } = (() => {
 Amplitude.init({
   songs: window.main_songs,
   playlists: {
-    main: {
+    main_songs: {
       songs: window.main_songs,
     },
   },
