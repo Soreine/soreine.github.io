@@ -58,7 +58,7 @@ So yeah, breaking the ice of perfection and the fear that accompanies it is my m
 
 </li>
 <li markdown="1">
- <strong>Alleviating my [web page](https://soreine.github.io)</strong>: Not that it is overloaded with content, but I want to keep it separate from blogging.
+ <strong>Alleviating my [web page](https://soreine.dev)</strong>: Not that it is overloaded with content, but I want to keep it separate from blogging.
 </li>
 </ul>
 
