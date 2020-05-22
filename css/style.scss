@@ -253,6 +253,12 @@ a.polaroid {
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
+
+    &:hover {
+      .progress-played::after {
+        display: block;
+      }
+    }
   }
   .progress-background,
   .progress-played,
@@ -273,6 +279,20 @@ a.polaroid {
     position: absolute;
     width: 0%;
     background-color: $textColor;
+
+    &::after {
+      display: none;
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translate(50%, -50%);
+      height: 0.7rem;
+      width: 0.7rem;
+      border-radius: 0.7rem;
+      border: 0.1rem solid $textColor;
+      background-color: $background;
+    }
   }
 
   hr {
