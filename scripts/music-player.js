@@ -80,8 +80,19 @@ const { onTimeUpdate, watchBuffered } = (() => {
   };
 })();
 
+// Bind download button
+const onSongChange = (() => {
+  const download = document.getElementById("download");
+  function onSongChange() {
+    const song = Amplitude.getActiveSongMetadata();
+    download.setAttribute("href", song.url);
+  }
+
+  return onSongChange;
+})();
+
 Amplitude.init({
-  songs: window.main_songs,
+  songs: [{}],
   playlists: {
     main_songs: {
       songs: window.main_songs,
@@ -89,10 +100,12 @@ Amplitude.init({
   },
   callbacks: {
     timeupdate: onTimeUpdate,
+    song_change: onSongChange,
   },
   bindings: {
     "32": "play_pause",
   },
+  autoplay: false,
   // debug: true,
   // preload: true,
 });
@@ -125,5 +138,8 @@ Amplitude.init({
     e.preventDefault();
   });
 })();
+
+Amplitude.skipTo(0, 0, "main_songs");
+Amplitude.pause();
 
 watchBuffered();

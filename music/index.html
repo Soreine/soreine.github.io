@@ -54,24 +54,31 @@ main_songs:
     url: ./mp3/When-Besaid-Cries.mp3
 ---
 
-<section class="music">
-  <!-- <p>
-    Here is a humble collection of songs. Echoes from timeless musical sessions,
-    spent trying to jam notes from the piano together into the computer.
-  </p> -->
-
-  {% include bars.svg.html %}
-
+<section>
   <div id="song-player">
+    <div class="song-name" data-amplitude-song-info="name"></div>
+
     <div class="controls">
-      <div class="amplitude-prev">
+      <a
+        id="download"
+        target="_blank"
+        download=""
+        class="download wrapper"
+        title="Download"
+      >
+        {% include download.svg.html %}
+      </a>
+      <div class="amplitude-prev" title="Previous">
         {% include skip-back.svg.html %}
       </div>
-      <div class="amplitude-play-pause">
+      <div class="amplitude-play-pause" title="Play/Plause">
         {% include play.svg.html %}{% include pause.svg.html %}
       </div>
-      <div class="amplitude-next">
+      <div class="amplitude-next" title="Next">
         {% include skip-forward.svg.html %}
+      </div>
+      <div class="amplitude-repeat" title="Repeat song">
+        {% include repeat.svg.html %}
       </div>
     </div>
 
@@ -91,33 +98,6 @@ main_songs:
     </div>
   </div>
 
-  <div id="single-song-player">
-    <img data-amplitude-song-info="cover_art_url" />
-    <div class="bottom-container">
-      <div class="time-container">
-        <span class="current-time">
-          <span class="amplitude-current-minutes"></span>:<span
-            class="amplitude-current-seconds"
-          ></span>
-        </span>
-        <span class="duration">
-          <span class="amplitude-duration-minutes"></span>:<span
-            class="amplitude-duration-seconds"
-          ></span>
-        </span>
-      </div>
-
-      <div class="control-container">
-        <!-- <div class="amplitude-play-pause" id="play-pause">Play/Pause</div> -->
-        <div class="meta-container">
-          <span data-amplitude-song-info="name" class="song-name"></span>
-          <span data-amplitude-song-info="artist"></span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <hr />
   <ul class="playlist">
     {% for item in page.main_songs %}
     <li
@@ -127,7 +107,7 @@ main_songs:
     >
       <span class="song-index sans">
         <span class="index">{{ forloop.index }}</span>
-        {% include play.svg.html %}
+        {% include eq-bars.svg.html %}
       </span>
       <span
         class="title amplitude-name"
@@ -135,25 +115,15 @@ main_songs:
         data-amplitude-song-index="{{ forloop.index0 }}"
         data-amplitude-playlist="main_songs"
       >
-        <!-- {{ item.name }} -->
+        {{ item.name }}
       </span>
       <span class="duration sans">{{ item.duration }}</span>
       <audio controls><source src="{{item.url}}" type="audio/mpeg" /></audio>
     </li>
     {% endfor %}
   </ul>
-  <hr />
 
-  <!-- <p>
-    <iframe
-      scrolling="no"
-      width="100%"
-      frameborder="no"
-      style="margin-top: 40px; height: 400px;"
-      src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/15157137&amp;auto_play=false&amp;hide_related=true&amp;show_comments=true&amp;show_user=false&amp;show_reposts=false&amp;visual=false"
-    >
-    </iframe>
-  </p> -->
+  <hr />
 </section>
 
 <script>

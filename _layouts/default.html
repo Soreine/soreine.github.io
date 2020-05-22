@@ -4,7 +4,7 @@
   <!-- https://instant.page/ -->
   <script src="/scripts/instantpage-3.0.0.js" type="module" defer></script>
   <body>
-    <article>
+    <article class="{{ page.category }}">
       {% include nav-breadcrumbs.html %} {{ content }}
     </article>
   </body>
