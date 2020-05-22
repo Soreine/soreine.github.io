@@ -7,7 +7,6 @@ url: "https://soreine.dev" # the base hostname & protocol for your site
 github_username: Soreine
 permalink: pretty
 exclude:
-  - css/style.styl
   - Gemfile
   - Gemfile.lock
   - README.md
