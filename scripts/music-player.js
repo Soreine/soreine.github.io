@@ -90,6 +90,9 @@ Amplitude.init({
   callbacks: {
     timeupdate: onTimeUpdate,
   },
+  bindings: {
+    "32": "play_pause",
+  },
   // debug: true,
   // preload: true,
 });
@@ -98,11 +101,14 @@ Amplitude.init({
 (() => {
   window.addEventListener("keydown", (e) => {
     if (e.key === " ") {
-      if (Amplitude.getPlayerState() === "playing") {
-        Amplitude.pause();
-      } else {
-        Amplitude.play();
-      }
+      // HACK: using the methods will not update the interface...
+      // So just prevent default, and use the `config.bindings`
+      //
+      // if (Amplitude.getPlayerState() === "playing") {
+      //   Amplitude.pause();
+      // } else {
+      //   Amplitude.play();
+      // }
     } else if (e.key === "ArrowRight") {
       Amplitude.next();
     } else if (e.key === "ArrowLeft") {
