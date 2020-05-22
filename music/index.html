@@ -48,14 +48,27 @@ main_songs:
     spent trying to jam notes from the piano together into the computer.
   </p> -->
 
-  <div class="amplitude-play" data-amplitude-song-index="0">Play</div>
+  <div id="song-player">
+    <div class="controls">
+      <div class="amplitude-prev">
+        {% include skip-back.svg.html %}
+      </div>
+      <div class="amplitude-play-pause">
+        {% include play.svg.html %}{% include pause.svg.html %}
+      </div>
+      <div class="amplitude-next">
+        {% include skip-forward.svg.html %}
+      </div>
+    </div>
 
-  <div id="custom-song-played-progress">
-    <div class="progress-background">
-      <div class="progress-buffered"></div>
-      <div class="progress-played"></div>
+    <div id="custom-song-played-progress">
+      <div class="progress-background">
+        <div class="progress-buffered"></div>
+        <div class="progress-played"></div>
+      </div>
     </div>
   </div>
+
   <div id="single-song-player">
     <img data-amplitude-song-info="cover_art_url" />
     <div class="bottom-container">
@@ -78,7 +91,7 @@ main_songs:
       </div>
 
       <div class="control-container">
-        <div class="amplitude-play-pause" id="play-pause">Play/Pause</div>
+        <!-- <div class="amplitude-play-pause" id="play-pause">Play/Pause</div> -->
         <div class="meta-container">
           <span data-amplitude-song-info="name" class="song-name"></span>
           <span data-amplitude-song-info="artist"></span>

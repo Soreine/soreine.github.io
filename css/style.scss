@@ -245,9 +245,25 @@ a.polaroid {
 }
 
 .music {
+  #song-player {
+    width: 50%;
+  }
+
+  .controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .feather {
+      display: block;
+      stroke-width: 0.1rem;
+      height: 1.2rem;
+      width: 1.2rem;
+    }
+  }
+
   #custom-song-played-progress {
     cursor: pointer;
-    width: 50%;
     height: 40px; // clickable zone
     display: flex;
     flex-direction: column;
@@ -293,6 +309,45 @@ a.polaroid {
       border: 0.1rem solid $textColor;
       background-color: $background;
     }
+  }
+
+  .amplitude-play-pause {
+    position: relative;
+    cursor: pointer;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 2rem;
+    border: 0.08rem solid $textColor;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .feather-play {
+      margin-left: 10%;
+    }
+  }
+  .amplitude-playing {
+    .feather-play {
+      display: none;
+    }
+  }
+  .amplitude-paused {
+    .feather-pause {
+      display: none;
+    }
+  }
+
+  .amplitude-play-pause,
+  .amplitude-prev,
+  .amplitude-next {
+    cursor: pointer;
+    height: 2rem;
+    width: 2rem;
+    margin: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   hr {
@@ -349,19 +404,6 @@ a.polaroid {
   }
 
   audio {
-    display: none;
-  }
-
-  .feather {
-    margin: 0 0.5em;
-    height: 1em;
-    width: 1em;
-    color: inherit;
-    display: inline-block;
-    vertical-align: baseline;
-    margin-bottom: -0.1rem;
-  }
-  .feather {
     display: none;
   }
 }
