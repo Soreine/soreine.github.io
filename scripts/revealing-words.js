@@ -33,6 +33,8 @@ links.forEach((link) => {
   }
 
   setRevealed([link, ...reveals], "false");
+  link.addEventListener("click", reveal);
+  link.addEventListener("touchstart", reveal);
   link.addEventListener("mouseover", onEnter);
   link.addEventListener("mouseleave", onLeave);
 });
