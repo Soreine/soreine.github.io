@@ -161,11 +161,12 @@ a.wrapper {
   @include no-underline();
 }
 
-.icon {
+.github-icon {
   display: inline-block;
   vertical-align: baseline;
   height: 1em;
-  margin: 0 0.5rem;
+  width: 1em;
+  margin: 0 0.5em;
 }
 
 .pixel-perfect {
