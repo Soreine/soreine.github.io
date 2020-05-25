@@ -272,10 +272,7 @@ a.wrapper {
 
 .music {
   #song-player {
-    max-width: 50%;
-    @media (max-width: $breakpoint) {
-      max-width: 100%;
-    }
+    max-width: $paragraphLength;
 
     .song-name {
       text-align: center;
@@ -363,7 +360,12 @@ a.wrapper {
       font-weight: 300;
       color: $textColor;
       flex: 0 0 auto;
-      margin: 0 1rem;
+    }
+    .current-time {
+      margin-right: 1rem;
+    }
+    .duration {
+      margin-left: 1rem;
     }
 
     .amplitude-play-pause {
@@ -429,11 +431,12 @@ a.wrapper {
     }
   }
 
-  .playlist {
+  ul.playlist {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
     padding: 0 1rem;
+    max-width: $paragraphLength;
   }
 
   .song {
