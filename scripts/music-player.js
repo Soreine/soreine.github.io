@@ -1,7 +1,12 @@
 const EPSILON = 1e-5; // Amplitude does not like 0/100 percentage
 
 // Bind progress bar events
-const { onTimeUpdate, watchBuffered } = (() => {
+const { onPlay, onTimeUpdate, watchBuffered } = (() => {
+  const onPlay = () => {
+    // Reveal player
+    document.getElementById("song-player").className = "";
+  };
+
   const progressBar = (() => {
     const p = document.getElementById("custom-progress-bar");
     const played = p.querySelector(".progress-played");
@@ -74,10 +79,7 @@ const { onTimeUpdate, watchBuffered } = (() => {
   window.addEventListener("mouseup", stopDragging);
   window.addEventListener("mousemove", mouseMoving);
 
-  return {
-    onTimeUpdate,
-    watchBuffered,
-  };
+  return { onPlay, onTimeUpdate, watchBuffered };
 })();
 
 // Bind download button
@@ -99,6 +101,7 @@ Amplitude.init({
     },
   },
   callbacks: {
+    play: onPlay,
     timeupdate: onTimeUpdate,
     song_change: onSongChange,
   },

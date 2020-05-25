@@ -55,49 +55,6 @@ main_songs:
 ---
 
 <section>
-  <div id="song-player">
-    <div class="song-name" data-amplitude-song-info="name"></div>
-
-    <div class="controls">
-      <a
-        id="download"
-        target="_blank"
-        download=""
-        class="download wrapper"
-        title="Download"
-      >
-        {% include download.svg.html %}
-      </a>
-      <div class="amplitude-prev" title="Previous">
-        {% include skip-back.svg.html %}
-      </div>
-      <div class="amplitude-play-pause" title="Play/Plause">
-        {% include play.svg.html %}{% include pause.svg.html %}
-      </div>
-      <div class="amplitude-next" title="Next">
-        {% include skip-forward.svg.html %}
-      </div>
-      <div class="amplitude-repeat" title="Repeat song">
-        {% include repeat.svg.html %}
-      </div>
-    </div>
-
-    <div id="song-progress">
-      <span class="current-time sans">
-        <span class="amplitude-current-time"></span>
-      </span>
-      <div id="custom-progress-bar">
-        <div class="progress-background">
-          <div class="progress-buffered"></div>
-          <div class="progress-played"></div>
-        </div>
-      </div>
-      <span class="duration sans">
-        <span class="amplitude-duration-time"></span>
-      </span>
-    </div>
-  </div>
-
   <ul class="playlist">
     {% for item in page.main_songs %}
     <li
@@ -124,6 +81,51 @@ main_songs:
   </ul>
 
   <hr />
+
+  <div id="song-player" class="hidden">
+    <div class="inner">
+      <div class="song-name" data-amplitude-song-info="name"></div>
+
+      <div class="controls">
+        <a
+          id="download"
+          target="_blank"
+          download=""
+          class="download wrapper"
+          title="Download"
+        >
+          {% include download.svg.html %}
+        </a>
+        <div class="amplitude-prev" title="Previous">
+          {% include skip-back.svg.html %}
+        </div>
+        <div class="amplitude-play-pause" title="Play/Plause">
+          {% include play.svg.html %}{% include pause.svg.html %}
+        </div>
+        <div class="amplitude-next" title="Next">
+          {% include skip-forward.svg.html %}
+        </div>
+        <div class="amplitude-repeat" title="Repeat song">
+          {% include repeat.svg.html %}
+        </div>
+      </div>
+
+      <div id="song-progress">
+        <span class="current-time sans">
+          <span class="amplitude-current-time"></span>
+        </span>
+        <div id="custom-progress-bar">
+          <div class="progress-background">
+            <div class="progress-buffered"></div>
+            <div class="progress-played"></div>
+          </div>
+        </div>
+        <span class="duration sans">
+          <span class="amplitude-duration-time"></span>
+        </span>
+      </div>
+    </div>
+  </div>
 </section>
 
 <script>
