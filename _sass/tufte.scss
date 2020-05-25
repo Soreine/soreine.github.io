@@ -8,6 +8,7 @@ I replaced the fonts with a custom one */
 $background: #fcfcfc;
 $textColor: #333;
 $breakpoint: 720px;
+$paragraphLength: 600px;
 
 @mixin dotted($color: $textColor, $thickness: 10%) {
   text-decoration: none;
@@ -158,8 +159,6 @@ html {
   font-size: 15px;
 }
 
-$paragraphLength: 600px;
-
 // [60 + 600 + 60]
 
 body {
@@ -309,9 +308,9 @@ section > table {
 /* 50 + 5 == 55, to be the same width as paragraph */
 section > ol,
 section > ul {
-  max-width: $paragraphLength;
-  padding-inline-start: 5%;
-  -webkit-padding-start: 5%;
+  max-width: calc(#{$paragraphLength} - 3rem);
+  padding-inline-start: 3rem;
+  -webkit-padding-start: 3rem;
 }
 
 li:not(:first-child) {
@@ -454,8 +453,8 @@ h3 > code {
 
 pre > code {
   font-size: 0.9rem;
-  width: 52.5%;
-  margin-left: 2.5%;
+  max-width: calc(#{$paragraphLength} - 2rem);
+  margin-left: 2rem;
   overflow-x: auto;
   display: block;
 }
@@ -509,9 +508,9 @@ input.margin-toggle {
     width: 100%;
   }
 
-  pre > code {
-    width: 97%;
-  }
+  // pre > code {
+  //   width: 97%;
+  // }
 
   section > ol {
     width: 90%;
