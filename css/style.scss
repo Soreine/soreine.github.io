@@ -212,7 +212,7 @@ a.polaroid {
     transform: rotate(6deg) translate(110px, -10px);
   }
 
-  @media (max-width: 760px) {
+  @media (max-width: $breakpoint) {
     margin: 40px auto;
 
     &:nth-child(4n + 1) {
@@ -249,6 +249,9 @@ a.polaroid {
 .music {
   #song-player {
     max-width: 50%;
+    @media (max-width: $breakpoint) {
+      max-width: 100%;
+    }
 
     .song-name {
       text-align: center;
@@ -374,7 +377,11 @@ a.polaroid {
       cursor: pointer;
       height: 2rem;
       width: 2rem;
+      flex: 0 0 auto;
       margin: 0 1rem;
+      @media (max-width: $breakpoint) {
+        margin: 0 0.5rem;
+      }
       display: flex;
       align-items: center;
       justify-content: center;
@@ -393,6 +400,9 @@ a.polaroid {
   hr {
     /* Same than ul */
     width: 50%;
+    @media (max-width: $breakpoint) {
+      width: 100%;
+    }
   }
 
   .playlist {

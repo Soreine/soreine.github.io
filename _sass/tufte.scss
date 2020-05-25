@@ -7,6 +7,7 @@ I replaced the fonts with a custom one */
 
 $background: #fcfcfc;
 $textColor: #333;
+$breakpoint: 720px;
 
 @mixin dotted($color: $textColor, $thickness: 10%) {
   text-decoration: none;
@@ -157,16 +158,29 @@ html {
   font-size: 15px;
 }
 
+$paragraphLength: 600px;
+
+// [60 + 600 + 60]
+
 body {
-  width: 87.5%;
+  width: 70%;
+  padding-left: 15%;
+  padding-right: 15%;
+  max-width: 1400px;
+
+  @media (max-width: $breakpoint) {
+    width: 84%;
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+
+  hyphens: auto;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 12.5%;
   font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD",
     "Book Antiqua", Georgia, serif;
   background-color: $background;
   color: $textColor;
-  max-width: 1400px;
   counter-reset: sidenote-counter;
 }
 
@@ -199,7 +213,8 @@ h3 {
 hr {
   display: block;
   height: 1px;
-  width: 55%;
+  width: 100%;
+  max-width: $paragraphLength;
   border: 0;
   border-top: 1px solid #ccc;
   margin: 1em 0;
@@ -275,12 +290,12 @@ blockquote {
 }
 
 blockquote p {
-  width: 55%;
+  max-width: $paragraphLength;
   margin-right: 40px;
 }
 
 blockquote footer {
-  width: 55%;
+  max-width: $paragraphLength;
   font-size: 1.1rem;
   text-align: right;
 }
@@ -288,13 +303,13 @@ blockquote footer {
 section > p,
 section > footer,
 section > table {
-  width: 55%;
+  max-width: $paragraphLength;
 }
 
 /* 50 + 5 == 55, to be the same width as paragraph */
 section > ol,
 section > ul {
-  width: 50%;
+  max-width: $paragraphLength;
   padding-inline-start: 5%;
   -webkit-padding-start: 5%;
 }
@@ -309,7 +324,7 @@ figure {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  max-width: 55%;
+  max-width: 600px;
   -webkit-margin-start: 0;
   -webkit-margin-end: 0;
   margin: 0 0 3em 0;
@@ -486,13 +501,7 @@ input.margin-toggle {
   height: 100%;
 }
 
-@media (max-width: 760px) {
-  body {
-    width: 84%;
-    padding-left: 8%;
-    padding-right: 8%;
-  }
-
+@media (max-width: $breakpoint) {
   hr,
   section > p,
   section > footer,
