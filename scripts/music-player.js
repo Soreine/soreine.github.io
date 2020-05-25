@@ -1,12 +1,8 @@
 const EPSILON = 1e-5; // Amplitude does not like 0/100 percentage
+const playerVisible = false;
 
 // Bind progress bar events
-const { onPlay, onTimeUpdate, watchBuffered } = (() => {
-  const onPlay = () => {
-    // Reveal player
-    document.getElementById("song-player").className = "";
-  };
-
+const { onTimeUpdate, watchBuffered } = (() => {
   const progressBar = (() => {
     const p = document.getElementById("custom-progress-bar");
     const played = p.querySelector(".progress-played");
@@ -79,11 +75,11 @@ const { onPlay, onTimeUpdate, watchBuffered } = (() => {
   window.addEventListener("mouseup", stopDragging);
   window.addEventListener("mousemove", mouseMoving);
 
-  return { onPlay, onTimeUpdate, watchBuffered };
+  return { onTimeUpdate, watchBuffered };
 })();
 
 // Bind download button
-const onSongChange = (() => {
+const updateDownloadButton = (() => {
   const download = document.getElementById("download");
   function onSongChange() {
     const song = Amplitude.getActiveSongMetadata();
@@ -93,25 +89,40 @@ const onSongChange = (() => {
   return onSongChange;
 })();
 
-Amplitude.init({
-  songs: [{}],
-  playlists: {
-    main_songs: {
-      songs: window.main_songs,
-    },
-  },
-  callbacks: {
-    play: onPlay,
-    timeupdate: onTimeUpdate,
-    song_change: onSongChange,
-  },
-  bindings: {
-    "32": "play_pause",
-  },
-  autoplay: false,
-  // debug: true,
-  // preload: true,
-});
+const onPlay = () => {
+  // Reveal player
+  document.getElementById("song-player").className = "";
+  playerVisible = true;
+};
+
+// Scroll to song on click
+const scrollToSong = () => {
+  const songs = document.querySelectorAll(".song");
+  let currentSong = null;
+
+  songs.forEach((song) => {
+    const playlist = song
+      .querySelector(".title")
+      .getAttribute("data-amplitude-playlist");
+    const index = song
+      .querySelector(".title")
+      .getAttribute("data-amplitude-song-index");
+
+    if (
+      playlist == Amplitude.getActivePlaylist() &&
+      index == Amplitude.getActiveSongMetadata().index
+    ) {
+      currentSong = song;
+    }
+  });
+
+  if (currentSong) {
+    currentSong.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+  }
+};
 
 // Bind keys
 (() => {
@@ -141,6 +152,29 @@ Amplitude.init({
     e.preventDefault();
   });
 })();
+
+Amplitude.init({
+  songs: [{}],
+  playlists: {
+    main_songs: {
+      songs: window.main_songs,
+    },
+  },
+  callbacks: {
+    play: onPlay,
+    timeupdate: onTimeUpdate,
+    song_change: () => {
+      updateDownloadButton();
+      scrollToSong();
+    },
+  },
+  bindings: {
+    "32": "play_pause",
+  },
+  autoplay: false,
+  // debug: true,
+  // preload: true,
+});
 
 Amplitude.skipTo(0, 0, "main_songs");
 Amplitude.pause();
