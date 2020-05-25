@@ -35,8 +35,15 @@ preview: "/images/art/mandala-preview.png"
       figure img {
         box-shadow: none;
         background: transparent;
+        max-height: initial !important;
       }
 
+      #colored {
+        position: relative;
+      }
+      #gray {
+        position: absolute;
+      }
       #gray,
       #colored {
         image-rendering: optimizeSpeed;
@@ -46,23 +53,22 @@ preview: "/images/art/mandala-preview.png"
         image-rendering: pixelated;
         -ms-interpolation-mode: nearest-neighbor;
 
-        position: absolute;
         left: 0;
         top: 0;
-
-        height: 299px;
-        width: 299px;
       }
       #image-container {
         position: relative;
 
         display: inline-block;
-        padding: 1%;
+      }
 
+      #gray,
+      #colored,
+      #image-container {
         height: 299px;
         width: 299px;
       }
-      @media (min-device-width: 800px) {
+      @media (min-device-width: 640px) {
         #gray,
         #colored,
         #image-container {

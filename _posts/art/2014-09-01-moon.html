@@ -11,6 +11,7 @@ preview: "/images/art/moonlight-sonata.png"
 <section>
   <figure>
     <img
+      id="moon"
       class="pixel-perfect"
       alt="Moonlight Sonata"
       src="/images/art/moonlight-sonata.png"
@@ -19,4 +20,18 @@ preview: "/images/art/moonlight-sonata.png"
       <figcaption>Moonlight Sonata (early logo for my website)</figcaption>
     </a>
   </figure>
+
+  <style>
+    #moon {
+      height: 180px;
+      width: 180px;
+      max-height: initial;
+    }
+    @media (min-width: 450px) {
+      #moon {
+        height: 360px;
+        width: 360px;
+      }
+    }
+  </style>
 </section>

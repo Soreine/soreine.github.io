@@ -158,6 +158,25 @@ figcaption {
   }
 }
 
+.post.art {
+  figure {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+  }
+
+  img,
+  canvas,
+  video {
+    width: auto;
+    height: auto;
+    max-height: 85vh;
+    // height: 100%;
+  }
+}
+
 // For images, videos, etc.
 a.wrapper {
   @include no-underline();

@@ -362,56 +362,11 @@ a,
   @include underlined($textColor);
 }
 
-/* Sidenotes, margin notes, figures, captions */
 img,
-video {
+video,
+canvas {
   max-width: 100%;
 }
-
-// .sidenote,
-// .marginnote {
-//   float: right;
-//   clear: right;
-//   margin-right: -60%;
-//   width: 50%;
-//   margin-top: 0;
-//   margin-bottom: 0;
-//   font-size: 1.1rem;
-//   line-height: 1.3;
-//   vertical-align: baseline;
-//   position: relative;
-// }
-
-// .sidenote-number {
-//   counter-increment: sidenote-counter;
-// }
-
-// .sidenote-number:after,
-// .sidenote:before {
-//   font-family: et-book-roman-old-style;
-//   position: relative;
-//   vertical-align: baseline;
-// }
-
-// .sidenote-number:after {
-//   content: counter(sidenote-counter);
-//   font-size: 1rem;
-//   top: -0.5rem;
-//   left: 0.1rem;
-// }
-
-// .sidenote:before {
-//   content: counter(sidenote-counter) " ";
-//   font-size: 1rem;
-//   top: -0.5rem;
-// }
-
-// blockquote .sidenote,
-// blockquote .marginnote {
-//   margin-right: -82%;
-//   min-width: 59%;
-//   text-align: left;
-// }
 
 div.fullwidth,
 table.fullwidth {
@@ -477,14 +432,6 @@ input.margin-toggle {
   display: none;
 }
 
-// label.sidenote-number {
-//   display: inline;
-// }
-
-// label.margin-toggle:not(.sidenote-number) {
-//   display: none;
-// }
-
 .iframe-wrapper {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 */
@@ -508,27 +455,9 @@ input.margin-toggle {
     width: 100%;
   }
 
-  // pre > code {
-  //   width: 97%;
-  // }
-
-  section > ol {
-    width: 90%;
-  }
-
-  section > ul {
-    width: 90%;
-  }
-
   figure {
-    max-width: 90%;
+    max-width: 100%;
   }
-
-  // figcaption,
-  // figure.fullwidth figcaption {
-  //   margin-right: 0%;
-  //   max-width: none;
-  // }
 
   blockquote {
     margin-left: 1.5em;
@@ -540,27 +469,6 @@ input.margin-toggle {
     width: 100%;
   }
 
-  // label.margin-toggle:not(.sidenote-number) {
-  //   display: inline;
-  // }
-
-  // .sidenote,
-  // .marginnote {
-  //   display: none;
-  // }
-
-  // .margin-toggle:checked + .sidenote,
-  // .margin-toggle:checked + .marginnote {
-  //   display: block;
-  //   float: left;
-  //   left: 1rem;
-  //   clear: both;
-  //   width: 95%;
-  //   margin: 1rem 2.5%;
-  //   vertical-align: baseline;
-  //   position: relative;
-  // }
-
   label {
     cursor: pointer;
   }
@@ -568,10 +476,5 @@ input.margin-toggle {
   div.table-wrapper,
   table {
     width: 85%;
-  }
-
-  img,
-  video {
-    width: 100%;
   }
 }
