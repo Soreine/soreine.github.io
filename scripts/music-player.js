@@ -116,7 +116,7 @@ const scrollToSong = () => {
     }
   });
 
-  if (currentSong) {
+  if (currentSong && playerVisible) {
     currentSong.scrollIntoView({
       behavior: "smooth",
       block: "center",
