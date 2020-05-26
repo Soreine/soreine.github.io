@@ -261,6 +261,7 @@ p {
 /* Chapter Epigraphs */
 div.epigraph {
   margin: 5em 0;
+  max-width: $paragraphLength;
 }
 
 div.epigraph > blockquote {

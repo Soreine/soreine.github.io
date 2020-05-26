@@ -36,7 +36,6 @@ body:after {
 }
 
 [data-from][data-revealed="true"] {
-  display: initial;
   animation-name: fadein;
   animation-timing-function: ease;
   animation-duration: 1s;
