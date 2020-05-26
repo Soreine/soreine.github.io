@@ -159,6 +159,12 @@ Amplitude.init({
     main_songs: {
       songs: window.main_songs,
     },
+    unfinished_songs: {
+      songs: window.unfinished_songs,
+    },
+    archived_songs: {
+      songs: window.archived_songs,
+    },
   },
   callbacks: {
     play: onPlay,

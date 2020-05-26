@@ -1,0 +1,24 @@
+<ul class="playlist">
+  {% for item in include.songs %}
+  <li
+    class="song amplitude-play-pause"
+    data-amplitude-song-index="{{ forloop.index0 }}"
+    data-amplitude-playlist="{{include.name}}"
+  >
+    <span class="song-index sans">
+      <span class="index">{{ forloop.index }}</span>
+      {% include eq-bars.svg.html %}
+    </span>
+    <span
+      class="title amplitude-name"
+      data-amplitude-song-info="name"
+      data-amplitude-song-index="{{ forloop.index0 }}"
+      data-amplitude-playlist="{{include.name}}"
+    >
+      {{ item.name }}
+    </span>
+    <span class="duration sans">{{ item.duration }}</span>
+    <audio controls><source src="{{item.url}}" type="audio/mpeg" /></audio>
+  </li>
+  {% endfor %}
+</ul>
