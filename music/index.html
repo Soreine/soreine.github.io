@@ -84,7 +84,7 @@ main_songs:
 
   <hr />
 
-  <div id="song-player" class="hidden">
+  <div id="song-player" class="">
     <div class="inner">
       <div class="song-name" data-amplitude-song-info="name"></div>
 
@@ -98,16 +98,16 @@ main_songs:
         >
           {% include download.svg.html %}
         </a>
-        <div class="amplitude-prev" title="Previous">
+        <div class="amplitude-prev" title="Previous song">
           {% include skip-back.svg.html %}
         </div>
         <div class="amplitude-play-pause" title="Play/Plause">
           {% include play.svg.html %}{% include pause.svg.html %}
         </div>
-        <div class="amplitude-next" title="Next">
+        <div class="amplitude-next" title="Next song">
           {% include skip-forward.svg.html %}
         </div>
-        <div class="amplitude-repeat" title="Repeat song">
+        <div class="amplitude-repeat-song" title="Repeat song">
           {% include repeat.svg.html %}
         </div>
       </div>

@@ -60,6 +60,12 @@ article.music {
         height: 1.2rem;
         width: 1.2rem;
       }
+
+      .amplitude-repeat-song-on {
+        .feather {
+          stroke-width: 0.2rem;
+        }
+      }
     }
 
     #song-progress {
@@ -164,7 +170,7 @@ article.music {
     .amplitude-play-pause,
     .amplitude-prev,
     .amplitude-next,
-    .amplitude-repeat,
+    .amplitude-repeat-song,
     .download {
       cursor: pointer;
       height: 2rem;
