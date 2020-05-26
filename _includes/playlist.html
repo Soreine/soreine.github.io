@@ -18,7 +18,13 @@
       {{ item.name }}
     </span>
     <span class="duration sans">{{ item.duration }}</span>
-    <audio controls><source src="{{item.url}}" type="audio/mpeg" /></audio>
+    <audio controls>
+      {% if item.mp3 %}
+      <source src="{{item.mp3}}" type="audio/mpeg" />
+      {% endif %} {% if item.m4a %}
+      <source src="{{item.m4a}}" type="audio/mp4" />
+      {% endif %}
+    </audio>
   </li>
   {% endfor %}
 </ul>

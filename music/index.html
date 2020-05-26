@@ -8,53 +8,73 @@ permalink: /music/
 main_songs:
   - name: Into the Open
     duration: "2:52"
-    url: https://storage.googleapis.com/soreine-dev-songs/Into-The-Open.mp3
+    mp3: https://storage.googleapis.com/soreine-dev-songs/Into-The-Open.mp3
 
   - name: Seashell Manor
     duration: "3:51"
-    url: https://storage.googleapis.com/soreine-dev-songs/Seashell-Manor.mp3
+    mp3: https://storage.googleapis.com/soreine-dev-songs/Seashell-Manor.mp3
 
   - name: Her Dog Was Named Cheryl
     duration: "2:50"
-    url: https://storage.googleapis.com/soreine-dev-songs/Her-Dog-Was-Named-Cheryl.mp3
+    mp3: https://storage.googleapis.com/soreine-dev-songs/Her-Dog-Was-Named-Cheryl.mp3
 
   - name: Awakening
     duration: "2:35"
-    url: https://storage.googleapis.com/soreine-dev-songs/Awakening.mp3
+    mp3: https://storage.googleapis.com/soreine-dev-songs/Awakening.mp3
 
   - name: Pan Pleut Mousse
     duration: "3:50"
-    url: https://storage.googleapis.com/soreine-dev-songs/Pan-Pleut-Mousse.mp3
+    mp3: https://storage.googleapis.com/soreine-dev-songs/Pan-Pleut-Mousse.mp3
 
   - name: Le Petit Chapardeur
     duration: "2:17"
-    url: https://storage.googleapis.com/soreine-dev-songs/Le-Petit-Chapardeur.mp3
+    mp3: https://storage.googleapis.com/soreine-dev-songs/Le-Petit-Chapardeur.mp3
 
   - name: Étrangement Familier
     duration: "4:13"
-    url: https://storage.googleapis.com/soreine-dev-songs/Etrangement-Familier.mp3
+    mp3: https://storage.googleapis.com/soreine-dev-songs/Etrangement-Familier.mp3
 
   - name: Cloudfall Village
     duration: "2:30"
-    url: https://storage.googleapis.com/soreine-dev-songs/Cloudfall-Village.mp3
+    mp3: https://storage.googleapis.com/soreine-dev-songs/Cloudfall-Village.mp3
 
   - name: Cloudfall Village - Storm Remix
     duration: "2:38"
-    url: https://storage.googleapis.com/soreine-dev-songs/CloudLight.mp3
+    mp3: https://storage.googleapis.com/soreine-dev-songs/CloudLight.mp3
 
 archived_songs:
   - name: Misty Goodness
     duration: "3:39"
-    url: https://storage.googleapis.com/soreine-dev-songs/Misty-Goodness.mp3
+    mp3: https://storage.googleapis.com/soreine-dev-songs/Misty-Goodness.mp3
 
   - name: When Besaid Cries (from FFX)
     duration: "4:11"
-    url: https://storage.googleapis.com/soreine-dev-songs/When-Besaid-Cries.mp3
+    mp3: https://storage.googleapis.com/soreine-dev-songs/When-Besaid-Cries.mp3
 
 unfinished_songs:
+  - name: Cotton White
+    duration: "1:27"
+    mp3: https://storage.googleapis.com/soreine-dev-songs/Cotton-White.mp3
+
+  - name: Death of the Spirit
+    duration: "2:19"
+    mp3: https://storage.googleapis.com/soreine-dev-songs/DeathOfTheSpirit.mp3
+
+  - name: Fern Green
+    duration: "0:32"
+    mp3: https://storage.googleapis.com/soreine-dev-songs/Fern-Green.mp3
+
+  - name: Marionette
+    duration: "0:25"
+    m4a: https://storage.googleapis.com/soreine-dev-songs/Marionnette.trimmed.m4a
+
+  - name: Sand Yellow
+    duration: "0:44"
+    m4a: https://storage.googleapis.com/soreine-dev-songs/Sand-Yellow.m4a
+
   - name: Horizontal Spaining
-    duration: "1:14"
-    url: https://storage.googleapis.com/soreine-dev-songs/Horizontal-Spaining.mp3
+    duration: "1:15"
+    mp3: https://storage.googleapis.com/soreine-dev-songs/Horizontal-Spaining.mp3
 ---
 
 <section>
@@ -67,7 +87,7 @@ unfinished_songs:
   <hr />
   {% include playlist.html songs=page.main_songs name="main_songs" %}
 
-  <h3>Fragments</h3>
+  <h3>Fragments and recordings</h3>
   <hr />
   {% include playlist.html songs=page.unfinished_songs name="unfinished_songs"
   %}
@@ -127,7 +147,7 @@ unfinished_songs:
   {% for item in page.main_songs %}
   {
     name: "{{item.name}}",
-    url: "{{item.url}}"
+    url: "{{item.mp3 | default: item.m4a }}"
   },
   {% endfor %}
   ];
@@ -137,7 +157,7 @@ unfinished_songs:
   {% for item in page.archived_songs %}
   {
     name: "{{item.name}}",
-    url: "{{item.url}}"
+    url: "{{item.mp3 | default: item.m4a }}"
   },
   {% endfor %}
   ];
@@ -147,7 +167,7 @@ unfinished_songs:
   {% for item in page.unfinished_songs %}
   {
     name: "{{item.name}}",
-    url: "{{item.url}}"
+    url: "{{item.mp3 | default: item.m4a }}"
   },
   {% endfor %}
   ];
