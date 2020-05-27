@@ -8,7 +8,7 @@
   },
   "scripts": {
     "predeploy": "bundle exec jekyll build",
-    "deploy": "gh-pages -d _site"
+    "deploy": "gh-pages -b master -d _site"
   },
   "repository": {
     "type": "git",
