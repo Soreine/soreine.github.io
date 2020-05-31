@@ -13,6 +13,27 @@
   <!-- CSS -->
   <link rel="stylesheet" href="/css/style.css" />
 
+  <link
+    rel="preload"
+    href="/css/et-book/et-book-roman-line-figures/et-book-roman-line-figures.woff"
+    as="font"
+    type="font/woff"
+    crossorigin
+  />
+
+  <!-- https://instant.page/ -->
+  <script src="/scripts/instantpage-3.0.0.js" type="module" defer></script>
+
+  
+  <link
+    rel="preload"
+    href="/css/et-book/et-book-bold-line-figures/et-book-bold-line-figures.woff"
+    as="font"
+    type="font/woff"
+    crossorigin
+  />
+   
+
   <!-- <link rel="canonical" href="https://soreine.dev/music/">
   <link rel="alternate" type="application/rss+xml" title="Soreine" href="https://soreine.dev/feed.xml" />
   -->
@@ -29,8 +50,6 @@
   <meta property="og:description" content="Soreine's personal website" />
 </head>
 
-  <!-- https://instant.page/ -->
-  <script src="/scripts/instantpage-3.0.0.js" type="module" defer></script>
   <body>
     <article class="music">
       <!-- https://github.com/git-no/jekyll-breadcrumbs -->
@@ -1619,5 +1638,7 @@
 <script src="../scripts/music-player.js"></script>
 
     </article>
+    <!-- Must be in the page, to block rendering, and after the rest of the content -->
+    <script src="/scripts/revealing-words.js"></script>
   </body>
 </html>

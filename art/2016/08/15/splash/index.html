@@ -13,6 +13,19 @@
   <!-- CSS -->
   <link rel="stylesheet" href="/css/style.css" />
 
+  <link
+    rel="preload"
+    href="/css/et-book/et-book-roman-line-figures/et-book-roman-line-figures.woff"
+    as="font"
+    type="font/woff"
+    crossorigin
+  />
+
+  <!-- https://instant.page/ -->
+  <script src="/scripts/instantpage-3.0.0.js" type="module" defer></script>
+
+   
+
   <!-- <link rel="canonical" href="https://soreine.dev/art/2016/08/15/splash/">
   <link rel="alternate" type="application/rss+xml" title="Soreine" href="https://soreine.dev/feed.xml" />
   -->
@@ -29,8 +42,6 @@
   <meta property="og:description" content="Soreine's personal website" />
 </head>
 
-  <!-- https://instant.page/ -->
-  <script src="/scripts/instantpage-3.0.0.js" type="module" defer></script>
   <body>
     <article class="art">
       <!-- https://github.com/git-no/jekyll-breadcrumbs -->
@@ -207,5 +218,7 @@
 </div>
 
     </article>
+    <!-- Must be in the page, to block rendering, and after the rest of the content -->
+    <script src="/scripts/revealing-words.js"></script>
   </body>
 </html>

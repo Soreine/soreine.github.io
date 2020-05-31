@@ -1,3 +1,5 @@
+const REVEAL_TIMEOUT = 200; // same than underline fade-out time
+
 function setRevealed(elements, value) {
   elements.forEach((el) => {
     el.setAttribute("data-revealed", value);
@@ -20,7 +22,7 @@ links.forEach((link) => {
   };
 
   const onEnter = (event) => {
-    revealTimeout = setTimeout(reveal, 200);
+    revealTimeout = setTimeout(reveal, REVEAL_TIMEOUT);
   };
 
   const onLeave = (event) => {
@@ -33,8 +35,14 @@ links.forEach((link) => {
   }
 
   setRevealed([link, ...reveals], "false");
-  link.addEventListener("click", reveal);
-  link.addEventListener("touchstart", reveal);
-  link.addEventListener("mouseover", onEnter);
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    reveal();
+  });
+  link.addEventListener("touchstart", (e) => {
+    e.preventDefault();
+    reveal();
+  });
+  link.addEventListener("mouseenter", onEnter);
   link.addEventListener("mouseleave", onLeave);
 });
