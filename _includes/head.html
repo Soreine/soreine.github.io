@@ -11,6 +11,34 @@
   <!-- CSS -->
   <link rel="stylesheet" href="/css/style.css" />
 
+  <link
+    rel="preload"
+    href="/css/et-book/et-book-roman-line-figures/et-book-roman-line-figures.woff"
+    as="font"
+    type="font/woff"
+    crossorigin
+  />
+
+  <!-- https://instant.page/ -->
+  <script src="/scripts/instantpage-3.0.0.js" type="module" defer></script>
+
+  {% if page.category == "music" %}
+  <link
+    rel="preload"
+    href="/css/et-book/et-book-bold-line-figures/et-book-bold-line-figures.woff"
+    as="font"
+    type="font/woff"
+    crossorigin
+  />
+  {% endif %} {% if page.reveals %}
+  <link
+    rel="preload"
+    href="/scripts/revealing-words.js"
+    as="script"
+    crossorigin
+  />
+  {% endif %}
+
   <!-- <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
   -->
