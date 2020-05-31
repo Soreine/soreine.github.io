@@ -6,20 +6,20 @@
 @import "music.scss";
 // Note: @use does not seem to work well in Jekyll :/
 
-// Slight yellow filter
-body:after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgb(255, 255, 248);
-  mix-blend-mode: multiply;
-  // opacity: 0.03;
-  pointer-events: none;
-  z-index: 1000;
-}
+// Slight yellow filter. Disabled because of performance issue on Windows Firefox
+// body:after {
+//   content: "";
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   background: rgb(255, 255, 248);
+//   mix-blend-mode: multiply;
+//   // opacity: 0.03;
+//   pointer-events: none;
+//   z-index: 1000;
+// }
 
 [data-reveal][data-revealed="false"] {
   @include dotted();
