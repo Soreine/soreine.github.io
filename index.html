@@ -24,13 +24,6 @@
   <!-- https://instant.page/ -->
   <script src="/scripts/instantpage-3.0.0.js" type="module" defer></script>
 
-   
-  <link
-    rel="preload"
-    href="/scripts/revealing-words.js"
-    as="script"
-    crossorigin
-  />
   
 
   <!-- <link rel="canonical" href="https://soreine.dev/">
@@ -216,7 +209,60 @@
 </section>
 
     </article>
-    <!-- Must be in the page, to block rendering, and after the rest of the content -->
-    <script src="/scripts/revealing-words.js"></script>
+
+    
+    <!-- Must be in the page, to block rendering, and after the rest of the content, to modify it -->
+    <!-- Inline this script to optimize fetching, and beginning of execution. It must be added in at the end of HTML body to block rendering -->
+<script>
+  const REVEAL_TIMEOUT = 200; // same than underline fade-out time
+
+  function setRevealed(elements, value) {
+    elements.forEach((el) => {
+      el.setAttribute("data-revealed", value);
+    });
+  }
+  const links = document.querySelectorAll("[data-reveal]");
+
+  links.forEach((link) => {
+    const key = link.getAttribute("data-reveal");
+    const memo = link.hasAttribute("data-memo");
+    const reveals = document.querySelectorAll('[data-from="' + key + '"]');
+
+    let revealTimeout = null;
+
+    const reveal = () => {
+      if (memo) {
+        localStorage.setItem("revealed" + key, true);
+      }
+      setRevealed([link, ...reveals], "true");
+    };
+
+    const onEnter = (event) => {
+      revealTimeout = setTimeout(reveal, REVEAL_TIMEOUT);
+    };
+
+    const onLeave = (event) => {
+      clearTimeout(revealTimeout);
+    };
+
+    if (memo) {
+      const wasRevealed = localStorage.getItem("revealed" + key);
+      if (wasRevealed) return;
+    }
+
+    setRevealed([link, ...reveals], "false");
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      reveal();
+    });
+    link.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      reveal();
+    });
+    link.addEventListener("mouseenter", onEnter);
+    link.addEventListener("mouseleave", onLeave);
+  });
+</script>
+ 
   </body>
 </html>
