@@ -1,5 +1,5 @@
 const EPSILON = 1e-5; // Amplitude does not like 0/100 percentage
-const playerVisible = false;
+let playerVisible = false;
 
 // Bind progress bar events
 const { onTimeUpdate, watchBuffered } = (() => {
@@ -34,10 +34,12 @@ const { onTimeUpdate, watchBuffered } = (() => {
   }
 
   function mouseMoving(e) {
-    if (!isDragging) return;
+    requestAnimationFrame(() => {
+      if (!isDragging) return;
 
-    mousePercentage = getMouseEventPercentage(e);
-    updateBar(progressBar.played, mousePercentage);
+      mousePercentage = getMouseEventPercentage(e);
+      updateBar(progressBar.played, mousePercentage);
+    });
   }
 
   function watchBuffered(x = 0) {
@@ -97,10 +99,11 @@ const onPlay = () => {
 
 // Scroll to song on click
 const scrollToSong = () => {
-  const songs = document.querySelectorAll(".song");
-  let currentSong = null;
+  if (Amplitude.getPlayerState() !== "playing") return;
 
-  songs.forEach((song) => {
+  const songs = Array.from(document.querySelectorAll(".song"));
+
+  const currentSong = songs.find((song) => {
     const playlist = song
       .querySelector(".title")
       .getAttribute("data-amplitude-playlist");
@@ -108,12 +111,10 @@ const scrollToSong = () => {
       .querySelector(".title")
       .getAttribute("data-amplitude-song-index");
 
-    if (
+    return (
       playlist == Amplitude.getActivePlaylist() &&
       index == Amplitude.getActiveSongMetadata().index
-    ) {
-      currentSong = song;
-    }
+    );
   });
 
   if (currentSong && playerVisible) {
