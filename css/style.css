@@ -657,7 +657,8 @@ article.music {
     font-size: 1.2rem;
     margin: 0 !important;
     padding: 1rem 0;
-    cursor: pointer; }
+    cursor: pointer;
+    user-select: none; }
   article.music .title,
   article.music .song-index {
     transition: transform 0.4s ease-out; }
