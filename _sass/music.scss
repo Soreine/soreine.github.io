@@ -20,6 +20,7 @@ article.music {
     margin: 0 !important;
     padding: 1rem 0;
     cursor: pointer;
+    user-select: none;
   }
 
   .title,
