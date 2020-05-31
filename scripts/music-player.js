@@ -1,5 +1,6 @@
 const EPSILON = 1e-5; // Amplitude does not like 0/100 percentage
 let playerVisible = false;
+let playerInitialized = false; // true at the end of this script
 
 // Bind progress bar events
 const { onTimeUpdate, watchBuffered } = (() => {
@@ -100,6 +101,8 @@ const onPlay = () => {
 // Scroll to song on click
 const scrollToSong = () => {
   if (Amplitude.getPlayerState() !== "playing") return;
+  // Ignore initialization call
+  if (!playerInitialized) return;
 
   const songs = Array.from(document.querySelectorAll(".song"));
 
@@ -117,13 +120,20 @@ const scrollToSong = () => {
     );
   });
 
-  if (currentSong && playerVisible) {
+  if (currentSong) {
     currentSong.scrollIntoView({
       behavior: "smooth",
       block: "center",
     });
   }
 };
+
+function updatePageTitle() {
+  // Ignore initialization call
+  if (!playerInitialized) return;
+  const song = Amplitude.getActiveSongMetadata();
+  document.title = song.name;
+}
 
 // Bind keys
 (() => {
@@ -168,11 +178,15 @@ Amplitude.init({
     },
   },
   callbacks: {
-    play: onPlay,
+    play: () => {
+      onPlay();
+      updatePageTitle();
+    },
     timeupdate: onTimeUpdate,
     song_change: () => {
       updateDownloadButton();
       scrollToSong();
+      updatePageTitle();
     },
   },
   bindings: {
@@ -187,3 +201,5 @@ Amplitude.skipTo(0, 0, "main_songs");
 Amplitude.pause();
 
 watchBuffered();
+
+playerInitialized = true;
