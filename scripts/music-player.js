@@ -100,32 +100,35 @@ const onPlay = () => {
 
 // Scroll to song on click
 const scrollToSong = () => {
-  if (Amplitude.getPlayerState() !== "playing") return;
-  // Ignore initialization call
-  if (!playerInitialized) return;
+  // Wait for player state to be fully updated
+  setTimeout(() => {
+    if (Amplitude.getPlayerState() !== "playing") return;
+    // Ignore initialization call
+    if (!playerInitialized) return;
 
-  const songs = Array.from(document.querySelectorAll(".song"));
+    const songs = Array.from(document.querySelectorAll(".song"));
 
-  const currentSong = songs.find((song) => {
-    const playlist = song
-      .querySelector(".title")
-      .getAttribute("data-amplitude-playlist");
-    const index = song
-      .querySelector(".title")
-      .getAttribute("data-amplitude-song-index");
+    const currentSong = songs.find((song) => {
+      const playlist = song
+        .querySelector(".title")
+        .getAttribute("data-amplitude-playlist");
+      const index = song
+        .querySelector(".title")
+        .getAttribute("data-amplitude-song-index");
 
-    return (
-      playlist == Amplitude.getActivePlaylist() &&
-      index == Amplitude.getActiveSongMetadata().index
-    );
-  });
-
-  if (currentSong) {
-    currentSong.scrollIntoView({
-      behavior: "smooth",
-      block: "center",
+      return (
+        playlist == Amplitude.getActivePlaylist() &&
+        index == Amplitude.getActiveSongMetadata().index
+      );
     });
-  }
+
+    if (currentSong) {
+      currentSong.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }
+  }, 0);
 };
 
 function updatePageTitle() {
