@@ -5,7 +5,9 @@
     <article class="{{ page.category }}">
       {% include nav-breadcrumbs.html %} {{ content }}
     </article>
-    <!-- Must be in the page, to block rendering, and after the rest of the content -->
-    <script src="/scripts/revealing-words.js"></script>
+
+    {% if page.reveals %}
+    <!-- Must be in the page, to block rendering, and after the rest of the content, to modify it -->
+    {% include revealing-words.js.html %} {% endif %}
   </body>
 </html>
