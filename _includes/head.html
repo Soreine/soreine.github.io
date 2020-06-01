@@ -32,6 +32,26 @@
   />
   {% endif %}
 
+  <!--  -->
+  {% if page.background %}
+  <!-- Chrome, Firefox OS and Opera -->
+  <meta name="theme-color" content="{{ page.background }}" />
+  <!-- Windows Phone -->
+  <meta name="msapplication-navbutton-color" content="{{ page.background }}" />
+  <!-- iOS Safari -->
+  <meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="{{ page.background }}"
+  />
+  {% else %}
+  <!-- Chrome, Firefox OS and Opera -->
+  <meta name="theme-color" content="#fcfcfc" />
+  <!-- Windows Phone -->
+  <meta name="msapplication-navbutton-color" content="#fcfcfc" />
+  <!-- iOS Safari -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="#fcfcfc" />
+  {% endif %}
+
   <!-- <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
   -->
