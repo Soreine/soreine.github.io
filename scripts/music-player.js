@@ -200,6 +200,7 @@ Amplitude.init({
   // preload: true,
 });
 
+Amplitude.setVolume(100);
 Amplitude.skipTo(0, 0, "main_songs");
 Amplitude.pause();
 
