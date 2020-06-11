@@ -1,5 +1,6 @@
+/* global Amplitude */
 const EPSILON = 1e-5; // Amplitude does not like 0/100 percentage
-let playerVisible = false;
+// let playerVisible = false;
 let playerInitialized = false; // true at the end of this script
 
 // Bind progress bar events
@@ -26,7 +27,7 @@ const { onTimeUpdate, watchBuffered } = (() => {
     mousePercentage = getMouseEventPercentage(e);
     updateBar(progressBar.played, mousePercentage);
   }
-  function stopDragging(e) {
+  function stopDragging() {
     if (isDragging) {
       Amplitude.setSongPlayedPercentage(mousePercentage * 100);
     }
@@ -43,7 +44,7 @@ const { onTimeUpdate, watchBuffered } = (() => {
     });
   }
 
-  function watchBuffered(x = 0) {
+  function watchBuffered() {
     window.requestAnimationFrame(() => {
       const percentage = Amplitude.getBuffered() / 100;
       updateBar(progressBar.buffered, percentage);
@@ -92,19 +93,21 @@ const updateDownloadButton = (() => {
   return onSongChange;
 })();
 
-const onPlay = () => {
+const revealPlayer = () => {
   // Reveal player
   document.getElementById("song-player").className = "";
-  playerVisible = true;
+  // playerVisible = true;
 };
 
 // Scroll to song on click
-const scrollToSong = () => {
+const scrollToSong = (force = false) => {
   // Wait for player state to be fully updated
-  setTimeout(() => {
-    if (Amplitude.getPlayerState() !== "playing") return;
-    // Ignore initialization call
-    if (!playerInitialized) return;
+  requestAnimationFrame(() => {
+    if (!force) {
+      if (Amplitude.getPlayerState() !== "playing") return;
+      // Ignore initialization call
+      if (!playerInitialized) return;
+    }
 
     const songs = Array.from(document.querySelectorAll(".song"));
 
@@ -128,14 +131,42 @@ const scrollToSong = () => {
         block: "center",
       });
     }
-  }, 0);
+  });
 };
 
 function updatePageTitle() {
   // Ignore initialization call
   if (!playerInitialized) return;
   const song = Amplitude.getActiveSongMetadata();
+  const playlist = Amplitude.getActivePlaylist();
   document.title = song.name;
+
+  setSearchParam({
+    playlist,
+    track: song.index.toString(),
+  });
+}
+
+function getSearchParam(key, value) {
+  let params = new window.URLSearchParams(window.location.search);
+  return params.get(key, value);
+}
+
+// https://stackoverflow.com/questions/1090948/change-url-parameters
+function setSearchParam(inputParams) {
+  let url = new URL(window.location.href);
+  let params = new window.URLSearchParams(window.location.search);
+  Object.keys(inputParams).forEach((key) => {
+    const value = inputParams[key];
+    if (value === undefined || value === null) {
+      params.delete(key);
+    } else {
+      params.set(key, value);
+    }
+  });
+
+  url.search = params;
+  window.history.replaceState({ url: url.toString() }, null, url.toString());
 }
 
 // Bind keys
@@ -170,19 +201,19 @@ function updatePageTitle() {
 Amplitude.init({
   songs: [{}],
   playlists: {
-    main_songs: {
-      songs: window.main_songs,
+    pieces: {
+      songs: window.pieces,
     },
-    unfinished_songs: {
-      songs: window.unfinished_songs,
+    fragments: {
+      songs: window.fragments,
     },
-    archived_songs: {
-      songs: window.archived_songs,
+    archived: {
+      songs: window.archived,
     },
   },
   callbacks: {
     play: () => {
-      onPlay();
+      revealPlayer();
       updatePageTitle();
     },
     timeupdate: onTimeUpdate,
@@ -200,10 +231,24 @@ Amplitude.init({
   // preload: true,
 });
 
-Amplitude.setVolume(100);
-Amplitude.skipTo(0, 0, "main_songs");
-Amplitude.pause();
+{
+  Amplitude.skipTo(0, 0, "pieces");
+  Amplitude.pause();
+  Amplitude.setVolume(100);
 
-watchBuffered();
+  watchBuffered();
 
-playerInitialized = true;
+  playerInitialized = true;
+
+  const playlistName = getSearchParam("playlist");
+  const track = getSearchParam("track");
+  if (playlistName !== "" && track !== "") {
+    Amplitude.skipTo(0, track, playlistName);
+    Amplitude.pause();
+    setTimeout(() => {
+      scrollToSong(true);
+      revealPlayer();
+      Amplitude.pause();
+    }, 200);
+  }
+}

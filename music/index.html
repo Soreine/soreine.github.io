@@ -5,7 +5,7 @@ comments: false
 category: music
 permalink: /music/
 
-main_songs:
+pieces:
   - name: Into the Open
     duration: "2:52"
     mp3: https://storage.googleapis.com/soreine-dev-songs/Into-The-Open.mp3
@@ -38,7 +38,7 @@ main_songs:
     duration: "2:30"
     mp3: https://storage.googleapis.com/soreine-dev-songs/Cloudfall-Village.mp3
 
-archived_songs:
+archived:
   - name: Misty Goodness
     duration: "3:39"
     mp3: https://storage.googleapis.com/soreine-dev-songs/Misty-Goodness.mp3
@@ -51,7 +51,7 @@ archived_songs:
     duration: "2:38"
     mp3: https://storage.googleapis.com/soreine-dev-songs/CloudLight.mp3
 
-unfinished_songs:
+fragments:
   - name: Crystal Silence (Chick Corea)
     duration: "7:14"
     mp3: https://storage.googleapis.com/soreine-dev-songs/crystal-silence.mp3
@@ -135,16 +135,15 @@ unfinished_songs:
 
   <h2>Pieces</h2>
   <hr />
-  {% include playlist.html songs=page.main_songs name="main_songs" %}
+  {% include playlist.html songs=page.pieces name="pieces" %}
 
   <h3>Fragments and recordings</h3>
   <hr />
-  {% include playlist.html songs=page.unfinished_songs name="unfinished_songs"
-  %}
+  {% include playlist.html songs=page.fragments name="fragments" %}
 
   <h3>Archived</h3>
   <hr />
-  {% include playlist.html songs=page.archived_songs name="archived_songs" %}
+  {% include playlist.html songs=page.archived name="archived" %}
 
   <div id="song-player" class="hidden">
     <div class="inner">
@@ -154,6 +153,7 @@ unfinished_songs:
         <a
           id="download"
           target="_blank"
+          rel="noopener"
           download=""
           class="download wrapper"
           title="Download"
@@ -193,8 +193,8 @@ unfinished_songs:
 </section>
 
 <script>
-  window.main_songs = [
-  {% for item in page.main_songs %}
+  window.pieces = [
+  {% for item in page.pieces %}
   {
     name: "{{item.name}}",
     url: "{{item.mp3 | default: item.m4a }}"
@@ -203,8 +203,8 @@ unfinished_songs:
   ];
 </script>
 <script>
-  window.archived_songs = [
-  {% for item in page.archived_songs %}
+  window.archived = [
+  {% for item in page.archived %}
   {
     name: "{{item.name}}",
     url: "{{item.mp3 | default: item.m4a }}"
@@ -213,8 +213,8 @@ unfinished_songs:
   ];
 </script>
 <script>
-  window.unfinished_songs = [
-  {% for item in page.unfinished_songs %}
+  window.fragments = [
+  {% for item in page.fragments %}
   {
     name: "{{item.name}}",
     url: "{{item.mp3 | default: item.m4a }}"
