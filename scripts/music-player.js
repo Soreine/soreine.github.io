@@ -204,11 +204,11 @@ Amplitude.init({
     pieces: {
       songs: window.pieces,
     },
+    renditions: {
+      songs: window.renditions,
+    },
     fragments: {
       songs: window.fragments,
-    },
-    archived: {
-      songs: window.archived,
     },
   },
   callbacks: {
@@ -224,7 +224,7 @@ Amplitude.init({
     },
   },
   bindings: {
-    "32": "play_pause",
+    32: "play_pause",
   },
   autoplay: false,
   // debug: true,
