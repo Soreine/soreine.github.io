@@ -38,20 +38,11 @@ pieces:
     duration: "2:30"
     mp3: https://storage.googleapis.com/soreine-dev-songs/Cloudfall-Village.mp3
 
-archived:
   - name: Misty Goodness
     duration: "3:39"
     mp3: https://storage.googleapis.com/soreine-dev-songs/Misty-Goodness.mp3
 
-  - name: When Besaid Cries (from FFX)
-    duration: "4:11"
-    mp3: https://storage.googleapis.com/soreine-dev-songs/When-Besaid-Cries.mp3
-
-  - name: Cloudfall Village - Storm Remix
-    duration: "2:38"
-    mp3: https://storage.googleapis.com/soreine-dev-songs/CloudLight.mp3
-
-fragments:
+renditions:
   - name: Goldwrap - Esbjörn Svensson Trio
     duration: "3:47"
     mp3: https://storage.googleapis.com/soreine-dev-songs/Goldwrap.mp3
@@ -60,6 +51,7 @@ fragments:
     duration: "7:14"
     mp3: https://storage.googleapis.com/soreine-dev-songs/crystal-silence.mp3
 
+fragments:
   - name: Ombrelle
     duration: "1:51"
     mp3: https://storage.googleapis.com/soreine-dev-songs/Ombrelle.mp3
@@ -137,17 +129,17 @@ fragments:
     I spent trying to jam melodies on a piano, or on a computer.
   </p>
 
-  <h2>Pieces</h2>
+  <h3>Original Pieces</h3>
   <hr />
   {% include playlist.html songs=page.pieces name="pieces" %}
 
-  <h3>Fragments and recordings</h3>
+  <h3>Renditions</h3>
+  <hr />
+  {% include playlist.html songs=page.renditions name="renditions" %}
+
+  <h3>Fragments</h3>
   <hr />
   {% include playlist.html songs=page.fragments name="fragments" %}
-
-  <h3>Archived</h3>
-  <hr />
-  {% include playlist.html songs=page.archived name="archived" %}
 
   <div id="song-player" class="hidden">
     <div class="inner">
@@ -207,8 +199,8 @@ fragments:
   ];
 </script>
 <script>
-  window.archived = [
-  {% for item in page.archived %}
+  window.renditions = [
+  {% for item in page.renditions %}
   {
     name: "{{item.name}}",
     url: "{{item.mp3 | default: item.m4a }}"
